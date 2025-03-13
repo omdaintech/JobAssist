@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import JobPreferences from '@/components/jobs/JobPreferences';
 import JobList from '@/components/jobs/JobList';
+import ChatSearch from '@/components/jobs/ChatSearch';
 
 const Jobs = () => {
   return (
@@ -16,9 +17,7 @@ const Jobs = () => {
             <h1 className="text-3xl md:text-4xl font-medium mb-8">Job Discovery</h1>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div>
-                <JobPreferences />
-              </div>
+              <ChatSearch />
               
               <div className="lg:col-span-2">
                 <JobList />
