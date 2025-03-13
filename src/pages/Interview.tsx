@@ -120,19 +120,19 @@ const Interview = () => {
                     {[
                       {
                         icon: CheckCircle,
-                        title: 'Research the Company',
-                        description: 'Understanding the company's values, products, and culture shows your interest and helps you tailor your answers accordingly.',
+                        title: "Research the Company",
+                        description: "Understanding the company's values, products, and culture shows your interest and helps you tailor your answers accordingly."
                       },
                       {
                         icon: Clock,
-                        title: 'Mind Your Timing',
-                        description: 'Aim to keep your answers between 1-2 minutes. Practice concise responses that highlight your key points without rambling.',
+                        title: "Mind Your Timing",
+                        description: "Aim to keep your answers between 1-2 minutes. Practice concise responses that highlight your key points without rambling."
                       },
                       {
                         icon: Award,
-                        title: 'Highlight Achievements',
-                        description: 'Use the STAR method (Situation, Task, Action, Result) to structure your responses and showcase your accomplishments.',
-                      },
+                        title: "Highlight Achievements",
+                        description: "Use the STAR method (Situation, Task, Action, Result) to structure your responses and showcase your accomplishments."
+                      }
                     ].map((tip) => (
                       <div key={tip.title} className="flex">
                         <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
