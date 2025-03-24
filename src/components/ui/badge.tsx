@@ -16,6 +16,13 @@ const badgeVariants = cva(
         destructive:
           "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
         outline: "text-foreground",
+        // Adding new variants for job matching
+        match: 
+          "border-transparent bg-green-500/20 text-green-700 dark:text-green-400 hover:bg-green-500/30",
+        skill: 
+          "border-transparent bg-blue-500/20 text-blue-700 dark:text-blue-400 hover:bg-blue-500/30",
+        new: 
+          "border-transparent bg-amber-500/20 text-amber-700 dark:text-amber-400 hover:bg-amber-500/30",
       },
     },
     defaultVariants: {
