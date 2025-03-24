@@ -1,14 +1,13 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Send, Loader2, Filter, ArrowRight, BookmarkIcon, BriefcaseIcon, MapPinIcon, DollarSignIcon, CalendarIcon, Check, GraduationCapIcon } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
+import { BriefcaseIcon } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
-import { useJobSearch, aiResponseTemplates, type JobPosting, type SearchQuery } from './JobSearchAPI';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { useJobSearch, type JobPosting, type SearchQuery } from './JobSearchAPI';
 import { toast } from '@/components/ui/use-toast';
+import ChatMessage from './ChatMessage';
+import ChatInput from './ChatInput';
 
 interface ChatMessage {
   type: 'user' | 'assistant';
@@ -72,7 +71,7 @@ const ChatSearch = () => {
           ...prev, 
           { 
             type: 'assistant', 
-            content: aiResponseTemplates[responseType as keyof typeof aiResponseTemplates], 
+            content: searchResults.responseType || 'default', 
             jobs: searchResults.jobs,
             analyticsInsight: searchResults.analyticsInsight,
             suggestedQueries: searchResults.suggestedQueries
@@ -151,189 +150,28 @@ const ChatSearch = () => {
       <ScrollArea className="flex-1 p-4 overflow-y-auto" ref={scrollAreaRef}>
         <div className="space-y-6">
           {messages.map((message, index) => (
-            <div key={index} className="space-y-2">
-              <div
-                className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                <div
-                  className={`max-w-[85%] rounded-lg p-3 ${
-                    message.type === 'user'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted'
-                  }`}
-                >
-                  {message.isTyping ? (
-                    <div className="flex items-center gap-1">
-                      <div className="w-2 h-2 bg-foreground/70 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                      <div className="w-2 h-2 bg-foreground/70 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                      <div className="w-2 h-2 bg-foreground/70 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
-                    </div>
-                  ) : (
-                    <p className="text-sm">{message.content}</p>
-                  )}
-                </div>
-              </div>
-              
-              {/* Jobs results section */}
-              {message.jobs && message.jobs.length > 0 && (
-                <div className="pl-2 mt-3 space-y-3">
-                  {/* Analytics insight */}
-                  {message.analyticsInsight && (
-                    <div className="mb-3 px-2 py-1.5 bg-primary/5 rounded-md border-l-2 border-primary">
-                      <p className="text-xs text-muted-foreground">
-                        <strong>Insight:</strong> {message.analyticsInsight}
-                      </p>
-                    </div>
-                  )}
-                  
-                  {/* Job listings */}
-                  {message.jobs.map(job => (
-                    <Card key={job.id} className="overflow-hidden border border-border bg-card shadow-sm hover:shadow transition-shadow">
-                      <CardContent className="p-4">
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <h3 className="font-medium text-sm">{job.title}</h3>
-                            <p className="text-xs text-muted-foreground">{job.company}</p>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            {job.matchScore && (
-                              <Badge variant="match" className="text-xs">
-                                {job.matchScore}% Match
-                              </Badge>
-                            )}
-                            {job.isNew && (
-                              <Badge variant="new" className="text-xs">
-                                New
-                              </Badge>
-                            )}
-                          </div>
-                        </div>
-                        
-                        <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground mt-2">
-                          <div className="flex items-center gap-1">
-                            <MapPinIcon className="h-3 w-3" />
-                            <span>{job.location}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <BriefcaseIcon className="h-3 w-3" />
-                            <span>{job.type}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <DollarSignIcon className="h-3 w-3" />
-                            <span>{job.salary}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <CalendarIcon className="h-3 w-3" />
-                            <span>{job.posted}</span>
-                          </div>
-                        </div>
-                        
-                        {/* Key skills */}
-                        <div className="flex flex-wrap gap-1 mt-2">
-                          {job.keySkills.slice(0, 5).map((skill, idx) => (
-                            <Badge key={idx} variant="skill" className="text-[0.65rem]">
-                              {skill}
-                            </Badge>
-                          ))}
-                        </div>
-                        
-                        <div className="flex items-center gap-2 mt-3">
-                          <TooltipProvider>
-                            <Tooltip>
-                              <TooltipTrigger asChild>
-                                <Button size="sm" variant="default" className="text-xs h-8 rounded-md">
-                                  View Job
-                                  <ArrowRight className="ml-1 h-3 w-3" />
-                                </Button>
-                              </TooltipTrigger>
-                              <TooltipContent>
-                                <p>View complete job details</p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
-                          
-                          <TooltipProvider>
-                            <Tooltip>
-                              <TooltipTrigger asChild>
-                                <Button 
-                                  size="sm" 
-                                  variant="outline" 
-                                  className="text-xs h-8 rounded-md"
-                                  onClick={() => handleQuickApply(job.id)}
-                                >
-                                  <Check className="mr-1 h-3 w-3" />
-                                  Quick Apply
-                                </Button>
-                              </TooltipTrigger>
-                              <TooltipContent>
-                                <p>Apply with your saved resume</p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
-                          
-                          <Button 
-                            size="sm" 
-                            variant="ghost" 
-                            className="ml-auto h-8 w-8 p-0" 
-                            title="Save job"
-                            onClick={() => handleSaveJob(job.id)}
-                          >
-                            <BookmarkIcon className="h-4 w-4" />
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                  
-                  {/* Suggested queries */}
-                  {message.suggestedQueries && message.suggestedQueries.length > 0 && (
-                    <div className="mt-4">
-                      <p className="text-xs text-muted-foreground mb-2">Try searching for:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {message.suggestedQueries.map((query, idx) => (
-                          <Button 
-                            key={idx} 
-                            variant="outline" 
-                            size="sm" 
-                            className="text-xs h-7 rounded-full"
-                            onClick={() => handleSuggestedQueryClick(query)}
-                          >
-                            {query}
-                          </Button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  
-                  <div className="flex justify-center mt-2">
-                    <Button variant="outline" size="sm" className="text-xs">
-                      <Filter className="mr-1 h-3 w-3" />
-                      Refine Results
-                    </Button>
-                  </div>
-                </div>
-              )}
-            </div>
+            <ChatMessage 
+              key={index}
+              type={message.type}
+              content={message.content}
+              isTyping={message.isTyping}
+              jobs={message.jobs}
+              analyticsInsight={message.analyticsInsight}
+              suggestedQueries={message.suggestedQueries}
+              onSuggestedQueryClick={handleSuggestedQueryClick}
+              onSaveJob={handleSaveJob}
+              onQuickApply={handleQuickApply}
+            />
           ))}
         </div>
       </ScrollArea>
 
-      <form onSubmit={handleSubmit} className="p-4 border-t flex gap-2">
-        <Input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Describe the job you're looking for..."
-          className="flex-1"
-          disabled={isProcessing}
-        />
-        <Button type="submit" size="icon" disabled={isProcessing}>
-          {isProcessing ? (
-            <Loader2 className="h-4 w-4 animate-spin" />
-          ) : (
-            <Send className="h-4 w-4" />
-          )}
-        </Button>
-      </form>
+      <ChatInput 
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        onSubmit={handleSubmit}
+        isProcessing={isProcessing}
+      />
     </Card>
   );
 };

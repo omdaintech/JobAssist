@@ -1,4 +1,3 @@
-
 // This file simulates a backend API for job searches
 import { useState, useEffect } from 'react';
 
@@ -36,6 +35,7 @@ export interface SearchResults {
   totalMatches: number;
   suggestedQueries?: string[];
   analyticsInsight?: string;
+  responseType?: string;
 }
 
 // Mock job database
