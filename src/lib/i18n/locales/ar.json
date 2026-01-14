@@ -1,0 +1,159 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "courses": "الدورات",
+    "about": "من نحن",
+    "blog": "الموارد",
+    "contact": "اتصل بنا",
+    "dashboard": "لوحة التحكم",
+    "cart": "السلة",
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+    "logout": "تسجيل الخروج"
+  },
+  "hero": {
+    "title": "إتقان مهارات الذكاء الاصطناعي والتكنولوجيا",
+    "subtitle": "للمهنيين غير التقنيين",
+    "description": "سد الفجوة بين التعليم والتوظيف. اكتسب مهارات الذكاء الاصطناعي والأدوات الرقمية لتطوير مسيرتك المهنية في مصر والسويد ومنطقة الشرق الأوسط وشمال أفريقيا.",
+    "cta": "استكشف الدورات",
+    "ctaSecondary": "شاهد كيف يعمل"
+  },
+  "home": {
+    "featuredCoursesTitle": "الدورات المميزة",
+    "featuredCoursesSubtitle": "ابدأ رحلتك مع دوراتنا الأكثر شعبية",
+    "testimonialsTitle": "قصص النجاح",
+    "testimonialsSubtitle": "استمع من المحترفين الذين غيروا مسيرتهم المهنية",
+    "trustTitle": "موثوق به من قبل المؤسسات الرائدة",
+    "ctaTitle": "مستعد لبدء رحلة التعلم الخاصة بك؟",
+    "ctaSubtitle": "انضم إلى آلاف المحترفين الذين يطورون مهاراتهم في الذكاء الاصطناعي والتكنولوجيا",
+    "ctaButton": "تصفح جميع الدورات"
+  },
+  "courses": {
+    "title": "جميع الدورات",
+    "filters": {
+      "search": "ابحث عن الدورات...",
+      "level": "مستوى المهارة",
+      "category": "الفئة",
+      "format": "التنسيق",
+      "clear": "مسح الفلاتر",
+      "apply": "تطبيق الفلاتر"
+    },
+    "levels": {
+      "beginner": "مبتدئ",
+      "intermediate": "متوسط",
+      "advanced": "متقدم"
+    },
+    "formats": {
+      "self-paced": "ذاتي الوتيرة",
+      "live": "جلسات مباشرة",
+      "hybrid": "هجين"
+    },
+    "categories": {
+      "ai-basics": "أساسيات الذكاء الاصطناعي",
+      "data-literacy": "محو الأمية البيانات",
+      "automation": "أدوات الأتمتة",
+      "digital-marketing": "التسويق الرقمي",
+      "productivity": "أدوات الإنتاجية"
+    },
+    "card": {
+      "students": "طالب",
+      "hours": "ساعات",
+      "rating": "التقييم",
+      "enrollNow": "سجل الآن",
+      "learnMore": "اعرف المزيد",
+      "addToCart": "أضف إلى السلة"
+    },
+    "noResults": "لم يتم العثور على دورات تطابق معاييرك",
+    "loading": "جارٍ تحميل الدورات..."
+  },
+  "courseDetail": {
+    "overview": "نظرة عامة",
+    "curriculum": "المنهج",
+    "instructor": "المدرس",
+    "reviews": "التقييمات",
+    "enroll": "سجل الآن",
+    "addToCart": "أضف إلى السلة",
+    "whatYouLearn": "ما ستتعلمه",
+    "prerequisites": "المتطلبات الأساسية",
+    "targetAudience": "لمن هذه الدورة",
+    "certificateIncluded": "شهادة إتمام متضمنة",
+    "duration": "المدة",
+    "level": "المستوى",
+    "format": "التنسيق",
+    "language": "اللغة",
+    "students": "الطلاب المسجلين",
+    "rating": "التقييم",
+    "reviews_count": "تقييمات"
+  },
+  "auth": {
+    "login": {
+      "title": "مرحباً بعودتك",
+      "subtitle": "سجل الدخول لمتابعة رحلة التعلم",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "forgotPassword": "نسيت كلمة المرور؟",
+      "submit": "تسجيل الدخول",
+      "noAccount": "ليس لديك حساب؟",
+      "signupLink": "إنشاء حساب"
+    },
+    "signup": {
+      "title": "إنشاء حسابك",
+      "subtitle": "ابدأ رحلتك لتطوير مهاراتك في الذكاء الاصطناعي والتكنولوجيا",
+      "fullName": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "country": "البلد",
+      "submit": "إنشاء حساب",
+      "haveAccount": "لديك حساب بالفعل؟",
+      "loginLink": "تسجيل الدخول",
+      "terms": "بالتسجيل، فإنك توافق على شروط الخدمة وسياسة الخصوصية"
+    }
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "myCourses": "دوراتي",
+    "progress": "التقدم",
+    "certificates": "الشهادات",
+    "payments": "سجل الدفعات",
+    "profile": "إعدادات الملف الشخصي",
+    "noCourses": "لم تسجل في أي دورات بعد",
+    "browseButton": "تصفح الدورات",
+    "continueButton": "تابع التعلم",
+    "downloadCertificate": "تحميل الشهادة"
+  },
+  "cart": {
+    "title": "سلة التسوق",
+    "empty": "سلتك فارغة",
+    "browseButton": "تصفح الدورات",
+    "total": "المجموع",
+    "checkout": "إتمام الدفع",
+    "remove": "إزالة",
+    "itemsCount": "{{count}} عنصر في السلة",
+    "itemsCount_plural": "{{count}} عناصر في السلة"
+  },
+  "footer": {
+    "aboutUs": "عن إكسباند ليرنينج",
+    "aboutDescription": "تمكين المهنيين في مصر والسويد ومنطقة الشرق الأوسط وشمال أفريقيا بمهارات الذكاء الاصطناعي والتكنولوجيا للتقدم الوظيفي.",
+    "quickLinks": "روابط سريعة",
+    "support": "الدعم",
+    "legal": "قانوني",
+    "contactUs": "اتصل بنا",
+    "followUs": "تابعنا",
+    "allRightsReserved": "© {{year}} إكسباند ليرنينج. جميع الحقوق محفوظة."
+  },
+  "common": {
+    "loading": "جارٍ التحميل...",
+    "error": "حدث خطأ",
+    "tryAgain": "حاول مرة أخرى",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "close": "إغلاق",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "showMore": "عرض المزيد",
+    "showLess": "عرض أقل",
+    "viewAll": "عرض الكل"
+  }
+}

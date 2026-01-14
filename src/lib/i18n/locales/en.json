@@ -1,0 +1,159 @@
+{
+  "nav": {
+    "home": "Home",
+    "courses": "Courses",
+    "about": "About Us",
+    "blog": "Resources",
+    "contact": "Contact",
+    "dashboard": "Dashboard",
+    "cart": "Cart",
+    "login": "Log In",
+    "signup": "Sign Up",
+    "logout": "Log Out"
+  },
+  "hero": {
+    "title": "Master AI & Tech Skills",
+    "subtitle": "For Non-Technical Professionals",
+    "description": "Bridge the gap between education and employment. Upskill in AI and digital tools to advance your career across Egypt, Sweden, and MENA.",
+    "cta": "Explore Courses",
+    "ctaSecondary": "Watch How It Works"
+  },
+  "home": {
+    "featuredCoursesTitle": "Featured Courses",
+    "featuredCoursesSubtitle": "Start your journey with our most popular courses",
+    "testimonialsTitle": "Success Stories",
+    "testimonialsSubtitle": "Hear from professionals who transformed their careers",
+    "trustTitle": "Trusted by Leading Organizations",
+    "ctaTitle": "Ready to Start Your Learning Journey?",
+    "ctaSubtitle": "Join thousands of professionals upskilling in AI and tech",
+    "ctaButton": "Browse All Courses"
+  },
+  "courses": {
+    "title": "All Courses",
+    "filters": {
+      "search": "Search courses...",
+      "level": "Skill Level",
+      "category": "Category",
+      "format": "Format",
+      "clear": "Clear Filters",
+      "apply": "Apply Filters"
+    },
+    "levels": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "formats": {
+      "self-paced": "Self-Paced",
+      "live": "Live Sessions",
+      "hybrid": "Hybrid"
+    },
+    "categories": {
+      "ai-basics": "AI Basics",
+      "data-literacy": "Data Literacy",
+      "automation": "Automation Tools",
+      "digital-marketing": "Digital Marketing",
+      "productivity": "Productivity Tools"
+    },
+    "card": {
+      "students": "students",
+      "hours": "hours",
+      "rating": "rating",
+      "enrollNow": "Enroll Now",
+      "learnMore": "Learn More",
+      "addToCart": "Add to Cart"
+    },
+    "noResults": "No courses found matching your criteria",
+    "loading": "Loading courses..."
+  },
+  "courseDetail": {
+    "overview": "Overview",
+    "curriculum": "Curriculum",
+    "instructor": "Instructor",
+    "reviews": "Reviews",
+    "enroll": "Enroll Now",
+    "addToCart": "Add to Cart",
+    "whatYouLearn": "What You'll Learn",
+    "prerequisites": "Prerequisites",
+    "targetAudience": "Who This Course Is For",
+    "certificateIncluded": "Certificate of Completion Included",
+    "duration": "Duration",
+    "level": "Level",
+    "format": "Format",
+    "language": "Language",
+    "students": "Students Enrolled",
+    "rating": "Rating",
+    "reviews_count": "reviews"
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Log in to continue your learning journey",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "submit": "Log In",
+      "noAccount": "Don't have an account?",
+      "signupLink": "Sign up"
+    },
+    "signup": {
+      "title": "Create Your Account",
+      "subtitle": "Start your journey to upskill in AI and tech",
+      "fullName": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "country": "Country",
+      "submit": "Sign Up",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Log in",
+      "terms": "By signing up, you agree to our Terms of Service and Privacy Policy"
+    }
+  },
+  "dashboard": {
+    "title": "My Dashboard",
+    "myCourses": "My Courses",
+    "progress": "Progress",
+    "certificates": "Certificates",
+    "payments": "Payment History",
+    "profile": "Profile Settings",
+    "noCourses": "You haven't enrolled in any courses yet",
+    "browseButton": "Browse Courses",
+    "continueButton": "Continue Learning",
+    "downloadCertificate": "Download Certificate"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "browseButton": "Browse Courses",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "remove": "Remove",
+    "itemsCount": "{{count}} item in cart",
+    "itemsCount_plural": "{{count}} items in cart"
+  },
+  "footer": {
+    "aboutUs": "About Xpand Learning",
+    "aboutDescription": "Empowering professionals across Egypt, Sweden, and MENA with AI and tech skills for career advancement.",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "legal": "Legal",
+    "contactUs": "Contact Us",
+    "followUs": "Follow Us",
+    "allRightsReserved": "© {{year}} Xpand Learning. All rights reserved."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "tryAgain": "Try Again",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "showMore": "Show More",
+    "showLess": "Show Less",
+    "viewAll": "View All"
+  }
+}

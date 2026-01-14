@@ -1,0 +1,159 @@
+{
+  "nav": {
+    "home": "Hem",
+    "courses": "Kurser",
+    "about": "Om Oss",
+    "blog": "Resurser",
+    "contact": "Kontakt",
+    "dashboard": "Dashboard",
+    "cart": "Kundvagn",
+    "login": "Logga In",
+    "signup": "Registrera",
+    "logout": "Logga Ut"
+  },
+  "hero": {
+    "title": "Bemästra AI & Tech-färdigheter",
+    "subtitle": "För Icke-Tekniska Professionella",
+    "description": "Överbrygga klyftan mellan utbildning och anställning. Uppgradera dina färdigheter inom AI och digitala verktyg för att avancera din karriär i Egypten, Sverige och MENA.",
+    "cta": "Utforska Kurser",
+    "ctaSecondary": "Se Hur Det Fungerar"
+  },
+  "home": {
+    "featuredCoursesTitle": "Utvalda Kurser",
+    "featuredCoursesSubtitle": "Börja din resa med våra mest populära kurser",
+    "testimonialsTitle": "Framgångshistorier",
+    "testimonialsSubtitle": "Hör från yrkesverksamma som förändrade sina karriärer",
+    "trustTitle": "Betrodd av Ledande Organisationer",
+    "ctaTitle": "Redo att Börja Din Läranderes?",
+    "ctaSubtitle": "Gå med tusentals yrkesverksamma som uppgraderar inom AI och tech",
+    "ctaButton": "Bläddra Alla Kurser"
+  },
+  "courses": {
+    "title": "Alla Kurser",
+    "filters": {
+      "search": "Sök kurser...",
+      "level": "Färdighetsnivå",
+      "category": "Kategori",
+      "format": "Format",
+      "clear": "Rensa Filter",
+      "apply": "Tillämpa Filter"
+    },
+    "levels": {
+      "beginner": "Nybörjare",
+      "intermediate": "Medel",
+      "advanced": "Avancerad"
+    },
+    "formats": {
+      "self-paced": "Egen Takt",
+      "live": "Live-sessioner",
+      "hybrid": "Hybrid"
+    },
+    "categories": {
+      "ai-basics": "AI Grunder",
+      "data-literacy": "Datakunnighet",
+      "automation": "Automatiseringsverktyg",
+      "digital-marketing": "Digital Marknadsföring",
+      "productivity": "Produktivitetsverktyg"
+    },
+    "card": {
+      "students": "studenter",
+      "hours": "timmar",
+      "rating": "betyg",
+      "enrollNow": "Registrera Nu",
+      "learnMore": "Läs Mer",
+      "addToCart": "Lägg till i Kundvagn"
+    },
+    "noResults": "Inga kurser hittades som matchar dina kriterier",
+    "loading": "Laddar kurser..."
+  },
+  "courseDetail": {
+    "overview": "Översikt",
+    "curriculum": "Kursplan",
+    "instructor": "Instruktör",
+    "reviews": "Recensioner",
+    "enroll": "Registrera Nu",
+    "addToCart": "Lägg till i Kundvagn",
+    "whatYouLearn": "Vad Du Kommer Att Lära Dig",
+    "prerequisites": "Förkunskaper",
+    "targetAudience": "Vem Denna Kurs Är För",
+    "certificateIncluded": "Intyg om Slutförande Ingår",
+    "duration": "Varaktighet",
+    "level": "Nivå",
+    "format": "Format",
+    "language": "Språk",
+    "students": "Registrerade Studenter",
+    "rating": "Betyg",
+    "reviews_count": "recensioner"
+  },
+  "auth": {
+    "login": {
+      "title": "Välkommen Tillbaka",
+      "subtitle": "Logga in för att fortsätta din läranderes",
+      "email": "E-post",
+      "password": "Lösenord",
+      "forgotPassword": "Glömt lösenord?",
+      "submit": "Logga In",
+      "noAccount": "Har du inget konto?",
+      "signupLink": "Registrera"
+    },
+    "signup": {
+      "title": "Skapa Ditt Konto",
+      "subtitle": "Börja din resa för att uppgradera inom AI och tech",
+      "fullName": "Fullständigt Namn",
+      "email": "E-post",
+      "password": "Lösenord",
+      "confirmPassword": "Bekräfta Lösenord",
+      "country": "Land",
+      "submit": "Registrera",
+      "haveAccount": "Har du redan ett konto?",
+      "loginLink": "Logga in",
+      "terms": "Genom att registrera dig godkänner du våra Användarvillkor och Integritetspolicy"
+    }
+  },
+  "dashboard": {
+    "title": "Min Dashboard",
+    "myCourses": "Mina Kurser",
+    "progress": "Framsteg",
+    "certificates": "Intyg",
+    "payments": "Betalningshistorik",
+    "profile": "Profilinställningar",
+    "noCourses": "Du har inte registrerat dig för några kurser ännu",
+    "browseButton": "Bläddra Kurser",
+    "continueButton": "Fortsätt Lära",
+    "downloadCertificate": "Ladda Ner Intyg"
+  },
+  "cart": {
+    "title": "Kundvagn",
+    "empty": "Din kundvagn är tom",
+    "browseButton": "Bläddra Kurser",
+    "total": "Totalt",
+    "checkout": "Gå till Kassan",
+    "remove": "Ta Bort",
+    "itemsCount": "{{count}} artikel i kundvagnen",
+    "itemsCount_plural": "{{count}} artiklar i kundvagnen"
+  },
+  "footer": {
+    "aboutUs": "Om Xpand Learning",
+    "aboutDescription": "Att stärka yrkesverksamma i Egypten, Sverige och MENA med AI- och tech-färdigheter för karriärutveckling.",
+    "quickLinks": "Snabblänkar",
+    "support": "Support",
+    "legal": "Juridisk",
+    "contactUs": "Kontakta Oss",
+    "followUs": "Följ Oss",
+    "allRightsReserved": "© {{year}} Xpand Learning. Alla rättigheter förbehållna."
+  },
+  "common": {
+    "loading": "Laddar...",
+    "error": "Ett fel uppstod",
+    "tryAgain": "Försök Igen",
+    "save": "Spara",
+    "cancel": "Avbryt",
+    "close": "Stäng",
+    "search": "Sök",
+    "filter": "Filtrera",
+    "sort": "Sortera",
+    "showMore": "Visa Mer",
+    "showLess": "Visa Mindre",
+    "viewAll": "Visa Alla"
+  }
+}
