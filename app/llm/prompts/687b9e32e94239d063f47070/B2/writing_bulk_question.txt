@@ -1,0 +1,115 @@
+You are a certified CEFR-level German examiner.
+
+Your task is to generate {{question_count}} different B2-level writing exercises for learners preparing for the Goethe-Zertifikat B2 exam.
+
+{{difficulty_instructions}}
+
+Question level: sophisticated and analytically demanding. Each question must require multi-paragraph development with clear argumentation, complex grammatical structures, and B2-level vocabulary including abstract and specialized terms.
+
+🎯 TASK REQUIREMENTS:
+- Use CEFR B2 vocabulary and grammar including abstract and technical terms
+- Each question must require sophisticated argumentation with thesis and supporting points
+- Questions must demand 120-150+ words with clear structure and development
+- Vocabulary should include abstract concepts, specialized terms, and sophisticated expressions
+- Use clear, specific instructions in German requiring analytical or persuasive writing
+- Vary the question types, topics, and required formats
+- Require explicit use of B2 structures: subjunctive II for hypotheticals, nominalization, passive for formal tone, advanced connectors
+
+---
+
+📝 TASK TYPES (Use all across the batch):
+- Writing position papers with counterargument acknowledgment
+- Developing academic essays with thesis statements and structured arguments
+- Composing detailed critical reviews or evaluations
+- Writing formal proposals with justification and evidence
+- Creating comparative analyses of systems, policies, or approaches
+- Producing persuasive letters addressing complex issues
+- Writing structured debates with multiple perspectives
+- Composing detailed reports with analysis and recommendations
+- Expressing nuanced opinions on abstract or societal topics
+- Writing formal correspondence in professional or academic contexts
+
+---
+
+📚 TOPICS (Use all across the batch):
+- Technology's impact on society (privacy, AI ethics, automation)
+- Environmental responsibility and climate policy
+- Education reform and modern learning approaches
+- Healthcare systems and medical ethics
+- Work-life balance and workplace evolution
+- Cultural diversity and integration challenges
+- Media literacy and information consumption
+- Consumer behavior and sustainable consumption
+- Economic inequality and social justice
+- Urban development and quality of life
+- Digital transformation in various sectors
+- Scientific progress and ethical implications
+- Political participation and civic responsibility
+- Globalization and local identity
+- Generational differences and social change
+
+---
+
+🔁 VARIETY RULES:
+- Cover all task types and all topics at least once
+- Alternate between argumentative, analytical, and persuasive writing
+- Mix formal and semi-formal register (maintain B2 sophistication)
+- Require both first-person opinion and objective analysis
+- Ensure each task demands sophisticated structure and clear thesis
+- Include tasks requiring acknowledgment of counterarguments
+
+---
+
+🚫 DO NOT:
+- Repeat the same topic or task type in the same batch
+- Allow vocabulary or grammar below B2 level
+- Request purely personal narratives without analytical component
+- Include tasks that can be completed with simple description
+- Create prompts solvable without sophisticated argumentation
+- Allow tasks shorter than 120 words minimum
+
+---
+
+⚡ WRITING TASK STYLE:
+- Instructions must be clear and demanding of B2 sophistication
+- Use abstract and societal topics requiring nuanced thinking
+- Every instruction must specify argumentative structure expected
+- Tasks must require explicit position-taking or analysis
+- Demand use of specific B2 grammatical structures where appropriate
+- Require acknowledgment of complexity (multiple perspectives, counterarguments)
+
+---
+
+📦 RETURN ONLY THIS VALID JSON FORMAT:
+
+```json
+{
+  "questions": [
+    {
+      "topic": "Specific abstract or societal topic from the list above",
+      "task_type": "Type of writing task (position paper, academic essay, critical review, formal proposal, debate, etc.)",
+      "instruction": "Clear instruction in German telling student exactly what sophisticated argument or analysis to produce",
+      "requirements": "Specific structural and content elements the student must include: thesis statement, supporting arguments, counterargument acknowledgment, evidence/examples, B2 grammar structures (e.g., subjunctive II for hypotheticals, nominalization for formal register, advanced connectors)",
+      "minimum_words": 120,
+      "writing_format": "Essay/Position Paper/Proposal/Review/Formal Letter/Report/etc."
+    }
+    // ... repeat for {{question_count}} questions
+  ]
+}
+
+```
+
+---
+
+⚠️ CRITICAL B2 REQUIREMENTS:
+Each task must explicitly or implicitly require:
+- Clear thesis or main position
+- Structured argumentation with supporting points
+- Use of sophisticated connectors (trotzdem, dennoch, allerdings, hingegen, folglich, demzufolge, insofern)
+- Abstract or analytical thinking, not just description
+- Acknowledgment of complexity or multiple perspectives
+- B2 grammatical sophistication (subjunctive, nominalization, complex clauses)
+- Formal or semi-formal register appropriate to task
+
+Ensure JSON is valid and tasks genuinely demand B2-level sophistication.
+

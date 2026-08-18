@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+        --primary: 221.2 83.2% 53.3%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 210 40% 96%;
+        --secondary-foreground: 222.2 84% 4.9%;
+        --muted: 210 40% 96%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+        --accent: 210 40% 96%;
+        --accent-foreground: 222.2 84% 4.9%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 221.2 83.2% 53.3%;
+        --radius: 0.5rem;
+        
+        /* Mobile-First Spacing System */
+        --page-gutter-xs: 0.5rem;
+        --page-gutter-sm: 0.75rem;
+        --page-gutter-md: 1rem;
+        --page-gutter-lg: 1.5rem;
+        --page-gutter-xl: 2rem;
+        
+        --card-padding-xs: 0.75rem;
+        --card-padding-sm: 1rem;
+        --card-padding-md: 1.25rem;
+        
+        --section-gap-xs: 0.75rem;
+        --section-gap-sm: 1rem;
+        --section-gap-md: 1.5rem;
+        
+        --touch-target-min: 44px;
+    }
+
+    .dark {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 210 40% 98%;
+        --primary-foreground: 222.2 84% 4.9%;
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+        --accent: 217.2 32.6% 17.5%;
+        --accent-foreground: 210 40% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 212.7 26.8% 83.9%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Remove old admin styles - replaced with Shadcn design */
+.admin-layout {
+    @apply h-screen flex overflow-hidden bg-gray-100;
+}
+
+.admin-sidebar {
+    @apply hidden md:flex md:flex-shrink-0;
+}
+
+.admin-header {
+    @apply relative z-10 flex-shrink-0 flex h-16 bg-white shadow;
+}
+
+.admin-main {
+    @apply flex-1 relative overflow-y-auto focus:outline-none;
+}
+
+.admin-nav-link {
+    @apply flex items-center px-2 py-2 text-sm font-medium rounded-md transition-colors text-gray-600 hover:bg-gray-50 hover:text-gray-900;
+}
+
+.admin-nav-link.active {
+    @apply bg-eu-blue text-white;
+}
+
+.admin-card {
+    @apply rounded-lg border bg-card text-card-foreground shadow-sm;
+}
+
+.admin-card-content {
+    @apply p-6;
+}
+
+/* PWA and Mobile Utilities */
+@layer utilities {
+  /* PWA Install Prompt Animation */
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out;
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Safe Area Support for PWA/Notch devices */
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .pl-safe {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .pr-safe {
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Mobile Touch Targets */
+  .touch-target {
+    min-height: var(--touch-target-min);
+    min-width: var(--touch-target-min);
+  }
+}

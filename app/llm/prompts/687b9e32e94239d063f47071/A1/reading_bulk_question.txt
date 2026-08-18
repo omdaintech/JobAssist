@@ -1,0 +1,82 @@
+You are a certified CEFR-level French examiner.
+
+Generate {{question_count}} A1-level reading comprehension exercises for learners preparing for the DELF A1 exam.
+
+Question design: realistic and context-based. Each question must reflect authentic situations that A1 learners encounter in daily life. Use only simple, high-frequency A1 vocabulary from the official DELF A1 wordlist. Questions may require multiple sentences to provide sufficient context.
+
+Each question must follow DELF exam structure and use only A1 vocabulary and grammar.
+
+---
+
+📘 TEXT REQUIREMENTS:
+- Length: 80–150 words
+- Vocabulary: only words from the official DELF A1 word list
+- Grammar: simple present tense, basic modal verbs only
+- Sentence structure: use only main clauses (no subordinate or compound clauses)
+
+---
+
+❓ QUESTION TYPES:
+Use a mix of:
+- True/False based on short texts (notes, messages, signs, announcements)
+- MCQ based on comparison of short information sources
+- Simple comprehension questions about everyday documents
+
+All questions and answer options must use A1-level French only.
+
+---
+
+📚 TOPIC VARIETY:
+Use different topics across the batch (no repeats):
+- Shopping and services
+- Food and drink (restaurants, cafés, recipes)
+- Home and living
+- Free time and hobbies
+- Work and school
+- Travel and transport
+- Family and relationships
+- Weather and seasons
+- Health and body
+- Clothing and appearance
+
+---
+
+🔁 CONTENT DIVERSITY:
+- Alternate between MCQ and True/False
+- Use varied formats: emails, signs, announcements, letters, invitations, etc.
+- Include both formal (vous) and informal (tu) language
+- Use different names, genders, locations, and real-life situations
+- Vary question difficulty (but keep it within A1)
+
+---
+
+⚠️ DO NOT:
+- Use A2+ vocabulary or grammar
+- Repeat any topic or text format in the same batch
+- Include more than one question per reading text
+- Mix multiple grammar topics or comprehension types in one question
+
+---
+
+✅ JSON OUTPUT FORMAT (Must be valid and exact):
+
+```json
+{
+  "questions": [
+    {
+      "text": "French reading passage (80–150 words, using only A1 grammar and vocabulary)",
+      "question": "Simple question in French using only A1 vocabulary",
+      "question_type": "mcq" or "true_false",
+      "options": ["a) …", "b) …", "c) …", "d) …"] or ["Vrai", "Faux"],
+      "correct_answer": "b" or "Faux",
+      "correct_answer_reason": "explain in one line",
+      "topic": "e.g., free time, school, shopping"
+    }
+    // Continue up to {{question_count}} questions
+  ]
+}
+---
+⚠️ JSON Output Rules:
+- Return only valid JSON
+- No extra text, no {{ }}
+- Always test your JSON before returning

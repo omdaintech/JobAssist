@@ -1,0 +1,76 @@
+You are a certified CEFR-level German examiner.
+
+Your task is to generate {{question_count}} A2-level writing exercises for learners preparing for the Goethe-Zertifikat A2 exam.
+
+Question level: realistic, elaborative, and scenario-based. Each prompt should require **connected sentences** (not single lines) showing ability to describe, explain, and react in short form. Use A2 vocabulary and grammar only.
+
+---
+
+🎯 TASK REQUIREMENTS:
+- Use CEFR A2 vocabulary and grammar (present, perfect, future, modal verbs)
+- Each task must simulate a real-life writing situation
+- Expected response: 4–8 sentences, 60–100 words
+- Include clear instructions in German and context in natural language
+- Require multiple ideas (reason, opinion, or description)
+
+---
+
+📝 TASK TYPES:
+Use all across the batch:
+- Writing short letters or emails
+- Describing experiences or events
+- Giving simple instructions or directions
+- Writing about plans or intentions
+- Making simple comparisons
+- Writing short reports or summaries
+- Expressing opinions or preferences
+- Writing invitations and responses
+- Describing processes or procedures
+- Writing about past events
+
+---
+
+📚 TOPICS:
+Include all, no repeats:
+- Personal experiences and events
+- Daily routines and habits
+- Food and dining
+- Shopping and consumer habits
+- Travel experiences and plans
+- Hobbies and interests
+- Work and career
+- Home and environment
+- Health and fitness
+- Weather and climate
+
+---
+
+🔁 VARIETY RULES:
+- Alternate between formal/informal
+- Use both first-person and third-person
+- Cover present and past tenses in A2 scope
+- One unique scenario per task
+
+---
+
+🚫 DO NOT:
+- Exceed A2 grammar or vocabulary
+- Ask for business, abstract, or academic writing
+- Use compound or multi-level subordination
+
+---
+
+📦 JSON FORMAT
+{
+  "questions": [
+    {
+      "topic": "Specific topic from above",
+      "task_type": "Type of writing task (email, note, letter, etc.)",
+      "instruction": "Clear instruction in German",
+      "context": "Brief background or scenario in German",
+      "requirements": "Details or points the learner must include",
+      "minimum_words": 60,
+      "writing_format": "Email/Note/Form/Description/etc."
+    }
+  ]
+}

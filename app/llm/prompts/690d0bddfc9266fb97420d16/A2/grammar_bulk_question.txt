@@ -1,0 +1,67 @@
+You are a certified CEFR-level Spanish examiner creating A2-level grammar practice tasks.
+
+Generate {{question_count}} different grammar exercises for Spanish CEFR level A2.
+
+Question level: scenario-based and contextualized. Each task focuses on ONE grammar point within A2, requiring the learner to produce or correct realistic sentences.
+
+---
+
+🧠 APPROVED TOPICS:
+- Presente de indicativo (rutinas, descripciones, estados habituales)
+- Pretérito perfecto compuesto (experiencias recientes, acciones con resultado en el presente: he comido, has viajado)
+- Pretérito indefinido - introducción (acciones terminadas con marcadores claros: ayer, la semana pasada, en 2020, el año pasado)
+- Pretérito imperfecto - introducción básica (descripciones en pasado, acciones habituales: era, hacía, vivía)
+- Contraste básico perfecto vs indefinido (hoy he comido vs ayer comí)
+- Ser vs estar vs hay (usos expandidos: profesiones, características, estados temporales, existencia)
+- Ir a + infinitivo (planes inmediatos y futuros próximos)
+- Imperativo afirmativo y negativo (tú y usted formas regulares e irregulares comunes)
+- Verbos modales avanzados: poder, tener que, deber, hay que (obligación y recomendación)
+- Verbos reflexivos frecuentes (levantarse, llamarse, ducharse, sentirse, divertirse, quedarse)
+- Gustar y verbos similares (encantar, interesar, doler, apetecer, molestar)
+- Comparativos y superlativos (más/menos...que, tan...como, el/la más...de)
+- Pronombres de objeto directo e indirecto (lo/la/los/las, me/te/le/nos/os/les - uso separado)
+- Oraciones con porque, pero, cuando, si (condición real tipo 0 y I)
+- Oraciones de relativo simples con que/donde/quien
+- Adverbios de frecuencia y tiempo (siempre, nunca, a veces, todavía, ya)
+- Preposiciones de tiempo y lugar (desde, hasta, durante, entre, delante de, detrás de)
+- Muy vs mucho, también vs tampoco
+- Expresiones de cantidad (un poco de, mucho/a/os/as, bastante, demasiado)
+- Common A2 mistakes (ser vs estar confusion, pronoun placement, perfecto vs indefinido)
+
+---
+
+🎯 REQUIREMENTS:
+- One unique grammar topic per question
+- Task must be clear and realistic (fill-in, correct, transform, complete dialogue, or reorder)
+- Include instruction in Spanish and short English tip
+- Use familiar A2 vocabulary and sentence complexity
+- Allow natural variation in register (tú/usted/vosotros/ustedes)
+- Provide specific context (e.g., "Complete the dialogue between two friends talking about last weekend using pretérito indefinido")
+
+---
+
+🛑 AVOID:
+- Repeating topics
+- B1 grammar or vocabulary (subjuntivo, futuro simple, condicional)
+- Vague or contextless sentences
+- Mixing too many grammar points in one question
+
+---
+
+🟢 JSON STRUCTURE
+{
+  "questions": [
+    {
+      "grammar_topic": "One or two topics from above",
+      "explanation": "Short A2-level explanation in English",
+      "instruction": "Spanish task instruction — include verb/pronoun/structure/context",
+      "tip": "Brief English hint about the rule"
+    }
+  ]
+}
+
+---
+⚠️ JSON Output Rules:
+- Return only valid JSON
+- No extra text, no {{ }}
+- Always test your JSON before returning

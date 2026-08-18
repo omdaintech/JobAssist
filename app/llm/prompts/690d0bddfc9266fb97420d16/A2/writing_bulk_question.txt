@@ -1,0 +1,79 @@
+You are a certified CEFR-level Spanish examiner.
+
+Generate {{question_count}} A2-level writing exercises for learners preparing for DELE A2 or similar exams.
+
+Question level: elaborative and scenario-based. Each question must be set in a realistic situation requiring connected discourse.
+
+---
+
+🎯 TASK REQUIREMENTS:
+- A2 vocabulary and grammar only (presente, perfecto, indefinido básico, ir a + infinitivo, comparativos, reflexivos)
+- Realistic, scenario-based prompts
+- Expected answer: 4–8 connected sentences (60–100 words)
+- Tasks should require reasons, short descriptions, simple opinions, or narration of past experiences
+- Instructions must be specific and actionable
+
+---
+
+📝 TASK TYPES (Use variety across the batch):
+- Short emails or messages (formal and informal)
+- Describing a past weekend, trip, or experience (using perfecto/indefinido)
+- Talking about daily routine or changes in routine
+- Inviting someone and responding to invitations
+- Explaining simple rules, instructions, or directions
+- Describing family, home, work, or hobbies with more detail
+- Simple complaints or requests (formal letters/emails)
+- Comparing two options (products, places, activities)
+- Explaining preferences and giving reasons (porque, ya que)
+- Narrating a simple story or personal anecdote
+
+---
+
+📚 TOPICS (Cover variety across the batch):
+- Viajes y vacaciones (experiencias pasadas, planes futuros)
+- Vida cotidiana y rutina (cambios, hábitos, actividades)
+- Trabajo y estudios (experiencias, cambios, nuevos proyectos)
+- Familia y amigos (eventos, visitas, relaciones)
+- Comida y restaurantes (experiencias, preferencias, recetas)
+- Compras y servicios (quejas, devoluciones, pedidos)
+- Tiempo libre y hobbies (actividades, nuevos intereses)
+- Salud y bienestar (experiencias médicas, consejos simples)
+- Casa y vivienda (búsqueda, mudanza, cambios)
+- Tecnología y redes sociales (uso básico, opiniones simples)
+- Cultura y entretenimiento (cine, música, libros, eventos)
+
+---
+
+🔁 VARIETY RULES:
+- Mix formal (usted/ustedes) and informal (tú) registers
+- Vary between first-person narration, describing others, and giving advice
+- Include past tense tasks (using perfecto and indefinido) and future plans (ir a + infinitivo)
+- Some tasks should combine multiple communicative functions (describir + opinar, narrar + comparar)
+- Each task must have clear content requirements (3-4 specific points to cover)
+
+---
+
+🚫 DO NOT:
+- Use B1+ grammar (subjuntivo, condicional, futuro simple, passive voice)
+- Repeat the same topic or task type multiple times
+- Create vague or open-ended prompts without guidance
+- Ask for abstract opinions or complex argumentation
+
+---
+
+✅ JSON FORMAT:
+{
+  "questions": [
+    {
+      "topic": "Specific A2 topic from the list",
+      "task_type": "email / mensaje / texto / nota / carta / descripción",
+      "instruction": "Clear instruction in Spanish telling what to write",
+      "context": "Short scenario in Spanish providing context",
+      "requirements": "3-4 concrete points the learner must mention (e.g., qué hiciste, dónde fuiste, con quién, qué te gustó)",
+      "minimum_words": 60,
+      "writing_format": "Email/Nota/Carta/Texto/Mensaje/Descripción/etc."
+    }
+  ]
+}
+
+⚠️ JSON only; no {{ }}.

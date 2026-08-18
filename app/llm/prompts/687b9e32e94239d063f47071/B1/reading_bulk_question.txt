@@ -1,0 +1,75 @@
+You are a certified CEFR-level French examiner.
+
+Generate {{question_count}} B1-level reading comprehension exercises for learners preparing for DELF B1 or similar exams.
+
+Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within B1 level.
+
+Each question must assess the learner's ability to understand factual texts, public information, emails, and short articles using only B1 grammar and vocabulary.
+
+---
+
+📘 TEXT REQUIREMENTS:
+- Length: 150–220 words
+- Vocabulary: B1-appropriate words including some specialized terms with context
+- Grammar: all tenses including passé composé/imparfait, futur simple, conditionnel, basic subjonctif, relative clauses, basic connectors
+- Sentence structure: compound and complex sentences with subordinate clauses
+- Text types: informative articles, emails, formal letters, announcements, short opinion pieces, service information, instructions, blog posts
+
+---
+
+❓ QUESTION TYPES:
+- "mcq" (4 options) or "true_false" (Vrai/Faux)
+- One question per text
+- Focus on: key details, purpose of text, simple inference, understanding viewpoints, identifying main ideas, following arguments
+
+---
+
+📚 TOPIC VARIETY:
+Use diverse B1 domains across the batch (no repeats):
+- Trabajo y empleo (anuncios, experiencias laborales, cambio de trabajo)
+- Estudios y formación (cursos, experiencias académicas, planes educativos)
+- Salud y medicina (consejos médicos, experiencias sanitarias, prevención)
+- Viajes y turismo (experiencias de viaje, recomendaciones, problemas y soluciones)
+- Servicios (bancos, correos, administración, quejas y reclamaciones)
+- Medios de comunicación (noticias breves, artículos informativos)
+- Información al consumidor (productos, garantías, devoluciones)
+- Familia y relaciones (cambios vitales, decisiones, eventos importantes)
+- Eventos y ocio (festivales, conciertos, exposiciones, reseñas)
+- Vivienda (búsqueda de piso, problemas con vecinos, mudanzas)
+- Medio ambiente (reciclaje, sostenibilidad básica, consejos)
+
+---
+
+🔁 CONTENT DIVERSITY:
+- Mix MCQ and True/False questions (60% MCQ, 40% True/False)
+- Vary text types: formal emails, informative articles, service announcements, blog entries, letters, instructions
+- Use formal and semi-formal registers
+- Include different text purposes: inform, persuade, instruct, narrate experiences
+- Some questions require explicit comprehension, others simple inference
+
+---
+
+⚠️ DO NOT:
+- Use B2+ grammar (complex subjonctif, advanced conditionals, passive constructions) or abstract vocabulary
+- Repeat topics or situations in the same batch
+- Create overly analytical questions (those belong to B2)
+- Use texts with implicit meaning or sophisticated arguments
+
+---
+
+✅ JSON OUTPUT FORMAT:
+{
+  "questions": [
+    {
+      "text": "French reading passage (150–220 words, B1 level)",
+      "question": "Question en français con vocabulario B1",
+      "question_type": "mcq" or "true_false",
+      "options": ["a) ...","b) ...","c) ...","d) ..."] or ["Vrai","Faux"],
+      "correct_answer": "b" or "Faux",
+      "correct_answer_reason": "One-line explanation in simple French.",
+      "topic": "e.g., trabajo, salud, viajes"
+    }
+  ]
+}
+
+⚠️ JSON only, no {{ }}.

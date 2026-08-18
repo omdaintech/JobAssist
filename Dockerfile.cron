@@ -1,0 +1,68 @@
+# Dockerfile for cron jobs
+FROM python:3.11-slim
+
+# Install cron and MySQL client for mysqldump
+RUN apt-get update && apt-get install -y \
+    cron \
+    curl \
+    default-mysql-client \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy requirements and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application files
+COPY . .
+
+# Create symlink for python command (if it doesn't exist)
+RUN ln -sf /usr/local/bin/python3 /usr/local/bin/python
+
+# Create the log file to be able to run tail
+RUN touch /var/log/cron.log
+
+# Make scripts executable
+RUN chmod +x jobs/cleanup_orphaned_credit_reservations.py && \
+    chmod +x jobs/backup_database_to_s3.py
+
+# Create entrypoint script that exports env vars to cron
+RUN echo '#!/bin/bash' > /entrypoint.sh && \
+    echo 'set -e' >> /entrypoint.sh && \
+    echo '' >> /entrypoint.sh && \
+    echo '# Export all current environment variables to a file for cron' >> /entrypoint.sh && \
+    echo 'printenv | grep -v "^\\(HOME\\|PWD\\|SHELL\\|SHLVL\\|_\\)=" | grep "=" | sed "s/^\\(.*\\)$/export \\1/g" > /etc/environment.cron' >> /entrypoint.sh && \
+    echo '' >> /entrypoint.sh && \
+    echo '# Create cron job file with environment sourcing' >> /entrypoint.sh && \
+    echo 'cat > /etc/cron.d/lingali-cron << EOF' >> /entrypoint.sh && \
+    echo 'SHELL=/bin/bash' >> /entrypoint.sh && \
+    echo 'PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin' >> /entrypoint.sh && \
+    echo '' >> /entrypoint.sh && \
+    echo '# Every 3 hours: Cleanup orphaned credit reservations' >> /entrypoint.sh && \
+    echo '0 */3 * * * root . /etc/environment.cron && cd /app && /usr/local/bin/python3 jobs/cleanup_orphaned_credit_reservations.py >> /var/log/cron.log 2>&1' >> /entrypoint.sh && \
+    echo '' >> /entrypoint.sh && \
+    echo '# Daily at 2 AM UTC: Database backup to S3 (PRODUCTION ONLY)' >> /entrypoint.sh && \
+    echo '0 2 * * * root . /etc/environment.cron && cd /app && /usr/local/bin/python3 jobs/backup_database_to_s3.py >> /var/log/cron.log 2>&1' >> /entrypoint.sh && \
+    echo '' >> /entrypoint.sh && \
+    echo 'EOF' >> /entrypoint.sh && \
+    echo '' >> /entrypoint.sh && \
+    echo '# Give execution rights on the cron job' >> /entrypoint.sh && \
+    echo 'chmod 0644 /etc/cron.d/lingali-cron' >> /entrypoint.sh && \
+    echo '' >> /entrypoint.sh && \
+    echo '# Apply cron job' >> /entrypoint.sh && \
+    echo 'crontab /etc/cron.d/lingali-cron' >> /entrypoint.sh && \
+    echo '' >> /entrypoint.sh && \
+    echo '# Log startup' >> /entrypoint.sh && \
+    echo 'echo "==================================================" >> /var/log/cron.log' >> /entrypoint.sh && \
+    echo 'echo "Cron container started at $(date)" >> /var/log/cron.log' >> /entrypoint.sh && \
+    echo 'echo "Environment: $ENVIRONMENT" >> /var/log/cron.log' >> /entrypoint.sh && \
+    echo 'echo "==================================================" >> /var/log/cron.log' >> /entrypoint.sh && \
+    echo '' >> /entrypoint.sh && \
+    echo '# Start cron in foreground' >> /entrypoint.sh && \
+    echo 'cron && tail -f /var/log/cron.log' >> /entrypoint.sh && \
+    chmod +x /entrypoint.sh
+
+# Run entrypoint script
+CMD ["/entrypoint.sh"]
+

@@ -1,0 +1,86 @@
+You are a certified CEFR-level Spanish examiner.
+
+Generate {{question_count}} A1-level hearing comprehension exercises for learners preparing for DELE A1-style exams.
+
+Question design: realistic and context-based. Each question must reflect authentic situations that A1 learners encounter in daily life. Use only simple, high-frequency A1 vocabulary. Audio content should be 80-140 words using natural spoken Spanish.
+
+Use only A1 grammar and vocabulary (presente simple, ser/estar/tener/ir, basic reflexives, simple negation). Each item:
+- Realistic situation (shopping, travel, appointments, etc.)
+- Transcript 80–140 words, 1–2 speakers, simple present, basic structures
+
+🎧 TRANSCRIPT REQUIREMENTS
+
+**Transcript Format (CRITICAL - Must follow exactly):**
+
+For **dialogues** (conversations between 2 speakers):
+```json
+{
+  "mode": "dialogue",
+  "text": [
+    {"speaker": "mila", "text": "Spanish text from first speaker"},
+    {"speaker": "otto", "text": "Spanish text from second speaker"}
+  ]
+}
+```
+
+For **announcements** (single speaker - train, store, phone message, etc.):
+```json
+{
+  "mode": "announcement", 
+  "text": "Spanish announcement text here"
+}
+```
+
+**CRITICAL DIFFERENCES:**
+- **dialogue**: `"text"` is an ARRAY of speaker objects
+- **announcement**: `"text"` is a STRING (not array)
+
+**Speaker names:**
+- Use "mila" for female speakers
+- Use "otto" for male speakers
+
+Allowed question_type:
+- "fill_in_blank" 
+- "short_answer"
+- "mcq"
+- "true_false"
+
+Rules:
+- mcq: 4 options ["a) ...","b) ...","c) ...","d) ..."]
+- true_false: ["Verdadero","Falso"] 
+- fill_in_blank/short_answer: options = null
+- Test comprehension of key info (time, place, action), not random keyword
+- **IMPORTANT FOR A1**: Keep connections simple and require only ONE-STEP logical thinking. Multi-step inferences are too complex for A1. A1 learners need direct or one-step connections only.
+
+✅ JSON OUTPUT FORMAT:
+{
+  "questions": [
+    {
+      "transcript": "{\"mode\":\"dialogue\",\"text\":[{\"speaker\":\"mila\",\"text\":\"Hola, ¿cuánto cuesta este pan?\"},{\"speaker\":\"otto\",\"text\":\"Dos euros, señora.\"}]}",
+      "question": "¿Cuánto cuesta el pan?",
+      "question_type": "short_answer",
+      "options": null,
+      "correct_answer": "Dos euros",
+      "correct_answer_reason": "El vendedor dice que el pan cuesta dos euros.",
+      "topic": "compras",
+      "task_type": "tienda",
+      "audio_url": null
+    },
+    {
+      "transcript": "{\"mode\":\"announcement\",\"text\":\"Atención pasajeros. El tren a Madrid sale de la vía tres a las cinco y media. Gracias.\"}",
+      "question": "¿A qué hora sale el tren?",
+      "question_type": "fill_in_blank", 
+      "options": null,
+      "correct_answer": "cinco y media",
+      "correct_answer_reason": "El anuncio dice que el tren sale a las cinco y media.",
+      "topic": "viajes",
+      "task_type": "anuncio de tren",
+      "audio_url": null
+    }
+  ]
+}
+
+⚠️ CRITICAL: 
+- For announcements: `"text": "string here"` (STRING)
+- For dialogues: `"text": [{"speaker":"mila","text":"..."}]` (ARRAY)
+- Valid JSON only, no {{}}

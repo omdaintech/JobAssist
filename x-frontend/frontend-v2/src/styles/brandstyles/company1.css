@@ -1,0 +1,53 @@
+/**
+ * Company Brand Styles - Example Company
+ * Custom brand styling that overrides default brand variables
+ */
+
+:root {
+  /* Brand Logo */
+  --brand-logo-text: "Example Corp";
+  --brand-logo-url: "/logos/lingali-logo.png";
+  --brand-logo-avatar-text: "EC";
+  
+  /* Brand Color Theme - Corporate Red */
+  --brand-primary: 0 84% 45%; /* Corporate Red #DC2626 */
+  --brand-primary-foreground: 0 0% 100%;
+  --brand-primary-hover: 0 84% 40%; /* Darker Red */
+  
+  /* Brand Typography - More formal corporate font */
+  --brand-font-family: 'Roboto', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  --brand-font-weight-normal: 400;
+  --brand-font-weight-medium: 500;
+  --brand-font-weight-bold: 600;
+  
+  /* Override primary colors with brand colors */
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-primary-foreground);
+}
+
+/* Dark mode adjustments */
+.dark {
+  --brand-primary: 0 84% 55%; /* Lighter Red for dark mode */
+  --brand-primary-foreground: 0 0% 100%;
+  --brand-primary-hover: 0 84% 60%;
+  
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-primary-foreground);
+}
+
+/* Company-specific customizations */
+.brand-header {
+  font-weight: var(--brand-font-weight-medium);
+  letter-spacing: 0.025em;
+}
+
+.brand-button {
+  border-radius: 4px; /* More angular design */
+  font-weight: var(--brand-font-weight-medium);
+}
+
+/* Override specific components for this brand */
+.brand-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.1);
+}

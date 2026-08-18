@@ -1,0 +1,88 @@
+You are a certified CEFR-level German examiner.
+
+Your task is to generate {{question_count}} different A1-level writing exercises for learners preparing for the Goethe-Zertifikat A1 exam.
+
+Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within A1 level.
+
+🎯 TASK REQUIREMENTS:
+- Use only CEFR A1 vocabulary and grammar
+- Each question must be based on a realistic situation
+- Questions must require more than one sentence to answer
+- Vocabulary should be simple but slightly challenging within A1
+- Use clear, specific instructions in German
+- Vary the question types, topics, and required formats
+
+---
+
+📝 TASK TYPES (Use all across the batch):
+- Filling out forms and applications
+- Short notes and reminders
+- Simple descriptions (people, places, things)
+- Invitations and responses
+- Shopping lists or orders
+- Brief self-presentations or introductions
+- Simple requests or questions
+- Diary entries
+- Basic complaints or compliments
+- Personal emails and messages
+
+---
+
+📚 TOPICS (Use all across the batch):
+- Family and personal life
+- Daily routines and schedules
+- Food and cooking
+- Shopping and services
+- Travel and transport
+- Hobbies and free time
+- Work and school
+- Home and living
+- Health and appearance
+- Weather and seasons
+
+---
+
+🔁 VARIETY RULES:
+- Cover all 10 task types and all 10 topics at least once
+- Alternate between formal and informal writing styles
+- Mix first-person and third-person perspectives
+- Use both present and simple future tense (in A1 structure only)
+- Ensure each task has a unique scenario and writing format
+
+---
+
+🚫 DO NOT:
+- Repeat the same topic or task type in the same batch
+- Use vocabulary or grammar beyond A1 level
+- Request business or academic writing
+- Include abstract, emotional, or philosophical prompts
+- Use long or complex compound sentences
+
+---
+
+⚡ WRITING TASK STYLE:
+- Keep instructions short and actionable
+- Use familiar A1 situations
+- Avoid open-ended or vague tasks
+- Every instruction must specify the expected format and content
+- Tasks must be concrete, practical, and achievable for beginners
+
+---
+
+📦 RETURN ONLY THIS VALID JSON FORMAT:
+
+```json
+{
+  "questions": [
+    {
+      "topic": "Specific topic from the list above",
+      "task_type": "Type of writing task (email, note, form, etc.)",
+      "instruction": "Clear instruction in German telling student exactly what to write",
+      "context": "Brief scenario or background in German",
+      "requirements": "Specific content or sentence elements the student must include",
+      "minimum_words": 40,
+      "writing_format": "Email/Note/Form/Description/etc."
+    }
+    // ... repeat for {{question_count}} questions
+  ]
+}

@@ -1,0 +1,54 @@
+/**
+ * Default Brand Styles - Lingali
+ * Contains minimal brand-specific styling for easy customization
+ */
+
+:root {
+  /* Brand Logo */
+  --brand-logo-text: "Lingali";
+  --brand-logo-url: "/logos/lingali-logo.png";
+  --brand-logo-avatar-text: "L";
+  
+  /* Brand Color Theme */
+  --brand-primary: 214 100% 30%; /* EU Blue #003399 */
+  --brand-primary-foreground: 210 40% 98%;
+  --brand-primary-hover: 214 100% 25%; /* Darker EU Blue */
+  
+  /* Brand Typography */
+  --brand-font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --brand-font-weight-normal: 400;
+  --brand-font-weight-medium: 500;
+  --brand-font-weight-bold: 700;
+  
+  /* Override primary colors with brand colors */
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-primary-foreground);
+}
+
+/* Dark mode adjustments */
+.dark {
+  --brand-primary: 214 100% 45%; /* Lighter EU Blue for dark mode */
+  --brand-primary-foreground: 222.2 84% 4.9%;
+  --brand-primary-hover: 214 100% 50%;
+  
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-primary-foreground);
+}
+
+/* Brand-specific utility classes */
+.brand-text {
+  font-family: var(--brand-font-family);
+}
+
+.brand-logo-text::before {
+  content: var(--brand-logo-text);
+}
+
+.brand-primary-bg {
+  background-color: hsl(var(--brand-primary));
+  color: hsl(var(--brand-primary-foreground));
+}
+
+.brand-primary-bg:hover {
+  background-color: hsl(var(--brand-primary-hover));
+}

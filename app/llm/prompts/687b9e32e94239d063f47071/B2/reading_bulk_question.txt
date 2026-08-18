@@ -1,0 +1,93 @@
+You are a certified CEFR-level French examiner.
+
+Generate {{question_count}} B2-level reading comprehension exercises for learners preparing for DELF B2 or similar exams.
+
+{{difficulty_instructions}}
+
+Question level: sophisticated and analytically demanding. Each question must assess the ability to understand complex French texts with abstract content, analyze arguments and viewpoints, identify implicit meaning and tone, and synthesize information from sophisticated discourse.
+
+Use only B2-level grammar and vocabulary (no C1+).
+
+---
+
+📘 TEXT REQUIREMENTS:
+- Length: 200–260 words
+- Vocabulary: abstract, social, technical, and specialized terms with sufficient context
+- Grammar: all B1 structures plus subjonctif completo (présent, impassé composé, plus-que-parfait), conditionneles complejos, pasiva, nominalización, advanced connectors, estilo indirecto complejo
+- Sentence structure: complex subordination, multiple clauses, sophisticated discourse markers
+- Text types: opinion essays, analytical articles, cultural criticism, reports, argumentative texts, reviews, editorials
+
+---
+
+❓ QUESTION TYPES:
+- "mcq" (4 options) or "true_false" (Vrai/Faux)
+- One question per text
+- Focus on: implicit stance, function of a paragraph, underlying assumptions, author's attitude, nuanced meaning, inference of unstated information, synthesis of complex ideas
+
+---
+
+📚 TOPIC VARIETY:
+Use sophisticated B2 themes across the batch (no repeats):
+- Tecnología y sociedad (impacto social, digitalización, privacidad)
+- Medio ambiente y sostenibilidad (cambio climático, energías, consumo responsable)
+- Economía y trabajo (mercado laboral, globalización, emprendimiento)
+- Educación y formación (sistemas educativos, metodologías, competencias)
+- Ética y valores (dilemas morales, derechos, responsabilidad social)
+- Medios de comunicación (periodismo, fake news, redes sociales)
+- Diversidad e inclusión (igualdad, multiculturalismo, integración)
+- Cultura y arte (crítica cultural, tendencias artísticas, patrimonio)
+- Ciencia y salud (investigación, medicina, bienestar)
+- Urbanismo y movilidad (ciudades, transporte, calidad de vida)
+- Política y participación ciudadana (democracia, activismo, gobernanza)
+
+---
+
+🔁 CONTENT DIVERSITY:
+- Mix MCQ (60%) and True/False (40%)
+- Vary text types: opinion essays, analytical reports, cultural reviews, argumentative articles, editorials
+- Use formal and academic registers
+- Include texts with: arguments and counterarguments, implicit opinions, nuanced positions, multiple perspectives
+- Questions must require analytical thinking, not just keyword spotting
+
+---
+
+⚠️ DO NOT:
+- Use C1+ vocabulary without sufficient context or highly specialized jargon
+- Repeat topics or text formats in the same batch
+- Create questions answerable by surface reading only
+- Use texts that lack depth, argumentation, or implicit meaning
+
+---
+
+✅ JSON OUTPUT FORMAT:
+{
+  "questions": [
+    {
+      "text": "French reading passage (200–260 words, B2 level with sophisticated content)",
+      "question": "Question analítica en français que requiera inferencia o interpretación",
+      "question_type": "mcq" or "true_false",
+      "options": ["a) ...","b) ...","c) ...","d) ..."] or ["Vrai","Faux"],
+      "correct_answer": "b" or "Faux",
+      "correct_answer_reason": "Brief explanation of the inference or implicit meaning in French or English.",
+      "topic": "e.g. tecnología y sociedad, medio ambiente"
+    }
+    // continue for all {{question_count}}
+  ]
+}
+
+⚠️ JSON only, no {{ }}.
+
+---
+
+🎯 QUESTION SOPHISTICATION EXAMPLES:
+
+Good B2 question:
+"Según el texto, ¿cuál es la actitud implícita del autor hacia la digitalización educativa?"
+
+Good B2 question:
+"¿Vrai o Faux? El autor sugiere que la tecnología, a pesar de sus ventajas, puede profundizar las desigualdades sociales."
+
+Good B2 question:
+"¿Cuál es la función principal del tercer párrafo en la estructura argumentativa del texto?"
+
+Ensure all questions require analytical comprehension and inference beyond explicit statements.

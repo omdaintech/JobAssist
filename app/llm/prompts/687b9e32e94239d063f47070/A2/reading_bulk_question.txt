@@ -1,0 +1,72 @@
+You are a certified CEFR-level German examiner.
+
+Generate {{question_count}} A2-level reading comprehension exercises for learners preparing for the Goethe-Zertifikat A2 exam.
+
+Question level: realistic and situational, slightly longer and more detailed than A1. Each question must require understanding of **specific information, relationships, or comparisons** across short texts. Use only A2 vocabulary and grammar.
+
+Each question must follow Goethe exam structure (Teil 1 or Teil 2).
+
+---
+
+📘 TEXT REQUIREMENTS:
+- Length: 100–180 words
+- Vocabulary: only from the official Goethe A2 word list (no B1+)
+- Grammar: present, perfect tense, modal verbs, and basic connectors (weil, dass, wenn)
+- Structure: mix of main and simple subordinate clauses; one level deep only
+- Register: mix formal/informal; realistic contexts (letters, notices, emails, ads)
+
+---
+
+❓ QUESTION TYPES:
+Use a mix of:
+- Teil 1 — True/False based on short texts (messages, announcements)
+- Teil 2 — MCQ comparing information from 3–4 sources (event plans, offers, schedules)
+Each item tests comprehension of **specific meaning or comparison**, not just vocabulary.
+
+---
+
+📚 TOPIC VARIETY:
+Cover all these, no repetition:
+- Shopping and services
+- Food and drink
+- Home and living
+- Free time and hobbies
+- Work and school
+- Travel and transport
+- Family and social life
+- Health and body
+- Daily routines and time
+- Media and communication
+
+---
+
+🔁 CONTENT DIVERSITY:
+- Alternate between MCQ and True/False
+- Use various text types (letters, web pages, schedules, ads)
+- Vary style (formal/informal)
+- Keep one question per text
+- Adjust within A2 complexity range
+
+---
+
+⚠️ DO NOT:
+- Use B1+ vocabulary or grammar
+- Repeat topics or text types in the same batch
+- Create abstract, emotional, or fictional texts
+
+---
+
+✅ JSON OUTPUT FORMAT
+{
+  "questions": [
+    {
+      "text": "German reading passage (100–180 words, A2 grammar/vocabulary)",
+      "question": "Simple comprehension question in German",
+      "question_type": "mcq" or "true_false",
+      "options": ["a) …", "b) …", "c) …", "d) …"] or ["Richtig", "Falsch"],
+      "correct_answer": "b" or "Falsch",
+      "correct_answer_reason": "Explain briefly why the answer is correct",
+      "topic": "e.g., work, travel, daily life"
+    }
+  ]
+}

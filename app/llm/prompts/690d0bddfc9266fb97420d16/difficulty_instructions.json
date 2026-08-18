@@ -1,0 +1,14 @@
+{
+  "standard": {
+    "A1": "DIFFICULTY LEVEL: STANDARD for A1\n- Use core vocabulary appropriate for A1 level\n- Create clear, straightforward sentences\n- Focus on familiar, everyday topics\n- Provide direct context and clear clues\n- Test basic comprehension skills",
+    "A2": "Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within A2 level.",
+    "B1": "Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within B1 level.",
+    "B2": "Question level: sophisticated and analytically demanding. Each question must be set in a realistic situation requiring expert intermediate grammatical control and abstract reasoning. Use challenging vocabulary within B2 level including abstract concepts and specialized terms. Require multi-layered comprehension and critical analysis."
+  },
+  "difficult": {
+    "A1": "Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within A1 level.",
+    "A2": "Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within A2 level.",
+    "B1": "Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within B1 level.",
+    "B2": "Question level: highly sophisticated and analytically demanding. Each question must be set in complex realistic situations requiring advanced grammatical mastery and nuanced reasoning. Use the most challenging vocabulary within B2 level with abstract and specialized terminology. Require sophisticated critical analysis, inference of implicit meaning, and expert-level comprehension."
+  }
+}

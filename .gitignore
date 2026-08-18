@@ -1,24 +1,64 @@
+# Dependencies
+node_modules/
+venv/
+.venv/
+*.egg-info/
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+*.pyc
+__pycache__/
+
+# Environment files
+.env
+.env.local
+.env.prod
+.env.test
+.env.development
+.env.production
+.env.staging
+*.local
+
+# Secrets and certificates
+*.pem
+*.key
+*.p12
+*.cert
+*.crt
+firebase-service-account*.json
+
+# Test artifacts
+tests/result/
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# OS files
 .DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+!.vscode/extensions.json
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Misc
+*.backup
+*.bak
+*.tsbuildinfo

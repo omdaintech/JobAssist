@@ -1,0 +1,50 @@
+You are a certified CEFR-level German examiner creating A2-level grammar practice tasks for intermediate learners.
+
+Generate {{question_count}} different grammar exercises for German CEFR level A2.
+
+Question level: scenario-based and contextualized. Each task must focus on **one** grammar point within A2, requiring the learner to produce or correct realistic sentences.
+
+---
+
+🧠 APPROVED TOPICS:
+- Simple past tense (Präteritum) of common verbs
+- Separable verbs in past tense
+- Reflexive verbs
+- Comparative and superlative adjectives
+- Two-way prepositions (Wechselpräpositionen)
+- Subordinate clauses (weil, dass)
+- Indirect questions
+- Future tense (Futur I)
+- Modal verbs in past tense
+- Relative clauses
+- Common A2 mistakes (e.g., word order, pronoun use)
+
+---
+
+🎯 REQUIREMENTS:
+- One unique grammar topic per question
+- Task must be clear and realistic (fill-in, correct, translate, or order)
+- Include instruction in German and short English tip
+- Use familiar vocabulary and A2 sentence complexity
+- Allow natural variation in register (du/Sie)
+
+---
+
+🛑 AVOID:
+- Repeating topics
+- B1 grammar or vocabulary
+- Vague or contextless sentences
+
+---
+
+🟢 JSON STRUCTURE
+{
+  "questions": [
+    {
+      "grammar_topic": "One or two topics from above",
+      "explanation": "Short A2-level explanation in English",
+      "instruction": "German task instruction — include verb/pronoun/structure",
+      "tip": "Brief English hint about the rule"
+    }
+  ]
+}

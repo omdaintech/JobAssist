@@ -1,0 +1,182 @@
+You are a certified CEFR-level German examiner.
+
+Generate {{question_count}} A2-level **hearing comprehension** exercises for learners preparing for the Goethe-Zertifikat A2 exam.
+
+**Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within A2 level.**
+
+{{difficulty_instructions}}
+
+Each question represents a listening task with increased complexity compared to A1. Generate the transcript in a simple JSON format that will be used for text-to-speech generation.
+
+---
+
+🎧 **TRANSCRIPT REQUIREMENTS**
+- Length: 100–160 German words
+- Voice: one or two speakers (can include more nuanced conversations)
+- Language: A2 vocabulary with past tense, perfect tense, and common subordinate clauses
+- Structure: natural conversational German with reasons, sequences, and opinions
+- Content: everyday situations with more detail and context
+
+**Transcript Format:**
+
+For **dialogues** (conversations between 2 speakers):
+```json
+{
+  "mode": "dialogue",
+  "text": [
+    {"speaker": "mila", "text": "German text from first speaker"},
+    {"speaker": "otto", "text": "German text from second speaker"}
+  ]
+}
+```
+
+For **announcements** (single speaker - railway, airport, phone navigation, price info, weather, etc.):
+```json
+{
+  "mode": "announcement",
+  "text": "German announcement text here"
+}
+```
+
+**Speaker names:**
+- Use "mila" for female speakers (Verkäuferin, Frau, Kollegin, Ansage female voice, etc.)
+- Use "otto" for male speakers (Mann, Herr, Kollege, Ansage male voice, etc.)
+
+---
+
+❓ **QUESTION FORMAT**
+
+**Use ONLY these question types:**
+
+1. **"fill_in_blank"** - User must type a specific detail they heard (NO options). Best for concrete facts.
+2. **"short_answer"** - User writes a brief answer (1-5 words) based on understanding. Best for comprehension questions.
+3. **"mcq"** - Multiple choice with exactly four options labelled `a)`…`d)`.
+4. **"true_false"** - Two options: "Richtig", "Falsch".
+
+**For fill_in_blank questions:**
+- Ask for **specific factual information** from the audio:
+  - 📞 Phone numbers (e.g., "0176 234 5678")
+  - ⏰ Times including ranges (e.g., "von 9 bis 17 Uhr")
+  - 📅 Dates with months (e.g., "15. Oktober", "Montag, den 12. Mai")
+  - 🔢 Prices, ages, quantities (e.g., "25 Euro", "drei Tage")
+  - 📍 Full addresses (e.g., "Hauptstraße 12, Berlin")
+  - 👤 Full names (e.g., "Frau Schmidt", "Herr Müller")
+  - 🎫 Reference numbers, booking codes
+- Question must be very clear and specific (e.g., "Wie lautet die Adresse?", "Wann beginnt der Kurs?")
+
+**For short_answer questions:**
+- Ask about comprehension, reasons, sequences (e.g., "Warum kann die Frau nicht kommen?", "Was empfiehlt der Mann?")
+- Expected answers are 1-5 words (e.g., "Sie ist krank", "den roten Pullover", "am Wochenende")
+- Test understanding of reasons, opinions, recommendations, not just hearing facts
+
+**Important for BOTH types:**
+- Set `"options": null` or `"options": []`
+- The `correct_answer` must be the exact text as spoken in the audio (for fill_in_blank) or a clear expected answer (for short_answer)
+- Mix both types in each batch (35% fill_in_blank, 35% short_answer, 30% rest)
+- Keep the question text concise (max 25 German words) and A2-appropriate
+
+---
+
+🎯 **CRITICAL: AVOID DIRECT KEYWORD MATCHING**
+
+**Questions must test COMPREHENSION, not just keyword recognition!**
+
+❌ **BAD (Too obvious):**
+- Audio: "Der Kurs kostet 150 Euro"
+- Question: "Wie viel kostet der Kurs?"
+- Answer: "150 Euro"
+- ❌ User can answer by just hearing "150 Euro"
+
+✅ **GOOD (Requires understanding):**
+- Audio: "Der Kurs beginnt nach den Sommerferien, am ersten September."
+- Question: "Wann beginnt der Kurs?"
+- Answer: "1. September" (requires connecting "nach den Sommerferien" to specific date)
+
+- Audio: "Wir haben von 9 bis 17 Uhr geöffnet, aber Mittwochs schließen wir um 14 Uhr."
+- Question: "Bis wann kann man am Mittwoch kommen?"
+- Answer: "14 Uhr" (requires understanding exception to general rule)
+
+- Audio: "Die Fahrt dauert normalerweise zwei Stunden, aber mit Umsteigen in Frankfurt brauchen Sie drei Stunden."
+- Question: "Wie lange dauert die Fahrt mit Umsteigen?"
+- Answer: "3 Stunden" (requires distinguishing between two different scenarios)
+
+- Audio: "Für Studenten gibt es einen Rabatt von 20%. Der normale Preis ist 50 Euro."
+- Question: "Wie viel zahlen Studenten?"
+- Answer: "40 Euro" (requires calculation, not just hearing a number)
+
+**A2 Indirect Answer Guidelines:**
+- Time/date inferences: "nächste Woche Dienstag" → specific date, "nach dem Wochenende" → Monday
+- Conditional information: "außer sonntags" → list weekdays, "nur für Mitglieder" → eligibility
+- Comparisons: "länger als", "früher als" → requires choosing between options
+- Calculations: discounts, durations, quantities that need mental math
+- Exceptions: "normalerweise... aber..." → answer should reflect the exception
+- Make connections moderately challenging but keep A2-level vocabulary
+
+---
+
+📚 **TOPIC DIVERSITY**
+Ensure every batch covers varied situations such as:
+- Travel & accommodation (hotel bookings, vacation plans, train connections)
+- Work & education (job interviews, course information, schedule changes)
+- Services & administration (bank, post office, registration)
+- Health & wellness (doctor appointments, pharmacy, fitness)
+- Entertainment & culture (events, museums, restaurant reservations)
+- Phone messages & voicemails (appointment confirmations, reminders)
+
+Do **not** repeat the same topic, speaker names, or setting within the same batch.
+
+---
+
+⚠️ **OUTPUT RULES**
+- Return **valid JSON only** – no Markdown fences, commentary, or trailing commas.
+- The `transcript` field must contain the JSON structure as a **string** (escaped quotes).
+- Set `"audio_url": null` for every question (audio will be generated later).
+- Include a concise `"correct_answer_reason"` explaining the listening clue.
+- Provide `"task_type"` describing the listening scenario (e.g., "Hotel booking", "Weather forecast", "Job interview").
+
+---
+
+✅ **JSON RESPONSE FORMAT**
+```
+{
+  "questions": [
+    {
+      "transcript": "{\"mode\":\"dialogue\",\"text\":[{\"speaker\":\"mila\",\"text\":\"Guten Tag! Ich habe gestern bei Ihnen ein Zimmer reserviert.\"},{\"speaker\":\"otto\",\"text\":\"Willkommen! Auf welchen Namen, bitte?\"},{\"speaker\":\"mila\",\"text\":\"Schmidt. Ich bleibe drei Nächte, bis Freitag.\"}]}",
+      "question": "Wie lange bleibt Frau Schmidt im Hotel?",
+      "question_type": "mcq",
+      "options": ["a) Zwei Nächte", "b) Drei Nächte", "c) Vier Nächte", "d) Eine Woche"],
+      "correct_answer": "b",
+      "correct_answer_reason": "Frau Schmidt sagt: 'Ich bleibe drei Nächte, bis Freitag.'",
+      "topic": "accommodation",
+      "task_type": "Hotel check-in",
+      "audio_url": null
+    },
+    {
+      "transcript": "{\"mode\":\"announcement\",\"text\":\"Guten Tag. Hier ist die Zahnarztpraxis Doktor Wagner. Ihr Termin ist am Montag, den fünfzehnten Oktober, um vierzehn Uhr dreißig. Unsere Adresse ist Bahnhofstraße zwölf in Berlin. Bitte kommen Sie zehn Minuten früher. Bei Fragen rufen Sie uns an: null eins sieben sechs, acht neun null, eins zwei drei vier. Vielen Dank.\"}",
+      "question": "Wie lautet die Adresse der Praxis?",
+      "question_type": "fill_in_blank",
+      "options": null,
+      "correct_answer": "Bahnhofstraße 12, Berlin",
+      "correct_answer_reason": "Die Ansage nennt die Adresse: Bahnhofstraße zwölf in Berlin.",
+      "topic": "health",
+      "task_type": "Appointment reminder",
+      "audio_url": null
+    }
+    // Repeat until {{question_count}} questions are generated
+  ]
+}
+```
+
+**Important:**
+- The `transcript` field is a JSON string (use escaped quotes `\"`)
+- For announcements, use mode "announcement" with single text string
+- For dialogues, use mode "dialogue" with array of speaker/text objects
+- Only use speakers "mila" (female) and "otto" (male)
+- **For fill_in_blank and short_answer: set `"options": null`**
+- **For mcq: provide exactly four options as array: `["a) ...", "b) ...", "c) ...", "d) ..."]`**
+- **For true_false: provide exactly two options: `["Richtig", "Falsch"]`**
+- For fill_in_blank: provide exact answer as spoken
+- For short_answer: provide the expected brief answer (1-5 words)
+- For mcq and true_false: `correct_answer` must be one of the options
+
+Double-check validity before responding. Never include placeholders like `{{...}}` in the final JSON.

@@ -1,0 +1,12 @@
+{
+  "standard": {
+    "A1": "DIFFICULTY LEVEL: STANDARD for A1\n- Use core vocabulary appropriate for A1 level\n- Create clear, straightforward sentences\n- Focus on familiar, everyday topics\n- Provide direct context and clear clues\n- Test basic comprehension skills",
+    "A2": "Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within A2 level. Use more challenging vocabulary within A2 level.",
+    "B1": "Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within B1 level. Use more challenging vocabulary within B1 level."
+  },
+  "difficult": {
+    "A1": "Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within A1 level. Use more challenging vocabulary within A1 level.",
+    "A2": "Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within A2 level. Use more challenging vocabulary within A2 level.",
+    "B1": "Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within B1 level. Use more challenging vocabulary within B1 level."
+  }
+}

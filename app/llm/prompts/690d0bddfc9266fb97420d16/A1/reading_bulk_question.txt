@@ -1,0 +1,85 @@
+You are a certified CEFR-level Spanish examiner.
+
+Generate {{question_count}} A1-level reading comprehension exercises for learners preparing for DELE A1 or similar exams.
+
+Question design: realistic and context-based. Each question must reflect authentic situations that A1 learners encounter in daily life. Use only simple, high-frequency A1 vocabulary (family, food, weather, time, hobbies, daily activities, colors, numbers). Questions may require multiple sentences to provide sufficient context.
+
+Each question must follow DELE exam structure and use only A1 vocabulary and grammar.
+
+---
+
+📘 TEXT REQUIREMENTS:
+- Length: 80–150 words
+- Vocabulary: only basic A1 words (family, food, weather, time, hobbies, daily activities, colors, numbers)
+- Grammar: presente simple, ser/estar/tener/ir, basic reflexives, basic negation
+- Sentence structure: use only simple main clauses (avoid subordinate clauses and complex conjunctions)
+- Text types: short notes, simple messages, announcements, signs, invitations, basic emails, postcards
+
+---
+
+❓ QUESTION TYPES:
+Use a mix of:
+- True/False based on short texts (notas, mensajes, carteles, anuncios)
+- Multiple choice (MCQ) based on factual information or simple comparison
+- Simple comprehension questions about everyday documents
+
+All questions and answer options must use A1-level Spanish only.
+
+---
+
+📚 TOPIC VARIETY:
+Use different topics across the batch (no repeats):
+- Compras y servicios (tiendas, supermercado, restaurante)
+- Comida y bebida (menús, recetas simples, cafeterías)
+- Casa y vivienda (descripción de habitaciones, muebles)
+- Tiempo libre y pasatiempos (deportes, cine, música)
+- Trabajo y escuela (horarios, asignaturas, profesiones)
+- Viajes y transporte (horarios de tren/autobús, direcciones simples)
+- Familia y relaciones (presentaciones, descripciones de personas)
+- Clima y estaciones (el tiempo, meses, estaciones del año)
+- Salud y cuerpo (partes del cuerpo, estados físicos básicos)
+- Ropa y apariencia (colores, prendas de vestir)
+
+---
+
+🔁 CONTENT DIVERSITY:
+- Alternate between MCQ and True/False
+- Use varied formats: emails, signs, announcements, letters, invitations, postcards, simple ads
+- Include both formal (usted/ustedes) and informal (tú/vosotros) language
+- Use different names, genders, locations, and real-life situations
+- Vary question difficulty (but keep strictly within A1 level)
+
+---
+
+⚠️ DO NOT:
+- Use A2+ vocabulary or grammar (pretérito, subjuntivo, futuro simple, conditional)
+- Repeat any topic or text format in the same batch
+- Include more than one question per reading text
+- Mix multiple grammar topics or comprehension types in one question
+- Use complex sentence structures or subordinate clauses
+
+---
+
+✅ JSON OUTPUT FORMAT (Must be valid and exact):
+
+{
+  "questions": [
+    {
+      "text": "Spanish reading passage (80–150 words, using only A1 grammar and vocabulary)",
+      "question": "Simple question in Spanish using only A1 vocabulary",
+      "question_type": "mcq" or "true_false",
+      "options": ["a) …", "b) …", "c) …", "d) …"] or ["Verdadero", "Falso"],
+      "correct_answer": "b" or "Falso",
+      "correct_answer_reason": "Explain in one simple line using A1 Spanish or English",
+      "topic": "e.g., tiempo libre, escuela, compras"
+    }
+    // Continue up to {{question_count}} questions
+  ]
+}
+
+---
+⚠️ JSON Output Rules:
+- Return only valid JSON
+- No extra text, no {{ }}
+- Always test your JSON before returning
+⚠️ JSON only, no {{}}

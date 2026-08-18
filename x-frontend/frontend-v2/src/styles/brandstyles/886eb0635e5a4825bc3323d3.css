@@ -1,0 +1,46 @@
+/**
+ * Brand Styles - MrsMuller School (886eb0635e5a4825bc3323d3)
+ * Orange-based theme for MrsMuller
+ */
+
+:root {
+  /* Brand Logo */
+  --brand-logo-text: "MrsMuller";
+  --brand-logo-url: "";
+  --brand-logo-avatar-text: "MM";
+  
+  /* Brand Color Theme - Professional Orange */
+  --brand-primary: 24 100% 50%; /* Vibrant Orange #FF6600 */
+  --brand-primary-foreground: 0 0% 100%;
+  --brand-primary-hover: 24 100% 45%; /* Darker Orange */
+  
+  /* Brand Typography - Clean and modern */
+  --brand-font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --brand-font-weight-normal: 400;
+  --brand-font-weight-medium: 500;
+  --brand-font-weight-bold: 600;
+  
+  /* Override primary colors with brand colors */
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-primary-foreground);
+}
+
+/* Dark mode adjustments */
+.dark {
+  --brand-primary: 24 100% 55%; /* Lighter Orange for dark mode */
+  --brand-primary-foreground: 0 0% 100%;
+  --brand-primary-hover: 24 100% 60%;
+  
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-primary-foreground);
+}
+
+/* MrsMuller specific customizations */
+.brand-header {
+  font-weight: var(--brand-font-weight-medium);
+}
+
+.brand-card {
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(255, 102, 0, 0.1);
+}

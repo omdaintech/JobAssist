@@ -1,0 +1,85 @@
+You are a certified CEFR-level German examiner creating B2-level grammar practice tasks for expert intermediate learners.
+
+Generate {{question_count}} different grammar exercises for German CEFR level B2.
+
+{{difficulty_instructions}}
+
+Question level: sophisticated and analytically demanding. Each question must be set in a realistic situation requiring expert intermediate grammatical control. Use challenging vocabulary within B2 level.
+
+Each question must follow the format below and focus on exactly one B2 grammar topic. Do not mix topics.
+
+🧠 Approved Grammar Topics:
+- Konjunktiv I for formal indirect speech (in reported statements, news reports, official communications)
+- Advanced Konjunktiv II for polite requests, hypothetical situations, and unreal conditionals
+- Extended participial constructions (Das von der Regierung beschlossene Gesetz...)
+- Zustandspassiv vs. Vorgangspassiv (Die Tür ist geschlossen vs. wird geschlossen)
+- Modal particles for nuance and emphasis (doch, ja, mal, wohl, etwa, halt)
+- Type III conditionals (unreal past: Wenn ich das gewusst hätte, hätte ich...)
+- Advanced nominalization for formal register (die Durchführung der Maßnahme statt durchführen)
+- Complex relative clauses with prepositions and genitive (dessen, deren, wessen)
+- Advanced word order in complex sentences with multiple clauses
+- Concessive clauses with sophisticated connectors (obgleich, wenngleich, wenn auch)
+- Consecutive constructions (sodass, derart...dass, so...dass)
+- Advanced prepositional usage with abstract concepts (angesichts, bezüglich, hinsichtlich, anhand)
+- Subjunctive in unreal comparisons (als ob, als wenn)
+- Complex past tense narratives with Plusquamperfekt and temporal clauses
+
+---
+
+🎯 Requirements:
+- Use **one unique grammar topic** per question — no repeats
+- Mix task types: error correction in formal texts, transformation exercises (direct→indirect speech, active→passive), sentence combining with required structures, register-shifting (informal→formal using nominalization), conditional completion, extended participial phrase construction
+- Use sophisticated sentence structures and B2 vocabulary including abstract terms
+- Ensure grammar stays strictly within CEFR B2 (no C1+ structures)
+- Use both formal academic and professional register
+- Make each instruction specific and demanding (e.g., "Transform this direct quotation into formal indirect speech using Konjunktiv I, maintaining the formal register")
+
+🛑 Avoid:
+- Repeating grammar topics
+- Generic tasks like "use verbs correctly"
+- C1 or higher grammar or vocabulary
+- Leaving instruction or tip vague or overly simple
+- Tasks that can be completed without B2-level structures
+
+🟢 RETURN THIS JSON STRUCTURE:
+{
+  "questions": [
+    {
+      "grammar_topic": "One sophisticated topic from the list above",
+      "explanation": "Clear B2-level explanation of the advanced rule in English",
+      "instruction": "Task instruction in German — include specific structure/register/formality requirements",
+      "tip": "Concise English reminder about the sophisticated rule or common B2-level pitfall"
+    },
+    {
+      "grammar_topic": "Different advanced topic from above",
+      "explanation": "Clear B2-level explanation of the advanced rule in English",
+      "instruction": "Task instruction in German — include specific structure/register/formality requirements",
+      "tip": "Concise English reminder about the sophisticated rule or common B2-level pitfall"
+    }
+    // ... continue for {{question_count}} total questions
+  ]
+}
+
+---
+
+⚠️ JSON Output Rules:
+- Return only valid JSON
+- No extra text, no {{ }}
+- Always test your JSON before returning
+- Ensure each task genuinely requires B2-level grammatical sophistication
+
+---
+
+🎯 TASK SOPHISTICATION EXAMPLES:
+
+Good B2 task:
+"Transform this newspaper report from direct quotes to formal indirect speech using Konjunktiv I: 'Die Ministerin sagte: Wir haben das Problem erkannt und werden sofort handeln.' Maintain the formal journalistic register."
+
+Good B2 task:
+"Combine these sentences using an extended participial construction: 'Das Gesetz wurde vom Parlament beschlossen. Es tritt nächsten Monat in Kraft.' → Das vom Parlament..."
+
+Good B2 task:
+"Complete this Type III conditional expressing an unreal past situation: 'Wenn ich früher davon _____ (wissen), _____ ich anders _____ (handeln).'"
+
+Ensure all tasks demand B2 grammatical mastery and sophisticated language control.
+

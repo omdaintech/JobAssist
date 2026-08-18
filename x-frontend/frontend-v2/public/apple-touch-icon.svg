@@ -1,0 +1,18 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="180" height="180" rx="40" fill="#f8fafc"/>
+  
+  <!-- Main chat bubble -->
+  <path d="M45 56.25C45 43.9515 54.9515 34 67.25 34H135C147.299 34 157.25 43.9515 157.25 56.25V101.25C157.25 113.549 147.299 123.5 135 123.5H90L67.25 146.25V123.5C54.9515 123.5 45 113.549 45 101.25V56.25Z" fill="#1f2937"/>
+  
+  <!-- Inner content area -->
+  <rect x="56.25" y="45" width="101.25" height="67.5" rx="8.4375" fill="white"/>
+  
+  <!-- Blue accent lines -->
+  <rect x="67.5" y="59.0625" width="56.25" height="5.625" rx="2.8125" fill="#2563eb"/>
+  <rect x="67.5" y="70.3125" width="70.3125" height="5.625" rx="2.8125" fill="#2563eb"/>
+  <rect x="67.5" y="81.5625" width="42.1875" height="5.625" rx="2.8125" fill="#3b82f6"/>
+  
+  <!-- Small accent dot -->
+  <circle cx="140.625" cy="48.75" r="2.8125" fill="#60a5fa"/>
+</svg>

@@ -1,0 +1,215 @@
+You are a certified CEFR-level German examiner creating B2-level hearing (listening) comprehension exercises.
+
+Generate {{question_count}} B2-level hearing comprehension tasks for learners preparing for the Goethe-Zertifikat B2 exam.
+
+Each task must follow the official Goethe B2 hearing format and assess the learner's ability to understand complex spoken German including abstract topics, implicit meaning, speaker attitudes, specialized discussions, and multi-speaker interactions with varying perspectives.
+
+{{difficulty_instructions}}
+
+Use only B2-level vocabulary and grammar as per Goethe's official guidelines. Do not use C1+ constructions.
+
+🎧 TRANSCRIPT REQUIREMENTS:
+
+Length: 200–250 words
+
+Speaking style: Natural conversational German with some filler words, discourse markers, and realistic speech patterns (also, eben, genau, eigentlich), but maintain clarity for B2 level
+
+Vocabulary: B2-level including abstract concepts, specialized terms, idiomatic expressions, and sophisticated vocabulary (no C1+)
+
+Grammar: All B1 structures PLUS advanced subjunctive II for hypotheticals and polite speech, Konjunktiv I for reported speech, complex passive constructions, nominalization in formal contexts, sophisticated connectors
+
+Content types: Academic lectures, professional presentations, technical discussions, debates on societal topics, expert interviews, policy discussions, cultural analyses, scientific explanations for educated audiences
+
+Topics: Abstract, specialized, or societal topics requiring sophisticated comprehension: technology and ethics, environmental policy, economic trends, healthcare debates, education reform, cultural phenomena, scientific developments, workplace evolution, political systems, urban sustainability
+
+Complexity: Include implicit arguments, speaker bias/perspective, multiple viewpoints, cause-effect relationships, hypothetical scenarios, technical or specialized information presented to educated non-experts
+
+**Transcript Format:**
+
+For **dialogues** (conversations between 2 speakers):
+```json
+{
+  "mode": "dialogue",
+  "text": [
+    {"speaker": "mila", "text": "German text from first speaker"},
+    {"speaker": "otto", "text": "German text from second speaker"}
+  ]
+}
+```
+
+For **announcements** (single speaker - lectures, presentations, monologues):
+```json
+{
+  "mode": "announcement",
+  "text": "German announcement text here"
+}
+```
+
+**Speaker names:**
+- Use "mila" for female speakers
+- Use "otto" for male speakers
+
+❓ QUESTION TYPES:
+
+**Use ONLY these question types:**
+
+1. **"mcq"** - Multiple choice with exactly four options labelled `a)`…`d)`. Best for testing attitudes, implicit meaning, main arguments.
+2. **"true_false"** - Two options: "Richtig", "Falsch". Best for testing inference of unstated information.
+3. **"short_answer"** - User writes a brief answer (1-7 words) based on understanding. Best for testing comprehension of speaker's position or implied information.
+
+**Distribution:** Mix question types in each batch (40% mcq, 30% true_false, 30% short_answer)
+
+**For short_answer questions:**
+- Ask about analytical comprehension (e.g., "Welche Position vertritt der Sprecher?", "Was wird hier impliziert?", "Welches Problem wird hauptsächlich diskutiert?")
+- Expected answers are 1-7 words capturing the key concept
+- Test understanding of implicit arguments, speaker attitudes, or underlying assumptions
+- Set `"options": null` or `"options": []`
+- The `correct_answer` should be a clear, concise expected answer
+- Keep questions concise (max 30 German words) to maintain B2-appropriate complexity
+
+**For mcq and true_false:**
+- Provide all options in the `options` array
+- `correct_answer` must match one of the options exactly
+- Options should test analytical comprehension, not surface-level facts
+
+Focus on ANALYTICAL and INFERENTIAL comprehension:
+- What is the speaker's attitude toward X?
+- What does the speaker imply but not state directly?
+- Why does the speaker mention X?
+- What is the main argument or purpose of this discussion?
+- How does the speaker support their position?
+- What underlying assumption is present?
+
+Use only one question per transcript. Each question must require sophisticated listening comprehension beyond surface-level detail extraction.
+
+---
+
+🎯 **CRITICAL: AVOID DIRECT KEYWORD MATCHING**
+
+**Questions must test SOPHISTICATED ANALYTICAL COMPREHENSION, not just keyword recognition!**
+
+❌ **BAD (Too obvious - surface level):**
+- Audio: "Die Lehrerin sagt, dass projektbasiertes Lernen die Motivation fördert."
+- Question: "Was fördert projektbasiertes Lernen laut der Lehrerin?"
+- Answer: "Motivation"
+- ❌ User can answer by just hearing the word "Motivation" without analytical comprehension
+
+✅ **GOOD (Requires analytical inference):**
+- Audio: "Also, ich sehe das kritisch. Natürlich gibt es Vorteile bei der Digitalisierung, aber wir dürfen die nicht vergessen, die keinen Zugang haben. Gerade ältere Menschen fühlen sich oft ausgegrenzt."
+- Question: "Was ist das Hauptanliegen der Sprecherin?"
+- Answer: "digitale Inklusion" or "Ausgrenzung verhindern" (requires inferring the underlying concern from multiple statements and tone)
+
+- Audio: "Der Experte betont zwar die Effizienzgewinne, räumt aber gleichzeitig ein, dass die Implementierung erhebliche Anfangsinvestitionen erfordert. Man müsse das langfristig betrachten."
+- Question: "Welche Position vertritt der Experte?"
+- Answer: "positive mit Einschränkungen" or "langfristig positiv" (requires understanding nuanced position with concessive clause)
+
+- Audio: "Einerseits würde das die Verwaltung vereinfachen. Andererseits müssten wir erst die Infrastruktur schaffen. Ohne ausreichende Schulung der Mitarbeiter wird das nicht funktionieren."
+- Question: "Welche Voraussetzung nennt der Sprecher als entscheidend?"
+- Answer: "Mitarbeiterschulung" or "Personal vorbereiten" (requires identifying the key condition among multiple points)
+
+**B2 Indirect Answer Guidelines:**
+- Implicit attitudes: Tone, hedging, discourse markers (zwar...aber, einerseits...andererseits) signal nuanced positions
+- Rhetorical strategies: Identify whether speaker uses concession, emphasis, or qualification
+- Multiple perspectives: Distinguish speaker's own view from cited opinions or hypothetical scenarios
+- Causal inference: Connect implicit cause-effect relationships across multiple sentences
+- Abstract synthesis: Combine scattered points to identify underlying argument or assumption
+- Attitudinal markers: "kritisch sehen", "Bedenken haben", "befürworten" require inferring from context
+- Make connections require sophisticated discourse analysis and implicit meaning detection
+
+📚 TOPIC VARIETY:
+Use different topics across the batch (no repeats):
+
+- Technology and society (AI ethics, digital privacy, automation)
+- Environmental policy and sustainability
+- Economic trends and globalization
+- Education methods and reform
+- Healthcare systems and medical advances
+- Cultural diversity and integration
+- Media influence and digital literacy
+- Consumer behavior and sustainability
+- Legal frameworks and social justice
+- Workplace evolution and professional development
+- Immigration and multicultural challenges
+- Urban planning and quality of life
+- Scientific research and ethical implications
+- Political participation and governance
+- Philosophical concepts in modern life
+
+🔁 CONTENT DIVERSITY:
+
+- Alternate between MCQ and True/False
+- Use various formats: lectures, interviews, debates, presentations, discussions, expert panels
+- Include different speech contexts: academic, professional, journalistic, public talks
+- Vary between formal academic register and sophisticated conversational style
+- Present multiple perspectives or nuanced positions
+- Include implicit arguments, speaker bias, and sophisticated rhetorical strategies
+
+⚠️ DO NOT:
+
+- Use C1+ vocabulary or highly technical jargon without context
+- Include more than one question per transcript
+- Repeat topics or discussion formats within the same batch
+- Create questions where answers are obvious surface facts
+- Use purely informational content without analysis or opinion
+- Include transcripts shorter than 200 or longer than 300 words
+
+---
+
+✅ JSON OUTPUT FORMAT (Must be valid and exact):
+
+```json
+{
+  "questions": [
+    {
+      "transcript": "{\"mode\":\"announcement\",\"text\":\"In unserem Bildungspodcast geht es heute um die Frage, ob projektbasiertes Lernen wirklich bessere Ergebnisse bringt. Eine Lehrerin erzählt, dass ihre Schülerinnen und Schüler motivierter seien, wenn sie an echten Problemen arbeiten. Sie sagt, dass Teamarbeit, Kreativität und kritisches Denken dadurch stärker gefördert werden. Ein Schulberater ergänzt jedoch, dass nicht jedes Fach dafür geeignet sei. Mathematische Grundlagen, meint er, müssten strukturiert vermittelt werden, sonst entstünden Wissenslücken. Außerdem gäbe es Eltern, die glauben, solche Methoden seien weniger anspruchsvoll. Die Lehrerin hält dagegen: Sie erklärt, dass Prüfungen ja weiterhin existieren, aber die Lernprozesse vielfältiger seien. Interessant ist, dass beide betonen, die Ausbildung der Lehrkräfte sei entscheidend. Ohne gute Vorbereitung könne projektbasiertes Lernen scheitern. Abschließend sagt der Moderator, Schulen müssten die richtige Balance finden, und politischer Druck auf schnelle Ergebnisse sei problematisch.\"}",
+      "question": "Welche Position vertritt die Lehrerin zum projektbasierten Lernen?",
+      "question_type": "mcq",
+      "options": ["a) Es ist für alle Fächer gleich gut geeignet", "b) Es fördert wichtige Fähigkeiten und Motivation", "c) Es ersetzt traditionelle Prüfungen vollständig", "d) Es ist weniger anspruchsvoll als andere Methoden"],
+      "correct_answer": "b",
+      "correct_answer_reason": "Die Lehrerin betont, dass Teamarbeit, Kreativität und kritisches Denken gefördert werden und Schüler motivierter sind.",
+      "topic": "education reform",
+      "task_type": "Educational podcast discussion",
+      "audio_url": null
+    },
+    {
+      "transcript": "{\"mode\":\"dialogue\",\"text\":[{\"speaker\":\"mila\",\"text\":\"Also, ich sehe das so: Die Digitalisierung der Verwaltung bringt natürlich Vorteile. Bürgerinnen und Bürger können Anträge online stellen, das spart Zeit. Aber wir müssen auch an die denken, die keinen Zugang zu Computern haben oder sich nicht gut damit auskennen. Ältere Menschen zum Beispiel.\"},{\"speaker\":\"otto\",\"text\":\"Ja, genau. Und was ist mit dem Datenschutz? Wenn alle Daten digital gespeichert werden, besteht doch ein höheres Risiko für Hackerangriffe. Die Infrastruktur muss erst einmal sicher sein, bevor wir alles digitalisieren. Außerdem kostet das Geld, das viele Kommunen gar nicht haben.\"}]}",
+      "question": "Was ist das Hauptanliegen der ersten Sprecherin?",
+      "question_type": "short_answer",
+      "options": null,
+      "correct_answer": "digitale Ausgrenzung verhindern",
+      "correct_answer_reason": "Sie betont die Notwendigkeit, an Menschen ohne Computerzugang zu denken (implizite Sorge um Inklusion).",
+      "topic": "digitalization and inclusion",
+      "task_type": "Policy discussion",
+      "audio_url": null
+    }
+    // Continue up to {{question_count}} questions
+  ]
+}
+```
+
+⚠️ JSON Output Rules:
+- Return only valid JSON
+- No extra text, no {{ }}
+- Always test your JSON before returning
+- The `transcript` field must contain the JSON structure as a **string** (use escaped quotes `\"`)
+- For announcements, use mode "announcement" with single text string
+- For dialogues, use mode "dialogue" with array of speaker/text objects
+- Only use speakers "mila" (female) and "otto" (male)
+- Set `"audio_url": null` for every question (audio will be generated later)
+- Include `"task_type"` field describing the listening scenario (e.g., "Academic lecture", "Expert debate", "News report")
+- **For short_answer: set `"options": null`**
+- **For mcq: provide exactly four options as array: `["a) ...", "b) ...", "c) ...", "d) ..."]`**
+- **For true_false: provide exactly two options: `["Richtig", "Falsch"]`**
+- Ensure each transcript presents sophisticated spoken discourse requiring B2-level analytical listening
+
+---
+
+🎧 TRANSCRIPT QUALITY CHECKLIST:
+- Natural German speech patterns with discourse markers (also, eben, genau, übrigens, eigentlich)
+- Sophisticated vocabulary and abstract concepts within B2 level
+- Clear speaker perspective or argument (not neutral information dump)
+- Implicit meaning requiring inference beyond surface statements
+- Professional or academic register with appropriate formality
+- Engaging content on abstract or specialized topics
+- Realistic for educated German speakers discussing complex issues
+

@@ -1,0 +1,141 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+# Official Grafana Cloud credentials
+clients:
+  - url: https://YOUR_GRAFANA_USER_ID:YOUR_GRAFANA_API_KEY@logs-prod-xxx.grafana.net/loki/api/v1/push
+
+scrape_configs:
+  # 🎯 CLEAN APPROACH: Drop system logs, keep only application logs
+  - job_name: app-name-clean-logs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: app-name
+          environment: development
+          cluster: local-dev
+          __path__: /var/lib/docker/containers/*/*log
+
+    pipeline_stages:
+      # Parse Docker JSON format
+      - json:
+          expressions:
+            output: log
+            stream: stream
+            time: time
+
+      # 🚫 STEP 1: Drop all the noise that's flooding Grafana
+
+      # Drop database connection logs (noise reduction)
+      - drop:
+          expression: '.*\\{"t":\\{"\\$date":.*"s":"I".*"c":"(NETWORK|ACCESS|COMMAND)".*|.*"id":(51800|22943|6788700|5286306|6788604).*'
+          drop_counter_reason: "database_connection_logs"
+
+      # Drop ALL Uvicorn HTTP request logs (health checks, API requests, etc.)
+      - drop:
+          expression: 'INFO:\\s+\\d+\\.\\d+\\.\\d+\\.\\d+:\\d+ - "(GET|POST|PUT|DELETE|PATCH|OPTIONS) .* HTTP/1\\.1" \\d+ \\w+'
+          drop_counter_reason: "uvicorn_http_requests"
+
+      # Drop health check logs specifically (extra safety net)
+      - drop:
+          expression: '.*- "GET /api/health HTTP/1\\.1" 200 OK'
+          drop_counter_reason: "health_check_logs"
+
+      # Drop Uvicorn server lifecycle logs
+      - drop:
+          expression: "INFO:\\s+(Uvicorn running on|Application startup complete|Started server process|Waiting for application|Finished server process)"
+          drop_counter_reason: "uvicorn_lifecycle"
+
+      # Drop LangChain deprecation warnings
+      - drop:
+          expression: ".*(LangChainDeprecationWarning|was deprecated in LangChain|should be used instead).*"
+          drop_counter_reason: "langchain_deprecations"
+
+      # Drop Promtail internal logs and errors
+      - drop:
+          expression: 'level=(warn|info).*component=client.*host=.*grafana\\.net.*msg="(error sending batch|will retry)"'
+          drop_counter_reason: "promtail_internal_errors"
+
+      # Drop empty lines and whitespace
+      - drop:
+          expression: "^\\\\s*$"
+          drop_counter_reason: "empty_lines"
+
+      # Drop development server logs
+      - drop:
+          expression: ".*\\[vite\\].*|.*hmr update.*|.*Local:.*localhost:300[0-9].*|.*ready - started server.*"
+          drop_counter_reason: "dev_server_logs"
+
+      # 🎯 STEP 2: What's left should be your application logs
+      # At this point, we should only have:
+      # - Structured JSON logs from your app with "logger", "event", "level", "timestamp"
+      # - Important error messages and exceptions
+      # - Application startup/shutdown messages
+
+      # Extract container info
+      - json:
+          expressions:
+            tag:
+          source: attrs
+
+      # Extract container name
+      - regex:
+          expression: (?P<container_name>[^/]+)
+          source: tag
+
+      # Map container names to services
+      - replace:
+          expression: ".*backend.*"
+          source: container_name
+          target: service
+          replace: "fastapi-backend"
+      - replace:
+          expression: ".*frontend.*"
+          source: container_name
+          target: service
+          replace: "react-frontend"
+      - replace:
+          expression: ".*admin.*"
+          source: container_name
+          target: service
+          replace: "admin-frontend"
+      - replace:
+          expression: ".*mysql.*"
+          source: container_name
+          target: service
+          replace: "mysql"
+
+      # Try to extract structured log fields (for your JSON app logs)
+      - json:
+          expressions:
+            app_logger: logger
+            app_event: event
+            app_level: level
+            app_user_id: user_id
+            app_timestamp: timestamp
+            app_error: error
+
+      # Add all relevant labels
+      - labels:
+          container_name:
+          service:
+          app_logger:
+          app_level:
+          app_user_id:
+
+      # Use app timestamp if available, otherwise Docker timestamp
+      - timestamp:
+          format: RFC3339
+          source: app_timestamp
+      - timestamp:
+          format: RFC3339Nano
+          source: time
+
+      # Output the full log message
+      - output:
+          source: output

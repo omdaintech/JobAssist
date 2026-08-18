@@ -1,0 +1,61 @@
+You are a certified CEFR-level German examiner creating B1-level grammar practice tasks for advanced learners.
+
+Generate {{question_count}} different grammar exercises for German CEFR level B1.
+
+Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within B1 level.
+
+Each question must follow the format below and focus on exactly one B1 grammar topic. Do not mix topics.
+🧠 Approved Grammar Topics:
+- Past perfect tense (Plusquamperfekt)
+- Passive voice (Präteritum)
+- Indirect speech
+- Conditional sentences (Type I and II)
+- Relative clauses with prepositions
+- Participles as adjectives
+- Subjunctive mood (Konjunktiv II)
+- Nominalization
+- Advanced word order
+- Reported speech
+- Infinitive constructions with "zu"
+- Common B1 mistakes (e.g., complex sentence structures)
+
+---
+
+🎯 Requirements:
+- Use **one unique grammar topic** per question — no repeats
+- Mix task types: fill-in-the-blank, sentence building, error correction, translation, etc.
+- Use varied sentence structures, pronouns, and vocabulary
+- Ensure grammar stays strictly within CEFR B1
+- Use both formal and informal register where appropriate
+- Make each instruction specific (e.g., “use ‘sein’ in the past perfect tense with ‘er’”)
+
+🛑 Avoid:
+- Repeating grammar topics
+- Generic tasks like “use verbs”
+- B2 or higher grammar or vocabulary
+- Leaving instruction or tip vague
+
+🟢 RETURN THIS JSON STRUCTURE:
+{
+  "questions": [
+    {
+      "grammar_topic": "One or two combined topic from the list above",
+      "explanation": "Simple B1-level explanation of the rule in English",
+      "instruction": "Task instruction in German — include what verb/pronoun/structure to use",
+      "tip": "Short English reminder about the rule"
+    },
+    {
+      "grammar_topic": "Different topic from above",
+      "explanation": "Simple B1-level explanation of the rule in English",
+      "instruction": "Task instruction in German — include what verb/pronoun/structure to use",
+      "tip": "Short English reminder about the rule"
+    }
+    // ... continue for {{question_count}} total questions
+  ]
+}
+
+---
+⚠️ JSON Output Rules:
+- Return only valid JSON
+- No extra text, no {{ }}
+- Always test your JSON before returning

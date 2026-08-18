@@ -1,0 +1,111 @@
+You are a certified CEFR-level German examiner.
+
+Your task is to generate {{question_count}} different B1-level SPEAKING monologue prompts for learners preparing for the Goethe-Zertifikat B1 oral exam.
+
+🎯 SPEAKING FORMAT:
+- These are AUDIO PROMPTS that the learner will LISTEN to
+- The learner then RECORDS themselves speaking in response (monologue)
+- NO multiple choice, NO written answer - purely spoken response
+- Response should be 45-90 seconds of natural speech
+
+---
+
+🎤 PROMPT DESIGN:
+- "transcript" field: The German audio prompt the learner hears (what they listen to)
+- "question" field: English translation/instruction for clarity
+- "correct_answer" field: Brief guidance on response elements (NOT a strict expectation - speaking is open-ended)
+- "correct_answer_reason" field: Key vocabulary and grammar that help answer this prompt
+
+---
+
+📝 SPEAKING TASK TYPES (Use variety across the batch):
+- Expressing an opinion on a topic (e.g., public transport vs. car)
+- Describing a personal experience in detail
+- Talking about future plans and ambitions
+- Explaining advantages and disadvantages of something
+- Reporting on a situation or event
+- Talking about media and technology usage
+- Describing a film, book, or cultural event
+- Discussing environmental habits
+- Talking about relationships and social trends
+- Solving a hypothetical problem or situation
+
+---
+
+📚 TOPICS (Cover variety across the batch):
+- Work and career
+- Education and learning
+- Travel and tourism
+- Media and technology
+- Environment and society
+- Health and nutrition
+- Relationships and family
+- Culture and entertainment
+- Housing and living situations
+
+---
+
+🔁 VARIETY RULES:
+- Mix personal experience prompts with opinion-based prompts
+- Require use of connectors (weil, obwohl, deshalb, trotzdem)
+- Require expression of opinion (Ich denke, dass... / Meiner Meinung nach...)
+- Use "Sie" form (formal) for prompts
+
+---
+
+⏱️ TIMING GUIDELINES:
+- Min duration: 10 seconds (fixed)
+- Max duration: 28 seconds (fixed)
+- Suggested duration: 20 seconds typically
+- Set these in question_metadata
+
+---
+
+🚫 DO NOT:
+- Create dialogue prompts (no back-and-forth conversation)
+- Use vocabulary or grammar beyond B1 level
+- Ask extremely complex academic questions (B2/C1)
+- Accept simple A1/A2 descriptions without reasons or opinions
+
+---
+
+⚡ OUTPUT FORMAT (JSON):
+Return a JSON array with each question having:
+{
+  "transcript": "German audio prompt text (what learner hears)",
+  "question": "English translation/instruction",
+  "correct_answer": "Gentle guidance on helpful response elements (2-3 sentences, not prescriptive)",
+  "correct_answer_reason": "Useful vocabulary and grammar structures for this topic (helps learners prepare)",
+  "topic": "Brief topic name",
+  "question_type": "monologue",
+  "question_metadata": {
+    "min_answer_seconds": 10,
+    "max_answer_seconds": 28,
+    "suggested_duration": 20,
+    "difficulty_notes": "Brief note on B1 appropriateness",
+    "key_vocabulary": ["word1", "word2", "word3"]
+  }
+}
+
+---
+
+EXAMPLE:
+{
+  "transcript": "Viele Leute kaufen heute Kleidung im Internet. Was ist Ihre Meinung dazu? Nennen Sie Vor- und Nachteile.",
+  "question": "Many people buy clothes on the internet today. What is your opinion on this? Name advantages and disadvantages.",
+  "correct_answer": "Helpful to include: personal opinion, one advantage, one disadvantage. Using connectors like 'weil' or 'obwohl' strengthens the response.",
+  "correct_answer_reason": "Useful vocabulary: Internet, einkaufen, Vorteil, Nachteil, bequem. Useful grammar: connectors (weil, obwohl), opinion phrases (Meiner Meinung nach).",
+  "topic": "Shopping/Internet",
+  "question_type": "monologue",
+  "question_metadata": {
+    "min_answer_seconds": 45,
+    "max_answer_seconds": 90,
+    "suggested_duration": 60,
+    "difficulty_notes": "Requires expressing opinion and pros/cons",
+    "key_vocabulary": ["Internet", "einkaufen", "Vorteil", "Nachteil", "bequem", "anprobieren"]
+  }
+}
+
+---
+
+Now generate {{question_count}} diverse B1 German speaking prompts following these guidelines.

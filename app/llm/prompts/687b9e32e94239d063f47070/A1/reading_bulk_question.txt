@@ -1,0 +1,81 @@
+You are a certified CEFR-level German examiner.
+
+Generate {{question_count}} A1-level reading comprehension exercises for learners preparing for the Goethe-Zertifikat A1 ("Start Deutsch 1") exam.
+
+Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within A1 level.
+
+Each question must follow Goethe exam structure (Teil 1 or Teil 2) and use only A1 vocabulary and grammar.
+
+---
+
+📘 TEXT REQUIREMENTS:
+- Length: 80–150 words
+- Vocabulary: only words from the official Goethe A1 word list
+- Grammar: simple present tense, basic modal verbs only
+- Sentence structure: use only main clauses (no subordinate or compound clauses)
+
+---
+
+❓ QUESTION TYPES:
+Use a mix of:
+- Teil 1 — True/False based on short texts (notes, messages, signs)
+- Teil 2 — MCQ based on comparison of 4 short information sources
+
+All questions and answer options must use A1-level German only.
+
+---
+
+📚 TOPIC VARIETY:
+Use different topics across the batch (no repeats):
+- Shopping and services
+- Food and drink
+- Home and living
+- Free time
+- Work and school
+- Travel and transport
+- Family and relationships
+- Weather and seasons
+- Health and body
+- Clothing and appearance
+
+---
+
+🔁 CONTENT DIVERSITY:
+- Alternate between MCQ and True/False
+- Use varied formats: emails, signs, announcements, letters, etc.
+- Include both formal and informal language
+- Use different names, genders, locations, and real-life situations
+- Vary question difficulty (but keep it within A1)
+
+---
+
+⚠️ DO NOT:
+- Use A2+ vocabulary or grammar
+- Repeat any topic or text format in the same batch
+- Include more than one question per reading text
+- Mix multiple grammar topics or comprehension types in one question
+
+---
+
+✅ JSON OUTPUT FORMAT (Must be valid and exact):
+
+```json
+{
+  "questions": [
+    {
+      "text": "German reading passage (80–150 words, using only A1 grammar and vocabulary)",
+      "question": "Simple question in German using only A1 vocabulary",
+      "question_type": "mcq" or "true_false",
+      "options": ["a) …", "b) …", "c) …", "d) …"] or ["Richtig", "Falsch"],
+      "correct_answer": "b" or "Falsch",
+      "correct_answer_reason": "explain in one line",
+      "topic": "e.g., free time, school, shopping"
+    }
+    // Continue up to {{question_count}} questions
+  ]
+}
+---
+⚠️ JSON Output Rules:
+- Return only valid JSON
+- No extra text, no {{ }}
+- Always test your JSON before returning

@@ -1,0 +1,125 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+# Production Grafana Cloud credentials
+clients:
+  - url: https://YOUR_GRAFANA_USER_ID:YOUR_GRAFANA_API_KEY@logs-prod-xxx.grafana.net/loki/api/v1/push
+
+scrape_configs:
+  # Production environment logs
+  - job_name: app-prod
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: app-prod
+          environment: production
+          cluster: prod-cluster
+          __path__: /var/lib/docker/containers/*/*log
+
+    pipeline_stages:
+      # Step 1: Parse Docker JSON format
+      - json:
+          expressions:
+            output: log
+            stream: stream
+            time: time
+            attrs:
+
+      # Step 2: Drop filters - match against the log line (default behavior)
+      # Health check logs
+      - drop:
+          expression: '.*GET /api/health HTTP.*'
+          drop_counter_reason: "health_check_logs"
+      
+      # HealthService initialized
+      - drop:
+          expression: '.*HealthService initialized.*'
+          drop_counter_reason: "health_service_init"
+      
+      # Uvicorn HTTP 2xx responses
+      - drop:
+          expression: '.*INFO:\s+\d+\.\d+\.\d+\.\d+:\d+.*HTTP/1\.[01].*2\d{2}.*'
+          drop_counter_reason: "uvicorn_2xx_requests"
+      
+      # Uvicorn lifecycle
+      - drop:
+          expression: '.*(Uvicorn running on|Application startup complete|Started server process).*'
+          drop_counter_reason: "uvicorn_lifecycle"
+      
+      # Promtail internal logs
+      - drop:
+          expression: '.*(caller=|level=info ts=|level=warn ts=).*'
+          drop_counter_reason: "promtail_internal"
+      
+      # Nginx worker notices
+      - drop:
+          expression: '.*\[notice\].*worker process.*'
+          drop_counter_reason: "nginx_notices"
+
+      # Step 3: Extract container tag from attrs
+      - json:
+          expressions:
+            tag:
+          source: attrs
+
+      # Extract container name from tag
+      - regex:
+          expression: '(?P<container_name>[^/]+)$'
+          source: tag
+
+      # Map container names to service labels
+      - replace:
+          expression: ".*backend.*"
+          source: container_name
+          target: service
+          replace: "fastapi-backend"
+      - replace:
+          expression: ".*frontend.*"
+          source: container_name
+          target: service
+          replace: "react-frontend"
+      - replace:
+          expression: ".*admin.*"
+          source: container_name
+          target: service
+          replace: "admin-frontend"
+      - replace:
+          expression: ".*mysql.*"
+          source: container_name
+          target: service
+          replace: "mysql"
+
+      # Try to extract structured log fields (for your JSON app logs)
+      - json:
+          expressions:
+            app_logger: logger
+            app_event: event
+            app_level: level
+            app_user_id: user_id
+            app_timestamp: timestamp
+            app_error: error
+
+      # Add all relevant labels
+      - labels:
+          container_name:
+          service:
+          app_logger:
+          app_level:
+          app_user_id:
+
+      # Use app timestamp if available, otherwise Docker timestamp
+      - timestamp:
+          format: RFC3339
+          source: app_timestamp
+      - timestamp:
+          format: RFC3339Nano
+          source: time
+
+      # Output the full log message
+      - output:
+          source: output

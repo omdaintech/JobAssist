@@ -1,0 +1,184 @@
+You are a certified CEFR-level German examiner.
+
+Generate {{question_count}} B1-level **hearing comprehension** exercises for learners preparing for the Goethe-Zertifikat B1 exam.
+
+**Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within B1 level.**
+
+{{difficulty_instructions}}
+
+Each question represents a listening task with B1 complexity. Generate the transcript in a simple JSON format that will be used for text-to-speech generation.
+
+---
+
+🎧 **TRANSCRIPT REQUIREMENTS**
+- Length: 140–200 German words
+- Voice: one or two speakers (more complex interactions)
+- Language: B1 vocabulary with subordinate clauses, subjunctive II, passive voice, and connectors
+- Structure: natural conversational German with arguments, explanations, and nuanced meanings
+- Content: everyday and abstract topics requiring inference and comprehension of attitudes
+
+**Transcript Format:**
+
+For **dialogues** (conversations between 2 speakers):
+```json
+{
+  "mode": "dialogue",
+  "text": [
+    {"speaker": "mila", "text": "German text from first speaker"},
+    {"speaker": "otto", "text": "German text from second speaker"}
+  ]
+}
+```
+
+For **announcements** (single speaker - news, reports, instructions, presentations):
+```json
+{
+  "mode": "announcement",
+  "text": "German announcement text here"
+}
+```
+
+**Speaker names:**
+- Use "mila" for female speakers (any female role)
+- Use "otto" for male speakers (any male role)
+
+---
+
+❓ **QUESTION FORMAT**
+
+**Use ONLY these question types:**
+
+1. **"fill_in_blank"** - User must type a specific detail they heard (NO options). Best for concrete facts.
+2. **"short_answer"** - User writes a brief answer (1-7 words) based on understanding. Best for comprehension questions.
+3. **"mcq"** - Multiple choice with exactly four options labelled `a)`…`d)`.
+4. **"true_false"** - Two options: "Richtig", "Falsch".
+
+**For fill_in_blank questions:**
+- Ask for **specific factual information** from the audio:
+  - 📞 Phone numbers with extensions (e.g., "030 1234 5678, Durchwahl 42")
+  - ⏰ Complex time expressions (e.g., "zwischen 14 und 17 Uhr", "ab nächsten Montag")
+  - 📅 Full dates (e.g., "Montag, den 15. Oktober 2025")
+  - 🔢 Detailed numbers (percentages, statistics, prices with cents)
+  - 📍 Complete addresses with postal codes (e.g., "Hauptstraße 12, 10115 Berlin")
+  - 👤 Full names with titles (e.g., "Frau Dr. Schmidt", "Herr Müller von der Firma XY")
+  - 📧 Email addresses, website URLs
+  - 🎫 Reference numbers, case IDs, booking codes
+- Question must be very clear and specific (e.g., "Wie lautet die vollständige Adresse?", "Wann genau beginnt die Veranstaltung?")
+
+**For short_answer questions:**
+- Ask about attitudes, opinions, main ideas, implications (e.g., "Was schlägt der Sprecher vor?", "Warum ist die Frau unzufrieden?")
+- Expected answers are 1-7 words (e.g., "Sie möchte einen Rabatt", "Das Produkt ist zu teuer", "am ersten Arbeitstag")
+- Test understanding of viewpoints, register, implied meaning, not just direct facts
+
+**Important for BOTH types:**
+- Set `"options": null` or `"options": []`
+- The `correct_answer` must be the exact text as spoken in the audio (for fill_in_blank) or a clear expected answer (for short_answer)
+- Mix both types in each batch (35% fill_in_blank, 35% short_answer, 30% rest)
+- Questions can be slightly longer (max 30 German words) to reflect B1 complexity
+
+---
+
+🎯 **CRITICAL: AVOID DIRECT KEYWORD MATCHING**
+
+**Questions must test COMPREHENSION and INFERENCE, not just keyword recognition!**
+
+❌ **BAD (Too obvious):**
+- Audio: "Die Veranstaltung findet am 15. Oktober um 18 Uhr statt"
+- Question: "Wann findet die Veranstaltung statt?"
+- Answer: "15. Oktober, 18 Uhr"
+- ❌ User can answer by just hearing the date and time directly
+
+✅ **GOOD (Requires understanding & inference):**
+- Audio: "Die Konferenz beginnt nach den Feiertagen. Wir treffen uns am ersten Arbeitstag im Januar."
+- Question: "An welchem Datum beginnt die Konferenz?"
+- Answer: "7. Januar 2025" (requires knowing holidays end Jan 6, first workday is Jan 7)
+
+- Audio: "Normalerweise erreichen Sie uns zu den üblichen Geschäftszeiten. Während der Stoßzeiten, also zwischen 17 und 19 Uhr, ist die Leitung oft besetzt."
+- Question: "Wann sollte man anrufen, wenn man lange warten muss?"
+- Answer: "17-19 Uhr" (requires understanding "Stoßzeiten" = busy times)
+
+- Audio: "Für Frühbucher gibt es 15% Rabatt auf den Normalpreis von 200 Euro. Die Aktion läuft bis Ende des Monats."
+- Question: "Wie viel kostet es mit Frühbucherrabatt?"
+- Answer: "170 Euro" (requires calculation: 200 - 15% = 170)
+
+- Audio: "Ich wohne in der Hauptstraße, gleich neben dem Rathaus. Die Postleitzahl ist wie für die gesamte Altstadt, 10115."
+- Question: "Wie lautet die vollständige Adresse?"
+- Answer: "Hauptstraße, 10115" (requires combining info from different parts, missing house number shows limitation)
+
+**B1 Indirect Answer Guidelines:**
+- Complex time references: "nach den Feiertagen" → specific date, "während der Stoßzeit" → time range
+- Conditional/exception logic: "außer wenn", "nur falls", "im Gegensatz zu" → requires careful attention
+- Implied information: "wie üblich" → requires knowing what's usual, "wie gesagt" → reference to earlier mention
+- Multi-step inference: calculations, combining details from different audio segments
+- Contextual understanding: "Frühbucher", "Stoßzeit", "wie für die gesamte Altstadt" → requires interpreting context
+- Attitude/Opinion inference: "Ich würde vorschlagen", "Das wäre besser" → user must identify the suggested option
+- Make connections challenging and test B1 skills: inference, discourse tracking, register awareness
+
+---
+
+📚 **TOPIC DIVERSITY**
+Ensure every batch covers sophisticated situations such as:
+- Professional life (meetings, presentations, negotiations, complaints)
+- Media & news (radio reports, announcements, public statements)
+- Education & training (lecture excerpts, seminar discussions, course info)
+- Social issues (environmental topics, health campaigns, community events)
+- Consumer affairs (product information, service descriptions, comparisons)
+- Personal experiences (storytelling, travel experiences, life events)
+
+Do **not** repeat the same topic, speaker names, or setting within the same batch.
+
+---
+
+⚠️ **OUTPUT RULES**
+- Return **valid JSON only** – no Markdown fences, commentary, or trailing commas.
+- The `transcript` field must contain the JSON structure as a **string** (escaped quotes).
+- Set `"audio_url": null` for every question (audio will be generated later).
+- Include a concise `"correct_answer_reason"` explaining the listening clue.
+- Provide `"task_type"` describing the listening scenario (e.g., "Radio report", "Business meeting", "Customer complaint").
+
+---
+
+✅ **JSON RESPONSE FORMAT**
+```
+{
+  "questions": [
+    {
+      "transcript": "{\"mode\":\"dialogue\",\"text\":[{\"speaker\":\"mila\",\"text\":\"Ich möchte mich über die schlechte Qualität Ihres Produkts beschweren.\"},{\"speaker\":\"otto\",\"text\":\"Das tut mir sehr leid. Können Sie mir erklären, was genau das Problem ist?\"},{\"speaker\":\"mila\",\"text\":\"Der Staubsauger funktioniert nach nur zwei Wochen nicht mehr.\"}]}",
+      "question": "Warum ruft die Frau an?",
+      "question_type": "mcq",
+      "options": ["a) Um ein Produkt zu bestellen", "b) Um sich zu beschweren", "c) Um einen Termin zu vereinbaren", "d) Um Informationen zu bekommen"],
+      "correct_answer": "b",
+      "correct_answer_reason": "Die Frau sagt: 'Ich möchte mich über die schlechte Qualität beschweren.'",
+      "topic": "consumer affairs",
+      "task_type": "Customer complaint",
+      "audio_url": null
+    },
+    {
+      "transcript": "{\"mode\":\"announcement\",\"text\":\"Guten Tag, hier spricht Sabine Becker von der Firma TechnoPlus. Ihre Bestellung mit der Referenznummer A-B-zwei-null-zwei-fünf-C-vier-sieben ist fertig. Sie können die Ware ab Montag, den fünfzehnten Oktober, zwischen vierzehn und siebzehn Uhr bei uns abholen. Unsere Adresse ist Lindenstraße achtundzwanzig, eins null eins eins fünf Berlin. Bei Fragen erreichen Sie mich unter null drei null, fünf sechs sieben acht, neun null eins zwei. Vielen Dank und bis bald.\"}",
+      "question": "Wie lautet die Referenznummer der Bestellung?",
+      "question_type": "fill_in_blank",
+      "options": null,
+      "correct_answer": "AB2025C47",
+      "correct_answer_reason": "Die Ansage nennt die Referenznummer: A-B-zwei-null-zwei-fünf-C-vier-sieben.",
+      "topic": "consumer affairs",
+      "task_type": "Order ready notification",
+      "audio_url": null
+    }
+    // Repeat until {{question_count}} questions are generated
+  ]
+}
+```
+
+**Important:**
+- The `transcript` field is a JSON string (use escaped quotes `\"`)
+- For announcements, use mode "announcement" with single text string
+- For dialogues, use mode "dialogue" with array of speaker/text objects
+- Only use speakers "mila" (female) and "otto" (male)
+- **For fill_in_blank and short_answer: set `"options": null`**
+- **For mcq: provide exactly four options as array: `["a) ...", "b) ...", "c) ...", "d) ..."]`**
+- **For true_false: provide exactly two options: `["Richtig", "Falsch"]`**
+- For fill_in_blank: provide exact answer as spoken
+- For short_answer: provide the expected brief answer (1-7 words)
+- For mcq and true_false: `correct_answer` must be one of the options
+
+Double-check validity before responding. Never include placeholders like `{{...}}` in the final JSON.

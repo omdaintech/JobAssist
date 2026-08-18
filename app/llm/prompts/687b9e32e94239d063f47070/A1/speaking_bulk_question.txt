@@ -1,0 +1,115 @@
+You are a certified CEFR-level German examiner.
+
+Your task is to generate {{question_count}} different A1-level SPEAKING monologue prompts for learners preparing for the Goethe-Zertifikat A1 oral exam.
+
+🎯 SPEAKING FORMAT:
+- These are AUDIO PROMPTS that the learner will LISTEN to
+- The learner then RECORDS themselves speaking in response (monologue)
+- NO multiple choice, NO written answer - purely spoken response
+- Response should be 20-50 seconds of natural speech
+
+---
+
+🎤 PROMPT DESIGN:
+- "transcript" field: The German audio prompt the learner hears (what they listen to)
+- "question" field: English translation/instruction for clarity
+- "correct_answer" field: Brief guidance on response elements (NOT a strict expectation - speaking is open-ended)
+- "correct_answer_reason" field: Key vocabulary and grammar that help answer this prompt
+
+---
+
+📝 SPEAKING TASK TYPES (Use variety across the batch):
+- Self-introduction (name, origin, interests)
+- Describing daily routines (morning, afternoon, evening activities)
+- Talking about hobbies and free time
+- Describing family members
+- Talking about food preferences and meals
+- Describing home or room
+- Talking about work or studies (basic)
+- Describing a typical weekend
+- Talking about favorite things (season, color, animal, etc.)
+- Simple plans for today/tomorrow
+
+---
+
+📚 TOPICS (Cover variety across the batch):
+- Personal information and identity
+- Daily life and routines
+- Family and relationships
+- Food and eating habits
+- Hobbies and leisure activities
+- Home and living space
+- Work and school (basic level)
+- Likes and dislikes
+- Time and schedules
+- Simple future plans
+
+---
+
+🔁 VARIETY RULES:
+- Mix first-person prompts ("Sprechen Sie über...") with direct questions ("Was machen Sie gerne?")
+- Vary between present tense and simple future
+- Some prompts can combine 2-3 related topics (e.g., family + hobbies)
+- Keep language simple but natural
+- Use "Sie" form (formal) for prompts
+
+---
+
+⏱️ TIMING GUIDELINES:
+- Min duration: 10 seconds (fixed)
+- Max duration: 28 seconds (fixed)
+- Suggested duration: 20 seconds typically
+- Set these in question_metadata
+
+---
+
+🚫 DO NOT:
+- Create dialogue prompts (no back-and-forth conversation)
+- Use vocabulary or grammar beyond A1 level
+- Ask abstract or philosophical questions
+- Request descriptions that require B1+ vocabulary
+- Create prompts requiring past tense narratives (keep it present/simple future)
+
+---
+
+⚡ OUTPUT FORMAT (JSON):
+Return a JSON array with each question having:
+{
+  "transcript": "German audio prompt text (what learner hears)",
+  "question": "English translation/instruction",
+  "correct_answer": "Gentle guidance on helpful response elements (1-2 sentences, not prescriptive)",
+  "correct_answer_reason": "Useful vocabulary and grammar structures for this topic (helps learners prepare)",
+  "topic": "Brief topic name",
+  "question_type": "monologue",
+  "question_metadata": {
+    "min_answer_seconds": 10,
+    "max_answer_seconds": 28,
+    "suggested_duration": 20,
+    "difficulty_notes": "Brief note on A1 appropriateness",
+    "key_vocabulary": ["word1", "word2", "word3"]
+  }
+}
+
+---
+
+EXAMPLE:
+{
+  "transcript": "Erzählen Sie etwas über Ihre Familie. Wer gehört zu Ihrer Familie?",
+  "question": "Tell something about your family. Who belongs to your family?",
+  "correct_answer": "Helpful to mention: family members, names, what they do. Any genuine attempt with 3-5 sentences works.",
+  "correct_answer_reason": "Useful vocabulary: Familie, Vater, Mutter, Bruder, Schwester. Useful grammar: possessive pronouns (mein, meine).",
+  "topic": "Family",
+  "question_type": "monologue",
+  "question_metadata": {
+    "min_answer_seconds": 20,
+    "max_answer_seconds": 50,
+    "suggested_duration": 35,
+    "difficulty_notes": "Describing family with possessive pronouns at A1 level",
+    "key_vocabulary": ["Familie", "Vater", "Mutter", "Bruder", "Schwester", "Eltern"]
+  }
+}
+
+---
+
+Now generate {{question_count}} diverse A1 German speaking prompts following these guidelines.
+

@@ -1,0 +1,90 @@
+You are a certified CEFR-level German examiner.
+
+Your task is to generate {{question_count}} different B1-level writing exercises for learners preparing for the Goethe-Zertifikat B1 exam.
+
+Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within B1 level.
+
+🎯 TASK REQUIREMENTS:
+- Use only CEFR B1 vocabulary and grammar
+- Each question must be based on a realistic situation
+- Questions must require more than one sentence to answer
+- Vocabulary should be simple but slightly challenging within B1
+- Use clear, specific instructions in German
+- Vary the question types, topics, and required formats
+
+---
+
+📝 TASK TYPES (Use all across the batch):
+- Writing detailed letters or emails
+- Describing complex experiences or events
+- Giving detailed instructions or directions
+- Writing about future plans or intentions
+- Making detailed comparisons
+- Writing reports or summaries
+- Expressing detailed opinions or preferences
+- Writing formal invitations and responses
+- Describing detailed processes or procedures
+- Writing about historical events
+
+---
+
+📚 TOPICS (Use all across the batch):
+- Personal achievements and goals
+- Daily routines and challenges
+- Culinary experiences and preferences
+- Shopping habits and consumer behavior
+- Travel experiences and aspirations
+- Hobbies and passions
+- Work and professional development
+- Home and lifestyle
+- Health and wellness
+- Weather patterns and climate change
+
+---
+
+🔁 VARIETY RULES:
+- Cover all 10 task types and all 10 topics at least once
+- Alternate between formal and informal writing styles
+- Mix first-person and third-person perspectives
+- Use both present and past tense (in B1 structure only)
+- Ensure each task has a unique scenario and writing format
+
+---
+
+🚫 DO NOT:
+- Repeat the same topic or task type in the same batch
+- Use vocabulary or grammar beyond B1 level
+- Request business or academic writing
+- Include abstract, emotional, or philosophical prompts
+- Use long or complex compound sentences
+
+---
+
+⚡ WRITING TASK STYLE:
+- Keep instructions short and actionable
+- Use familiar B1 situations
+- Avoid open-ended or vague tasks
+- Every instruction must specify the expected format and content
+- Tasks must be concrete, practical, and achievable for advanced learners
+
+---
+
+📦 RETURN ONLY THIS VALID JSON FORMAT:
+
+```json
+{
+  "questions": [
+    {
+      "topic": "Specific topic from the list above",
+      "task_type": "Type of writing task (email, note, form, etc.)",
+      "instruction": "Clear instruction in German telling student exactly what to write",
+      "context": "Brief scenario or background in German",
+      "requirements": "Specific content or sentence elements the student must include",
+      "minimum_words": 80,
+      "writing_format": "Email/Note/Form/Description/etc."
+    }
+    // ... repeat for {{question_count}} questions
+  ]
+}
+
+```

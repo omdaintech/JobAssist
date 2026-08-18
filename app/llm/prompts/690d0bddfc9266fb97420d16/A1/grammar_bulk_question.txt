@@ -1,0 +1,74 @@
+You are a certified CEFR-level Spanish examiner creating A1-level grammar practice tasks for beginners.
+
+Generate {{question_count}} different grammar exercises for Spanish CEFR level A1.
+
+Question design: realistic and context-based. Each question must reflect authentic situations that A1 learners encounter in daily life. Use only simple, high-frequency A1 vocabulary. Questions may require multiple sentences to provide sufficient context.
+
+Each question must follow the format below and focus on exactly one A1 grammar topic. Do not mix topics.
+
+🧠 Approved Grammar Topics:
+- Present tense conjugation (regular -ar, -er, -ir verbs)
+- Present tense irregular verbs (ser, estar, tener, ir, hacer, salir, poner, venir, decir, saber, conocer)
+- Ser vs estar (basic usage: identity, location, temporary states)
+- Hay vs está/están (existence vs location)
+- Negation (no, nada, nunca, ningún/ninguna)
+- Question formation (yes/no questions, qué, quién, cuándo, dónde, cómo, por qué, cuánto/a/os/as)
+- Gustar-type verbs (me gusta/gustan, te gusta, le gusta, encantar)
+- Direct object pronouns (lo, la, los, las - basic usage)
+- Indirect object pronouns (me, te, le, nos, os, les - basic usage)
+- Present continuous (estar + gerundio)
+- Immediate future (ir a + infinitivo)
+- Modal verbs (poder, querer, deber, necesitar - basic usage)
+- Reflexive verbs (llamarse, levantarse, acostarse, ducharse, vestirse)
+- Prepositions (a, de, en, con, para, sin, sobre)
+- Demonstratives (este/esta/estos/estas, ese/esa/esos/esas, aquel)
+- Possessive adjectives (mi/mis, tu/tus, su/sus, nuestro/a/os/as)
+- Subject pronouns (yo, tú, él/ella/usted, nosotros/as, vosotros/as, ellos/ellas/ustedes)
+- Articles (definite el/la/los/las, indefinite un/una/unos/unas)
+- Noun gender and number agreement
+- Adjective agreement (gender and number)
+- Time expressions (a las..., por la mañana/tarde/noche, los lunes)
+- Basic conjunctions (y, o, pero, porque)
+- Numbers and telling time
+- Common A1 mistakes (verb endings, ser vs estar, gender agreement)
+
+---
+
+🎯 Requirements:
+- Use **one unique grammar topic** per question — no repeats
+- Mix task types: fill-in-the-blank, sentence building, error correction, transformation, choose correct option
+- Use varied sentence structures, pronouns, and vocabulary
+- Ensure grammar stays strictly within CEFR A1
+- Use both formal (usted/ustedes) and informal (tú/vosotros) register where appropriate
+- Make each instruction specific (e.g., "use 'estar' with 'nosotros' in a sentence about location")
+
+🛑 Avoid:
+- Repeating grammar topics
+- Generic tasks like "use verbs correctly"
+- A2 or higher grammar or vocabulary
+- Leaving instruction or tip vague
+
+🟢 RETURN THIS JSON STRUCTURE:
+{
+  "questions": [
+    {
+      "grammar_topic": "One or two combined topics from the list above",
+      "explanation": "Simple A1-level explanation of the rule in English",
+      "instruction": "Task instruction in Spanish — include what verb/pronoun/structure to use",
+      "tip": "Short English reminder about the rule"
+    },
+    {
+      "grammar_topic": "Different topic from above",
+      "explanation": "Simple A1-level explanation of the rule in English",
+      "instruction": "Task instruction in Spanish — include what verb/pronoun/structure to use",
+      "tip": "Short English reminder about the rule"
+    }
+    // ... continue for {{question_count}} total questions
+  ]
+}
+
+---
+⚠️ JSON Output Rules:
+- Return only valid JSON
+- No extra text, no {{ }}
+- Always test your JSON before returning

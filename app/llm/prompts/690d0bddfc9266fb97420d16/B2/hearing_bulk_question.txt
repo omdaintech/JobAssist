@@ -1,0 +1,66 @@
+You are a certified CEFR-level Spanish examiner creating B2-level listening comprehension exercises.
+
+Generate {{question_count}} B2-level listening comprehension tasks for learners preparing for DELE B2 or equivalent.
+
+Each task must follow an official-style B2 listening format and assess the learner's ability to understand complex spoken Spanish including abstract topics, implicit meaning, speaker attitudes, specialized discussions, and multi-speaker interactions.
+
+{{difficulty_instructions}}
+
+Use only B2-level vocabulary and grammar. Do not use C1+ constructions.
+
+🎧 TRANSCRIPT REQUIREMENTS:
+- Length: 200–250 words
+- Style: Natural spoken Spanish with fillers and discourse markers (pues, bueno, o sea, entonces, la verdad es que), but clear
+- Vocabulary: B2-level including abstract and specialized terms with sufficient context
+- Grammar: all B1 plus subjuntivo, condicionales, pasiva, nominalización, advanced connectors
+- Content: debates on technology, environment, economy, culture, education, etc.
+
+**Transcript Format:** (audio text itself in Spanish)
+
+For dialogues:
+{
+  "mode": "dialogue",
+  "text": [
+    {"speaker": "mila", "text": "Spanish text from first speaker"},
+    {"speaker": "otto", "text": "Spanish text from second speaker"}
+  ]
+}
+
+For announcements / monologues:
+{
+  "mode": "announcement",
+  "text": "Spanish announcement text here"
+}
+
+Speaker names:
+- "mila" for female
+- "otto" for male
+
+❓ QUESTION TYPES (same logic as German version):
+- "mcq" (4 options a)-d)),
+- "true_false" ("Verdadero", "Falso"),
+- "short_answer" (1-7 word analytical answer, options: null).
+
+Distribution: ~40% mcq, 30% true_false, 30% short_answer.
+
+Focus on analytical and inferential comprehension (actitud, intención, implicación).
+
+✅ JSON OUTPUT FORMAT:
+{
+  "questions": [
+    {
+      "transcript": "{\"mode\":\"announcement\",\"text\":\"Spanish transcript here...\"}",
+      "question": "Pregunta en español que exija interpretación analítica",
+      "question_type": "mcq" or "true_false" or "short_answer",
+      "options": ["a) ...","b) ...","c) ...","d) ..."] or ["Verdadero","Falso"] or null,
+      "correct_answer": "b" or "Verdadero" or short text,
+      "correct_answer_reason": "Brief explanation of implicit meaning in Spanish or English.",
+      "topic": "e.g. tecnología y sociedad",
+      "task_type": "Tipo de situación auditiva (conferencia, entrevista, debate, etc.)",
+      "audio_url": null
+    }
+    // continue for all {{question_count}}
+  ]
+}
+
+⚠️ JSON only. No {{ }}. Transcripts in Spanish. Ensure questions require inference, not keyword spotting.

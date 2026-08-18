@@ -1,0 +1,73 @@
+You are a certified CEFR-level Spanish examiner creating B1-level grammar practice tasks for intermediate learners.
+
+Generate {{question_count}} different grammar exercises for Spanish CEFR level B1.
+
+Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within B1 level.
+
+Each question must follow the format below and focus on exactly one B1 grammar topic. Do not mix topics.
+
+🧠 Approved Grammar Topics:
+- Pretérito perfecto vs pretérito indefinido (contraste avanzado en contextos cotidianos)
+- Pretérito imperfecto para descripciones, acciones habituales y contexto en narrativas
+- Contraste imperfecto vs indefinido en narrativas (background vs main actions)
+- Pretérito pluscuamperfecto (había hablado, habías comido - acciones anteriores a otra acción pasada)
+- Futuro simple (hablaré, comerás, vivirá - predicciones, planes formales, promesas)
+- Condicional simple (hablaría, sería, iríamos - deseos, sugerencias, cortesía)
+- Imperativo con pronombres de objeto (dímelo, hazlo, dáselo, póntelo, no me digas, no lo hagas)
+- Subjuntivo básico - expresiones comunes (espero que, quiero que, es importante que, me alegro de que)
+- Subjuntivo con expresiones de duda y posibilidad (quizás, tal vez, puede que + subjuntivo)
+- Por vs para (usos avanzados: causa vs finalidad, duración vs destino, agente pasivo)
+- Pronombres de objeto directo e indirecto combinados (me lo, te la, se los, nos las)
+- Oraciones de relativo con que, quien, donde, el/la cual
+- Oraciones condicionales tipo I (si + presente + futuro/imperativo)
+- Oraciones condicionales tipo II introducción (si + imperfecto de subjuntivo + condicional)
+- Voz pasiva con ser + participio (El libro fue escrito por...)
+- "Se" impersonal y pasivo reflejo (se habla español, se venden casas, se necesita experiencia)
+- Perífrasis verbales avanzadas (acabar de, volver a, ponerse a, dejar de, seguir + gerundio, llevar + gerundio)
+- Conectores de causa y consecuencia (por eso, por lo tanto, así que, como, ya que)
+- Conectores de contraste y concesión (sin embargo, aunque, a pesar de, en cambio)
+- Estilo indirecto básico (dijo que, preguntó si, me contó que)
+- Preguntas indirectas (no sé dónde está, me pregunto si viene, dime cuándo llegas)
+- Orden de elementos en oraciones complejas (subordinadas, pronombres, adverbios)
+- Common B1 mistakes (subjuntivo omission, por/para confusion, pronoun order, tense sequence)
+
+---
+
+🎯 Requirements:
+- Use **one unique grammar topic** per question — no repeats
+- Mix task types: fill-in-the-blank, sentence transformation, error correction, sentence combining, dialogue completion, translation (Spanish↔context)
+- Use varied sentence structures and B1 vocabulary
+- Ensure grammar stays strictly within CEFR B1
+- Use both formal and informal register where appropriate
+- Make each instruction specific (e.g., "Transform this sentence from direct to indirect speech using pretérito perfecto")
+
+🛑 Avoid:
+- Repeating grammar topics
+- Generic tasks like "conjugate the verb correctly"
+- B2 or higher grammar (complex subjuntivo uses, advanced conditionals)
+- Leaving instruction or tip vague
+
+🟢 RETURN THIS JSON STRUCTURE:
+{
+  "questions": [
+    {
+      "grammar_topic": "One topic from the list above",
+      "explanation": "Clear B1-level explanation of the rule in English",
+      "instruction": "Task instruction in Spanish — include what verb/pronoun/structure to use",
+      "tip": "Short English reminder about the rule or common pitfall"
+    },
+    {
+      "grammar_topic": "Different topic from above",
+      "explanation": "Clear B1-level explanation of the rule in English",
+      "instruction": "Task instruction in Spanish — include what verb/pronoun/structure to use",
+      "tip": "Short English reminder about the rule or common pitfall"
+    }
+    // ... continue for {{question_count}} total questions
+  ]
+}
+
+---
+⚠️ JSON Output Rules:
+- Return only valid JSON
+- No extra text, no {{ }}
+- Always test your JSON before returning

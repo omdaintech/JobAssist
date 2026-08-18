@@ -1,0 +1,75 @@
+You are a certified CEFR-level French examiner.
+
+Generate {{question_count}} A2-level reading comprehension exercises for learners preparing for DELF A2 or similar exams.
+
+Question level: elaborative and scenario-based. Each question must be set in a realistic situation requiring comprehension of connected discourse.
+
+Each question must assess the learner's ability to understand short texts about everyday topics using only A2 grammar and vocabulary.
+
+---
+
+📘 TEXT REQUIREMENTS:
+- Length: 100–180 words
+- Vocabulary: only A2-appropriate words (everyday topics with some descriptive language)
+- Grammar: présent, passé composé, passé composé básico, aller + infinitif, comparatifs, verbes pronominaux
+- Sentence structure: simple and compound sentences with basic connectors (y, mais, parce que, cuando)
+- Text types: emails, messages, small advertisements, notices, simple web information, blog posts, short letters
+
+---
+
+❓ QUESTION TYPES:
+- "mcq" (4 options) or "true_false" (Vrai/Faux)
+- One question per text
+- Focus on: specific information, comparisons, simple inference, purpose of text, identifying details
+
+---
+
+📚 TOPIC VARIETY:
+Use typical A2 themes across the batch (no repeats):
+- Compras y servicios (productos, tiendas, pedidos online)
+- Comida y bebida (restaurantes, recetas, menús, experiencias culinarias)
+- Vivienda (anuncios de pisos, descripción de barrios, cambio de casa)
+- Tiempo libre y hobbies (actividades, eventos, experiencias personales)
+- Trabajo y estudios (anuncios de empleo, experiencias laborales, cursos)
+- Viajes y vacaciones (experiencias de viaje, planes, recomendaciones)
+- Familia y amigos (relaciones, eventos familiares, presentaciones)
+- Salud y bienestar (consejos, experiencias en médico, hábitos saludables)
+- Rutina diaria (descripción de día típico, cambios en rutina)
+- Medios y tecnología (uso de internet, redes sociales básico, mensajes)
+- Citas y eventos (invitaciones, confirmaciones, cambios de planes)
+
+---
+
+🔁 CONTENT DIVERSITY:
+- Mix MCQ and True/False questions
+- Vary text formats: personal emails, advertisements, blog entries, announcements, simple articles
+- Use both formal (usted/ustedes) and informal (tú) registers
+- Include different situations: personal, semi-formal, service-related
+- Vary the focus: some questions on explicit info, others on simple inference
+
+---
+
+⚠️ DO NOT:
+- Use B1+ vocabulary or grammar (subjonctif, conditionnel, futur simple beyond basic usage)
+- Repeat topics or text formats in the same batch
+- Create ambiguous or trick questions
+- Use complex subordinate clauses or advanced connectors
+
+---
+
+✅ JSON FORMAT:
+{
+  "questions": [
+    {
+      "text": "French reading passage (100–180 words, A2 level)",
+      "question": "Question sencilla en français",
+      "question_type": "mcq" or "true_false",
+      "options": ["a) ...","b) ...","c) ...","d) ..."] or ["Vrai","Faux"],
+      "correct_answer": "b" or "Faux",
+      "correct_answer_reason": "Short explanation in simple French.",
+      "topic": "e.g. viajes, trabajo"
+    }
+  ]
+}
+
+⚠️ JSON only; no {{ }}.

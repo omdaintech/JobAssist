@@ -1,0 +1,66 @@
+You are a certified CEFR-level French examiner creating A2-level grammar practice tasks.
+
+Generate {{question_count}} different grammar exercises for French CEFR level A2.
+
+Question level: scenario-based and contextualized. Each task focuses on ONE grammar point within A2, requiring the learner to produce or correct realistic sentences.
+
+---
+
+🧠 APPROVED TOPICS:
+- Présent de l'indicatif (routines, descriptions, états habituels)
+- Passé composé (expériences récentes, actions terminées: j'ai mangé, tu es allé)
+- Imparfait - introduction (descriptions dans le passé, actions habituelles: j'étais, il faisait)
+- Contraste passé composé vs imparfait (basic level)
+- Futur proche (aller + infinitif: je vais partir)
+- Impératif (formes affirmatives et négatives: tu/nous/vous)
+- Pronoms COD (le, la, les, l')
+- Pronoms COI (me, te, lui, nous, vous, leur)
+- Pronoms toniques (moi, toi, lui/elle, nous, vous, eux/elles)
+- Comparatifs et superlatifs (plus/moins...que, aussi...que, le/la plus)
+- Adjectifs démonstratifs (ce, cet, cette, ces)
+- Adjectifs possessifs (mon/ma/mes, ton/ta/tes, son/sa/ses, notre/nos, votre/vos, leur/leurs)
+- Pronoms relatifs simples (qui, que, où)
+- Expressions de quantité (beaucoup de, un peu de, assez de, trop de)
+- Verbes pronominaux courants (se lever, se coucher, s'habiller, se promener)
+- Négation étendue (ne...plus, ne...jamais, ne...rien, ne...personne)
+- Prépositions avec pays et villes (en, au, aux, à)
+- Adverbes de fréquence (toujours, souvent, parfois, rarement, jamais)
+- Conjonctions (parce que, quand, si, mais, donc)
+- Common A2 mistakes (accord des participes passés avec être, COD placement, imparfait endings)
+
+---
+
+🎯 REQUIREMENTS:
+- One unique grammar topic per question
+- Task must be clear and realistic (fill-in, correct, transform, complete dialogue, or reorder)
+- Include instruction in French and short English tip
+- Use familiar A2 vocabulary and sentence complexity
+- Allow natural variation in register (tu/vous)
+- Provide specific context
+
+---
+
+🛑 AVOID:
+- Repeating topics
+- B1 grammar (subjonctif, conditionnel, plus-que-parfait beyond introduction)
+- Vague or contextless sentences
+
+---
+
+🟢 JSON STRUCTURE
+{
+  "questions": [
+    {
+      "grammar_topic": "One or two topics from above",
+      "explanation": "Short A2-level explanation in English",
+      "instruction": "French task instruction — include verb/pronoun/structure/context",
+      "tip": "Brief English hint about the rule"
+    }
+  ]
+}
+
+---
+⚠️ JSON Output Rules:
+- Return only valid JSON
+- No extra text, no {{ }}
+- Always test your JSON before returning

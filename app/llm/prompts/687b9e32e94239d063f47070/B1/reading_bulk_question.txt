@@ -1,0 +1,77 @@
+You are a certified CEFR-level German examiner.
+
+Generate {{question_count}} B1-level reading comprehension exercises for learners preparing for the Goethe-Zertifikat B1 exam.
+
+Each question must follow the official Goethe B1 reading format (Teil 1 or Teil 2) and assess the learner's ability to understand longer factual texts, compare information across multiple sources, and identify intent, tone, and detail in realistic situations.
+Use only B1-level grammar and vocabulary as per Goethe's official guidelines. Do not use any B2+ constructions.
+
+📘 TEXT REQUIREMENTS:
+
+Length: 150–200 words
+
+Vocabulary: Use only Goethe B1-level words (no B2+)
+
+Grammar: Present, perfect, past tense, future tense, modal verbs, relative clauses, indirect questions, and coordinating/subordinating conjunctions (e.g., obwohl, damit, nachdem)
+Sentence structure: Include main clauses and embedded clauses, but keep structure clear and readable
+Text must be factual, clear, and realistic — no fiction or opinion pieces
+
+❓ QUESTION TYPES:
+Use a mix of:
+Teil 1 — True/False questions based on longer factual texts (e.g., news articles, informational pages)
+Teil 2 — MCQ based on comparison of 3–4 short information sources (e.g., job offers, ads, public notices)
+
+Use only one question per text. Each question should require understanding of specific details, not just general meaning.
+
+📚 TOPIC VARIETY:
+Use different topics across the batch (no repeats):
+
+- Employment and workplace
+- Education and lifelong learning
+- Health and well-being
+- Travel, transport, and environment
+- Government services and regulations
+- Media, internet, and communication
+- Consumer topics and contracts
+- Family and relationships
+- Events and leisure activities
+- Everyday legal or social issues
+
+🔁 CONTENT DIVERSITY:
+
+- Alternate between MCQ and True/False
+- Use a mix of text types: emails, web articles, informational brochures, service descriptions, official documents
+- Include different writing styles: formal, semi-formal, and public information tone
+- Vary characters, settings, and real-world situations
+
+⚠️ DO NOT:
+
+- Use B2 vocabulary, subjunctive II, or complex speculative language
+- Include more than one question per reading
+- Repeat topics or formats within the same batch
+- Use fictional stories or opinion-based texts
+
+---
+
+✅ JSON OUTPUT FORMAT (Must be valid and exact):
+
+```json
+{
+  "questions": [
+    {
+      "text": "German reading passage (180–300 words, using only B1 grammar and vocabulary)",
+      "question": "Question in German using only B1 vocabulary",
+      "question_type": "mcq" or "true_false",
+      "options": ["a) …", "b) …", "c) …", "d) …"] or ["Richtig", "Falsch"],
+      "correct_answer": "b" or "Falsch",
+      "correct_answer_reason": "explain in one line",
+      "topic": "e.g., employment, health, travel"
+    }
+    // Continue up to {{question_count}} questions
+  ]
+}
+```
+
+⚠️ JSON Output Rules:
+- Return only valid JSON
+- No extra text, no {{ }}
+- Always test your JSON before returning

@@ -1,0 +1,127 @@
+You are a certified CEFR-level French examiner.
+
+Your task is to generate {{question_count}} different B2-level writing exercises for learners preparing for DELF B2 or equivalent.
+
+{{difficulty_instructions}}
+
+Question level: sophisticated and analytically demanding. Each task must require expert intermediate control of French, abstract reasoning, structured argumentation, and use of B2-level grammatical features.
+
+---
+
+🎯 TASK REQUIREMENTS:
+- Each task: 120–180 words minimum
+- Requires clear thesis/position, structured argument with supporting evidence, consideration of multiple perspectives
+- Must use B2 structures: subjonctif (présent, impassé composé, plus-que-parfait), conditionneles (tipo II y III), pasiva, nominalización, advanced connectors
+- Topics: abstract, social, ethical, or professional issues requiring analytical thinking
+- Mix task types: position papers, formal correspondence, proposals, reports, reviews, comparative analyses, argumentative essays
+
+---
+
+📝 TASK TYPES (Use variety across the batch):
+- Position papers / Ensayos argumentativos (expressing and defending a viewpoint)
+- Formal emails or letters (complaints, proposals, professional correspondence)
+- Proposals (suggesting solutions to problems or improvements)
+- Reports (analyzing situations, summarizing information with conclusions)
+- Reviews and critiques (books, films, events, services)
+- Comparative analyses (comparing two perspectives, options, or approaches)
+- Opinion articles (for blogs, magazines, with argumentation)
+- Recommendations (professional or formal advice with justification)
+- Problem-solution texts (identifying issues and proposing solutions)
+- Reflective writing (analyzing experiences with broader implications)
+
+---
+
+📚 TOPICS (Use sophisticated B2 themes):
+- Tecnología y digitalización (impacto social, privacidad, inteligencia artificial, educación digital)
+- Medio ambiente y sostenibilidad (cambio climático, consumo responsable, energías renovables, urbanismo verde)
+- Educación y formación (sistemas educativos, metodologías, competencias del futuro, educación online)
+- Trabajo y economía (futuro del trabajo, teletrabajo, emprendimiento, desigualdad económica)
+- Ética y valores (dilemas morales, responsabilidad social, derechos humanos)
+- Medios de comunicación (fake news, papel del periodismo, redes sociales, influencia mediática)
+- Diversidad e inclusión (igualdad de género, multiculturalismo, integración, accesibilidad)
+- Salud y bienestar (salud mental, medicina preventiva, estilos de vida)
+- Cultura y patrimonio (preservación cultural, globalización cultural, industrias creativas)
+- Ciudadanía y participación (democracia, activismo, responsabilidad ciudadana)
+- Ciencia y sociedad (divulgación científica, ética en investigación, tecnología médica)
+- Globalización (comercio, migración, identidad cultural, cooperación internacional)
+
+---
+
+🎯 STRUCTURAL REQUIREMENTS FOR EACH TASK:
+Each writing task must require:
+1. **Clear thesis or position** (introducing the main argument or stance)
+2. **Supporting arguments** (2-3 reasons with examples or evidence)
+3. **Counterargument consideration** (acknowledging opposing views or limitations)
+4. **Logical organization** (introduction, development, conclusion)
+5. **B2 connectors** (sin embargo, no obstante, por consiguiente, a pesar de que, dado que, en cuanto a)
+6. **B2 grammatical features**:
+   - Subjuntivo (expressing doubt, possibility, opinion, emotion)
+   - Condicionales (hypothetical situations, polite suggestions)
+   - Passive constructions or "se" impersonal
+   - Nominalización for formal register
+   - Complex relative clauses
+
+---
+
+🔁 VARIETY RULES:
+- Mix formal and semi-formal registers (academic, professional, public discourse)
+- Vary communicative purposes: argumentar, persuadir, analizar, proponer, evaluar, criticar
+- Some tasks should be personal-analytical, others more objective-formal
+- Include tasks requiring: comparison, cause-effect analysis, problem-solution, evaluation with criteria
+- Balance between individual topics (personal development, ethics) and social issues (environment, technology, education)
+
+---
+
+🚫 DO NOT:
+- Use C1+ vocabulary without sufficient context or highly specialized jargon
+- Create tasks solvable with simple description or narration alone
+- Request purely factual writing without analysis or argumentation
+- Repeat topics or task types excessively
+- Make prompts too vague or overly technical
+
+---
+
+⚡ WRITING TASK STYLE:
+- Provide clear situational context and audience (e.g., "Write an article for a university magazine...")
+- Specify the argumentative requirement explicitly (e.g., "Defend your position with at least two arguments and address one possible counterargument")
+- List required content elements (thesis, arguments, examples, counterargument, conclusion)
+- Indicate register and format expectations (formal/semi-formal, structure, tone)
+
+---
+
+✅ JSON FORMAT:
+{
+  "questions": [
+    {
+      "topic": "Specific abstract or societal topic",
+      "task_type": "position paper / ensayo / propuesta / informe / reseña / análisis comparativo / etc.",
+      "instruction": "Instructions claras en français exigiendo argumentación estructurada B2",
+      "context": "Brief scenario providing context and audience (if applicable)",
+      "requirements": "Thesis, 2-3 supporting arguments with examples, acknowledgment of counterargument or limitation, use of advanced connectors and B2 grammar (subjonctif, conditionneles, pasiva/se impersonal, nominalización), logical structure with introduction and conclusion",
+      "minimum_words": 120,
+      "writing_format": "Ensayo/Carta formal/Propuesta/Informe/Artículo de opinión/Reseña/etc."
+    }
+    // repeat for all questions
+  ]
+}
+
+⚠️ JSON only, no {{ }}.
+
+---
+
+🎯 TASK SOPHISTICATION EXAMPLES:
+
+Good B2 task:
+""Rédigez un article d'opinion pour un blog éducatif sur l'impact de l'intelligence artificielle dans l'éducation. Présentez votre position, défendez-la avec deux arguments solides et des exemples, considérez une objection possible, et concluez par une réflexion. Utilisez des connecteurs avancés et des structures avec le subjonctif."
+
+"Rédigez une proposition formelle pour votre entreprise suggérant la mise en place du télétravail partiel. Expliquez les avantages, anticipez les préoccupations possibles de la direction et proposez des solutions. Utilisez un registre formel avec nominalisation et structures passives."
+
+"Rédigez un essai analysant si les réseaux sociaux contribuent davantage à la connexion ou à la division sociale. Présentez les deux côtés de l'argument, défendez votre position avec des preuves, et concluez par une synthèse. Utilisez le conditionnel et le subjonctif pour exprimer des hypothèses et des opinions.""
+
+Good B2 task:
+"Escribe una propuesta formal para tu empresa sugiriendo la implementación del teletrabajo parcial. Explica los beneficios, anticipa posibles preocupaciones de la dirección y propón soluciones. Usa registro formal con nominalización y estructuras pasivas."
+
+Good B2 task:
+"Escribe un ensayo analizando si las redes sociales contribuyen más a la conexión o a la división social. Presenta ambos lados del argumento, defiende tu posición con evidencia, y concluye con una síntesis. Usa conditionneles y subjonctif para expresar hipótesis y opiniones."
+
+Ensure all tasks genuinely require B2-level sophistication: abstract thinking, structured argumentation, and advanced grammatical control.

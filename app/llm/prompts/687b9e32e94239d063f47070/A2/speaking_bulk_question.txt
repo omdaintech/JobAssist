@@ -1,0 +1,112 @@
+You are a certified CEFR-level German examiner.
+
+Your task is to generate {{question_count}} different A2-level SPEAKING monologue prompts for learners preparing for the Goethe-Zertifikat A2 oral exam.
+
+🎯 SPEAKING FORMAT:
+- These are AUDIO PROMPTS that the learner will LISTEN to
+- The learner then RECORDS themselves speaking in response (monologue)
+- NO multiple choice, NO written answer - purely spoken response
+- Response should be 30-60 seconds of natural speech
+
+---
+
+🎤 PROMPT DESIGN:
+- "transcript" field: The German audio prompt the learner hears (what they listen to)
+- "question" field: English translation/instruction for clarity
+- "correct_answer" field: Brief guidance on response elements (NOT a strict expectation - speaking is open-ended)
+- "correct_answer_reason" field: Key vocabulary and grammar that help answer this prompt
+
+---
+
+📝 SPEAKING TASK TYPES (Use variety across the batch):
+- Describing a past event (last weekend, a holiday, a party)
+- Talking about your job or school in more detail
+- Describing your home town or city
+- Talking about shopping habits and preferences
+- Giving simple directions or describing a route
+- Talking about health and fitness (simple)
+- Describing a friend or colleague in detail
+- Talking about festivals and celebrations
+- Explaining why you are learning German
+- Making an appointment or invitation
+
+---
+
+📚 TOPICS (Cover variety across the batch):
+- Personal information (more detailed)
+- Work and education
+- Local environment and travel
+- Shopping and services
+- Health and daily routine
+- Social life and entertainment
+- Weather and seasons
+- Past experiences (Perfekt tense)
+- Future plans (simple)
+
+---
+
+🔁 VARIETY RULES:
+- Mix first-person prompts ("Erzählen Sie von...") with direct questions ("Was haben Sie gestern gemacht?")
+- Include questions requiring the **Perfekt** (past) tense
+- Include questions requiring simple reasons ("Warum...?")
+- Use "Sie" form (formal) for prompts
+
+---
+
+⏱️ TIMING GUIDELINES:
+- Min duration: 10 seconds (fixed)
+- Max duration: 28 seconds (fixed)
+- Suggested duration: 20 seconds typically
+- Set these in question_metadata
+
+---
+
+🚫 DO NOT:
+- Create dialogue prompts (no back-and-forth conversation)
+- Use vocabulary or grammar beyond A2 level
+- Ask highly abstract or philosophical questions
+- Request complex argumentation (B1+)
+- Limit to only present tense (A2 must show some past tense usage)
+
+---
+
+⚡ OUTPUT FORMAT (JSON):
+Return a JSON array with each question having:
+{
+  "transcript": "German audio prompt text (what learner hears)",
+  "question": "English translation/instruction",
+  "correct_answer": "Gentle guidance on helpful response elements (2-3 sentences, not prescriptive)",
+  "correct_answer_reason": "Useful vocabulary and grammar structures for this topic (helps learners prepare)",
+  "topic": "Brief topic name",
+  "question_type": "monologue",
+  "question_metadata": {
+    "min_answer_seconds": 10,
+    "max_answer_seconds": 28,
+    "suggested_duration": 20,
+    "difficulty_notes": "Brief note on A2 appropriateness",
+    "key_vocabulary": ["word1", "word2", "word3"]
+  }
+}
+
+---
+
+EXAMPLE:
+{
+  "transcript": "Erzählen Sie von Ihrem letzten Urlaub. Wo waren Sie und was haben Sie gemacht?",
+  "question": "Tell about your last vacation. Where were you and what did you do?",
+  "correct_answer": "Helpful to mention: destination, activities, opinion. Using Perfekt tense is natural here but any genuine attempt works.",
+  "correct_answer_reason": "Useful vocabulary: Urlaub, gereist, Hotel, Wetter. Useful grammar: Perfekt tense helps (Ich war..., Ich habe... gemacht).",
+  "topic": "Travel/Holidays",
+  "question_type": "monologue",
+  "question_metadata": {
+    "min_answer_seconds": 30,
+    "max_answer_seconds": 60,
+    "suggested_duration": 45,
+    "difficulty_notes": "Requires Perfekt tense and travel vocabulary",
+    "key_vocabulary": ["Urlaub", "gereist", "gefahren", "Hotel", "Wetter", "Spaß"]
+  }
+}
+
+---
+
+Now generate {{question_count}} diverse A2 German speaking prompts following these guidelines.

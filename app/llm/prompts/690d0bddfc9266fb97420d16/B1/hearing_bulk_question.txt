@@ -1,0 +1,70 @@
+You are a certified CEFR-level Spanish examiner.
+
+Generate {{question_count}} B1-level listening comprehension exercises for learners preparing for a DELE B1-style exam.
+
+Question level: elaborative and scenario-based. Each question must be set in a realistic situation or require more than one sentence to complete. Use more challenging vocabulary within B1 level.
+
+{{difficulty_instructions}}
+
+Each question represents a listening task with B1 complexity. Generate the transcript in a simple JSON format that will be used for text-to-speech generation.
+
+🎧 TRANSCRIPT REQUIREMENTS
+- Length: 140–200 Spanish words
+- Voice: one or two speakers
+- Language: B1 vocabulary with clear past tenses, future expressions, connectors
+- Structure: natural Spanish with explanations, reasons, polite requests
+- Content: everyday and semi-formal topics requiring inference and understanding of details
+
+Transcript Format (stringified JSON):
+
+Dialogues:
+{
+  "mode": "dialogue",
+  "text": [
+    {"speaker": "mila", "text": "Spanish text from first speaker"},
+    {"speaker": "otto", "text": "Spanish text from second speaker"}
+  ]
+}
+
+Announcements:
+{
+  "mode": "announcement",
+  "text": "Spanish announcement text here"
+}
+
+Speakers:
+- "mila" for female
+- "otto" for male
+
+❓ QUESTION TYPES
+Use ONLY:
+- "fill_in_blank"
+- "short_answer"
+- "mcq"
+- "true_false"
+
+Rules:
+- fill_in_blank and short_answer: "options": null
+- mcq: 4 options "a) ...", "b) ...", "c) ...", "d) ..."
+- true_false: ["Verdadero","Falso"]
+
+Questions must require comprehension or simple inference, not only keyword spotting.
+
+✅ JSON RESPONSE FORMAT
+{
+  "questions": [
+    {
+      "transcript": "{\"mode\":\"announcement\",\"text\":\"Spanish transcript here...\"}",
+      "question": "Pregunta en español con enfoque B1",
+      "question_type": "mcq" or "true_false" or "fill_in_blank" or "short_answer",
+      "options": [...],
+      "correct_answer": "b" or "Verdadero" or short text,
+      "correct_answer_reason": "Short explanation of the clue in the audio.",
+      "topic": "e.g., trabajo, viajes, estudios",
+      "task_type": "Type of situation (phone message, radio info, etc.)",
+      "audio_url": null
+    }
+  ]
+}
+
+⚠️ JSON only, no {{ }} in final output when used.

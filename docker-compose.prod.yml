@@ -1,0 +1,164 @@
+services:
+  # React Frontend Production Server (Main Frontend)
+  frontend:
+    build:
+      context: ./x-frontend/frontend-v2
+      dockerfile: ../Dockerfile
+      target: production
+      args:
+        - NODE_VERSION=22
+        - BUILD_TARGET=production
+        # Flagsmith Production Environment (build-time variable)
+        - VITE_FLAGSMITH_ENVIRONMENT_ID=YOUR_FLAGSMITH_PROD_ID
+      # Limit build resources
+      shm_size: '256mb'
+    ports:
+    - "81:80"
+    environment:
+      - VITE_APP_ENV=production
+      - VITE_API_URL=
+      - NODE_ENV=production
+    depends_on:
+      - backend
+    networks:
+      - prod-network
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.5"
+        reservations:
+          memory: 64M
+          cpus: "0.2"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Admin Frontend Production Server (React + Shadcn/UI)
+  admin-frontend:
+    build:
+      context: ./x-frontend/admin-frontend-v2
+      dockerfile: ../Dockerfile
+      target: production
+      args:
+        - NODE_VERSION=20
+        - BUILD_TARGET=production
+      # Limit build resources
+      shm_size: '256mb'
+    ports:
+    - "82:80"
+    environment:
+      - VITE_APP_ENV=production
+      - VITE_API_URL=
+      - NODE_ENV=production
+    depends_on:
+      - backend
+    networks:
+      - prod-network
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.5"
+        reservations:
+          memory: 64M
+          cpus: "0.2"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # FastAPI Backend API
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - "83:80"
+    env_file:
+      - .env.prod
+    environment:
+      - DEBUG=False
+      - FRONTEND_URL=https://app.example.com
+      - ADMIN_URL=https://admin.example.com
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - prod-network
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+          cpus: "1.0"
+        reservations:
+          memory: 256M
+          cpus: "0.5"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Credit Cleanup Cron Job (runs hourly) + Database Backup (daily at 2 AM)
+  credit-cron:
+    build:
+      context: .
+      dockerfile: Dockerfile.cron
+    env_file:
+      - .env.prod
+    environment:
+      - ENVIRONMENT=production  # Required for database backup safety check
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - prod-network
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: "0.2"
+        reservations:
+          memory: 64M
+          cpus: "0.1"
+    healthcheck:
+      test: ["CMD", "test", "-f", "/var/log/cron.log"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  # Promtail - Log Collector (ships logs to Grafana Cloud)
+  promtail:
+    image: grafana/promtail:2.9.2
+    volumes:
+      - /var/log:/var/log:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - ./monitoring/promtail-config-prod.yml:/etc/promtail/config.yml:ro
+    command: -config.file=/etc/promtail/config.yml
+    env_file:
+      - .env.prod
+    networks:
+      - prod-network
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: "0.5"
+        reservations:
+          memory: 64M
+          cpus: "0.2"
+
+networks:
+  prod-network:
+    driver: bridge

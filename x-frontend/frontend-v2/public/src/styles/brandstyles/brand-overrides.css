@@ -1,0 +1,172 @@
+/**
+ * Brand Color Overrides - Common for all brands
+ * This file contains generic overrides that work with any brand's CSS variables
+ * Include this after brand-specific CSS to ensure proper theming
+ */
+
+/* Override all eu-blue classes with brand colors */
+.bg-eu-blue {
+  background-color: hsl(var(--brand-primary)) !important;
+  color: hsl(var(--brand-primary-foreground)) !important;
+}
+
+.bg-eu-blue\/90,
+.hover\:bg-eu-blue\/90:hover {
+  background-color: hsl(var(--brand-primary-hover)) !important;
+}
+
+.hover\:bg-eu-blue:hover,
+.hover\:bg-eu-blue-700:hover {
+  background-color: hsl(var(--brand-primary-hover)) !important;
+}
+
+/* Additional specific selectors for default brand compatibility */
+button.hover\:bg-eu-blue\/90:hover,
+.bg-eu-blue.hover\:bg-eu-blue\/90:hover {
+  background-color: hsl(var(--brand-primary-hover, 214 100% 25%)) !important;
+}
+
+/* Force the hover state with maximum specificity for default case */
+button.bg-eu-blue.hover\:bg-eu-blue\/90.text-white:hover {
+  background-color: hsl(var(--brand-primary-hover, 214 100% 25%)) !important;
+}
+
+/* Fallback for when CSS variable isn't working */
+:root button.bg-eu-blue:hover,
+:root .bg-eu-blue:hover {
+  background-color: hsl(var(--brand-primary-hover, 214 100% 25%)) !important;
+}
+
+.text-eu-blue {
+  color: hsl(var(--brand-primary)) !important;
+}
+
+.hover\:text-eu-blue:hover {
+  color: hsl(var(--brand-primary)) !important;
+}
+
+.border-eu-blue {
+  border-color: hsl(var(--brand-primary)) !important;
+}
+
+.border-eu-blue-800 {
+  border-color: hsl(var(--brand-primary-hover)) !important;
+}
+
+.bg-eu-blue\/5 {
+  background-color: hsl(var(--brand-primary) / 0.05) !important;
+}
+
+/* Override border and loading spinner colors */
+.border-b-2.border-eu-blue {
+  border-bottom-color: hsl(var(--brand-primary)) !important;
+}
+
+.border-l-4.border-eu-blue {
+  border-left-color: hsl(var(--brand-primary)) !important;
+}
+
+/* Override hardcoded blue classes with brand colors */
+.bg-blue-600 {
+  background-color: hsl(var(--brand-primary)) !important;
+  color: hsl(var(--brand-primary-foreground)) !important;
+}
+
+.hover\:bg-blue-700:hover {
+  background-color: hsl(var(--brand-primary-hover)) !important;
+}
+
+.bg-blue-500 {
+  background-color: hsl(var(--brand-primary)) !important;
+  color: hsl(var(--brand-primary-foreground)) !important;
+}
+
+.hover\:bg-blue-600:hover {
+  background-color: hsl(var(--brand-primary-hover)) !important;
+}
+
+.text-blue-600,
+.text-blue-500 {
+  color: hsl(var(--brand-primary)) !important;
+}
+
+.border-blue-600,
+.border-blue-500 {
+  border-color: hsl(var(--brand-primary)) !important;
+}
+
+/* Focus states */
+.focus\:ring-blue-500:focus {
+  --tw-ring-color: hsl(var(--brand-primary) / 0.5) !important;
+}
+
+.focus\:border-blue-500:focus {
+  border-color: hsl(var(--brand-primary)) !important;
+}
+
+/* Additional blue variants that might be used */
+.bg-blue-50 {
+  background-color: hsl(var(--brand-primary) / 0.05) !important;
+}
+
+.bg-blue-100 {
+  background-color: hsl(var(--brand-primary) / 0.1) !important;
+}
+
+.text-blue-700,
+.text-blue-800 {
+  color: hsl(var(--brand-primary-hover)) !important;
+}
+
+/* Brand utility classes */
+.brand-text {
+  font-family: var(--brand-font-family) !important;
+}
+
+.brand-primary-bg {
+  background-color: hsl(var(--brand-primary)) !important;
+  color: hsl(var(--brand-primary-foreground)) !important;
+}
+
+.brand-primary-bg:hover {
+  background-color: hsl(var(--brand-primary-hover)) !important;
+}
+
+.brand-logo-text::before {
+  content: var(--brand-logo-text);
+}
+
+/* Comprehensive button hover state fixes */
+/* More specific selectors to override Tailwind's hover classes */
+/* Target the exact class combination used in SessionLanding */
+button.bg-eu-blue.hover\:bg-eu-blue\/90:hover,
+.bg-eu-blue.hover\:bg-eu-blue\/90:hover,
+button.bg-eu-blue:hover,
+.bg-eu-blue:hover,
+button[class*="bg-eu-blue hover:bg-eu-blue"]:hover,
+.hover\:bg-eu-blue:hover,
+.hover\:bg-eu-blue-700:hover,
+.hover\:bg-eu-blue\/80:hover,
+.hover\:bg-eu-blue\/85:hover,
+.hover\:bg-eu-blue\/90:hover,
+.hover\:bg-eu-blue\/95:hover {
+  background-color: hsl(var(--brand-primary-hover)) !important;
+}
+
+/* Extra specific overrides for button elements with multiple classes */
+button[class*="bg-eu-blue"][class*="hover:bg-eu-blue"]:hover,
+a[class*="bg-eu-blue"][class*="hover:bg-eu-blue"]:hover,
+div[class*="bg-eu-blue"][class*="hover:bg-eu-blue"]:hover {
+  background-color: hsl(var(--brand-primary-hover)) !important;
+}
+
+/* Button component specific overrides */
+.btn-primary,
+.btn-primary:hover {
+  background-color: hsl(var(--brand-primary)) !important;
+  color: hsl(var(--brand-primary-foreground)) !important;
+}
+
+.btn-primary:hover {
+  background-color: hsl(var(--brand-primary-hover)) !important;
+}

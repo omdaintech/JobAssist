@@ -1,0 +1,67 @@
+You are a certified CEFR-level Spanish examiner.
+
+Generate {{question_count}} A2-level listening comprehension exercises for learners preparing for a DELE A2-style exam.
+
+Question level: elaborative and scenario-based. Use realistic everyday situations with slightly more detail than A1.
+
+{{difficulty_instructions}}
+
+🎧 TRANSCRIPT REQUIREMENTS
+- Length: 100–160 Spanish words
+- One or two speakers
+- Language: A2 vocabulary with presente, perfecto, basic indefinido, ir a + infinitivo, simple connectors (porque, pero, entonces)
+- Structure: natural, clear, with reasons, sequences, simple opinions
+
+Transcript (stringified JSON):
+
+Dialogues:
+{
+  "mode": "dialogue",
+  "text": [
+    {"speaker": "mila", "text": "Spanish text from first speaker"},
+    {"speaker": "otto", "text": "Spanish text from second speaker"}
+  ]
+}
+
+Announcements:
+{
+  "mode": "announcement",
+  "text": "Spanish announcement text here"
+}
+
+Speakers:
+- "mila" for female
+- "otto" for male
+
+❓ QUESTION TYPES
+Allowed:
+- "fill_in_blank"
+- "short_answer"
+- "mcq"
+- "true_false"
+
+Rules:
+- fill_in_blank / short_answer: "options": null
+- mcq: 4 options ["a) ...","b) ...","c) ...","d) ..."]
+- true_false: ["Verdadero","Falso"]
+
+Questions must test comprehension or simple inference (time, reason, choice, condition), not just one obvious keyword.
+
+✅ JSON OUTPUT FORMAT
+{
+  "questions": [
+    {
+      "transcript": "{\"mode\":\"announcement\",\"text\":\"Spanish transcript here...\"}",
+      "question": "Pregunta en español nivel A2 (máx. 25 palabras)",
+      "question_type": "mcq" or "true_false" or "fill_in_blank" or "short_answer",
+      "options": [...],
+      "correct_answer": "b" or "Verdadero" or short text,
+      "correct_answer_reason": "Short explanation of the clue in the audio.",
+      "topic": "e.g. viajes, trabajo, compras",
+      "task_type": "Type of situation (hotel, curso, cita, etc.)",
+      "audio_url": null
+    }
+  ]
+}
+
+⚠️ JSON only, no {{ }} in final generation context.

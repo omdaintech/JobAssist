@@ -1,0 +1,150 @@
+services:
+  # React Frontend Development Server (Main Frontend)
+  frontend:
+    build:
+      context: ./x-frontend/frontend-v2
+      dockerfile: ../Dockerfile
+      target: development
+      args:
+        - NODE_VERSION=22
+        - BUILD_TARGET=development
+    ports:
+    - "91:80"
+    volumes:
+      - ./x-frontend/frontend-v2/src:/app/src
+      - ./x-frontend/frontend-v2/public:/app/public
+      - ./x-frontend/frontend-v2/index.html:/app/index.html
+      - ./x-frontend/frontend-v2/vite.config.ts:/app/vite.config.ts
+      - ./x-frontend/frontend-v2/tailwind.config.js:/app/tailwind.config.js
+      - ./x-frontend/frontend-v2/postcss.config.js:/app/postcss.config.js
+      - ./x-frontend/frontend-v2/tsconfig.json:/app/tsconfig.json
+      - ./x-frontend/frontend-v2/tsconfig.app.json:/app/tsconfig.app.json
+      - ./x-frontend/frontend-v2/tsconfig.node.json:/app/tsconfig.node.json
+      - ./x-frontend/frontend-v2/eslint.config.js:/app/eslint.config.js
+    environment:
+      - DOCKER_ENV=true
+      # Flagsmith Development Environment
+      - VITE_FLAGSMITH_ENVIRONMENT_ID=YOUR_FLAGSMITH_DEV_ID
+    depends_on:
+      - backend
+    networks:
+      - dev-network
+
+  # Admin Frontend v2 Development Server (React + Shadcn/UI)
+  admin-frontend:
+    build:
+      context: ./x-frontend/admin-frontend-v2
+      dockerfile: ../Dockerfile
+      target: development
+      args:
+        - NODE_VERSION=20
+        - BUILD_TARGET=development
+    ports:
+    - "92:80"
+    volumes:
+      - ./x-frontend/admin-frontend-v2/src:/app/src
+      - ./x-frontend/admin-frontend-v2/public:/app/public
+      - ./x-frontend/admin-frontend-v2/index.html:/app/index.html
+      - ./x-frontend/admin-frontend-v2/vite.config.ts:/app/vite.config.ts
+      - ./x-frontend/admin-frontend-v2/tailwind.config.js:/app/tailwind.config.js
+      - ./x-frontend/admin-frontend-v2/postcss.config.js:/app/postcss.config.js
+      - ./x-frontend/admin-frontend-v2/tsconfig.json:/app/tsconfig.json
+      - ./x-frontend/admin-frontend-v2/tsconfig.app.json:/app/tsconfig.app.json
+      - ./x-frontend/admin-frontend-v2/tsconfig.node.json:/app/tsconfig.node.json
+    environment:
+      - DOCKER_ENV=true
+    depends_on:
+      - backend
+    networks:
+      - dev-network
+
+    # FastAPI Backend API
+  backend:
+    build: .
+    ports:
+        - "93:80"
+    volumes:
+      # Add volume mounts for live development updates
+      - ./app:/app/app
+      - ./jobs:/app/jobs
+      - ./tests:/app/tests
+      - ./requirements.txt:/app/requirements.txt
+    env_file:
+      - .env.local
+    # Override command to enable auto-reload for development
+    command:
+      [
+        "uvicorn",
+        "app.api_main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+          "80",
+        "--reload",
+      ]
+    environment:
+    # Docker-specific URLs (not in .env.local)
+    - FRONTEND_URL=http://localhost:91
+    - ADMIN_URL=http://localhost:92
+    - ENABLE_SWAGGER_DOCS=true  # Enable docs for development
+    # MySQL connection for Docker (connect to local MariaDB)
+    - MYSQL_HOST=host.docker.internal
+    # depends_on:
+      # - mysql  # Using local MariaDB instead
+    networks:
+      - dev-network
+    restart: unless-stopped
+
+  # MariaDB Database (COMMENTED OUT - Using local MariaDB instead)
+  # mysql:
+  #   image: mariadb:11.8
+  #   ports:
+  #     - "3306:3306"
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=CHANGEME_ROOT_PASSWORD
+  #     - MYSQL_DATABASE=cefr_practice
+  #     - MYSQL_USER=your_mysql_user
+  #     - MYSQL_PASSWORD=CHANGEME_DB_PASSWORD
+  #   volumes:
+  #     - ./database/mysql-init:/docker-entrypoint-initdb.d
+  #     - mysql_data:/var/lib/mysql
+  #   command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+  #   networks:
+  #     - dev-network
+  #   restart: unless-stopped
+  #   healthcheck:
+  #     test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+  #     timeout: 20s
+  #     retries: 10
+  #     interval: 10s
+  #     start_period: 30s
+
+
+
+  # Promtail - Log Collector (ships logs to Grafana Cloud)
+  # DISABLED FOR DEV - Uncomment to re-enable log shipping to Grafana
+  # promtail:
+  #   image: grafana/promtail:2.9.2
+  #   volumes:
+  #     - /var/log:/var/log:ro
+  #     - /var/lib/docker/containers:/var/lib/docker/containers:ro
+  #     - ./monitoring/promtail-config.yml:/etc/promtail/config.yml
+  #   command: -config.file=/etc/promtail/config.yml
+  #   networks:
+  #     - dev-network
+  #   restart: unless-stopped
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         memory: 256M
+  #         cpus: "0.25"
+  #       reservations:
+  #         memory: 128M
+  #         cpus: "0.1"
+
+networks:
+  dev-network:
+    driver: bridge
+
+# volumes:
+  # mysql_data:  # Not needed for local MariaDB

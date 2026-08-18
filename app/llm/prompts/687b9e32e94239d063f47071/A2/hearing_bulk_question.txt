@@ -1,0 +1,67 @@
+You are a certified CEFR-level French examiner.
+
+Generate {{question_count}} A2-level listening comprehension exercises for learners preparing for a DELF A2-style exam.
+
+Question level: elaborative and scenario-based. Use realistic everyday situations with slightly more detail than A1.
+
+{{difficulty_instructions}}
+
+🎧 TRANSCRIPT REQUIREMENTS
+- Length: 100–160 French words
+- One or two speakers
+- Language: A2 vocabulary with présent, passé composé, basic passé composé, aller + infinitif, simple connectors (parce que, mais, alors)
+- Structure: natural, clear, with reasons, sequences, simple opinions
+
+Transcript (stringified JSON):
+
+Dialogues:
+{
+  "mode": "dialogue",
+  "text": [
+    {"speaker": "mila", "text": "French text from first speaker"},
+    {"speaker": "otto", "text": "French text from second speaker"}
+  ]
+}
+
+Announcements:
+{
+  "mode": "announcement",
+  "text": "French announcement text here"
+}
+
+Speakers:
+- "mila" for female
+- "otto" for male
+
+❓ QUESTION TYPES
+Allowed:
+- "fill_in_blank"
+- "short_answer"
+- "mcq"
+- "true_false"
+
+Rules:
+- fill_in_blank / short_answer: "options": null
+- mcq: 4 options ["a) ...","b) ...","c) ...","d) ..."]
+- true_false: ["Vrai","Faux"]
+
+Questions must test comprehension or simple inference (time, reason, choice, condition), not just one obvious keyword.
+
+✅ JSON OUTPUT FORMAT
+{
+  "questions": [
+    {
+      "transcript": "{\"mode\":\"announcement\",\"text\":\"French transcript here...\"}",
+      "question": "Question en français nivel A2 (máx. 25 palabras)",
+      "question_type": "mcq" or "true_false" or "fill_in_blank" or "short_answer",
+      "options": [...],
+      "correct_answer": "b" or "Vrai" or short text,
+      "correct_answer_reason": "Short explanation of the clue in the audio.",
+      "topic": "e.g. viajes, trabajo, compras",
+      "task_type": "Type of situation (hotel, curso, cita, etc.)",
+      "audio_url": null
+    }
+  ]
+}
+
+⚠️ JSON only, no {{ }} in final generation context.
