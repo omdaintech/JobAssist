@@ -1,4 +1,4 @@
-# UX Audit & Recommendations - Lingali Frontend v2
+# UX Audit & Recommendations - One-CEFR Frontend v2
 
 **Conducted By:** Senior UX Design Review  
 **Date:** October 19, 2025  
@@ -14,7 +14,7 @@
 
 **UX Score: 72/100 (C+)**
 
-The Lingali platform demonstrates a solid technical foundation with modern UI components and responsive design patterns. However, there are **significant UX gaps** that prevent users from fully understanding and utilizing the platform's value proposition. The application suffers from unclear onboarding, missing guidance systems, and inconsistent information architecture.
+The One-CEFR platform demonstrates a solid technical foundation with modern UI components and responsive design patterns. However, there are **significant UX gaps** that prevent users from fully understanding and utilizing the platform's value proposition. The application suffers from unclear onboarding, missing guidance systems, and inconsistent information architecture.
 
 ### Top 5 Critical Issues
 
@@ -46,7 +46,7 @@ The following UX issues have been addressed and implemented:
 **Files:** `OnboardingView.tsx`, `App.tsx`
 
 **What was built:**
-- **Step 1: Welcome & Value Proposition** - Introduces Lingali with clear benefits
+- **Step 1: Welcome & Value Proposition** - Introduces One-CEFR with clear benefits
 - **Step 2: Goal Selection** - Personalizes experience based on user intent
 - **Step 3: Profile Setup** - Collects level preferences and practice frequency
 
@@ -369,7 +369,7 @@ Add persistent progress header:
       </div>
     </div>
     <div className="border-t mt-6 pt-6 text-center text-sm text-gray-600">
-      © 2025 Lingali. All rights reserved. Made with ❤️ for German learners.
+      © 2025 One-CEFR. All rights reserved. Made with ❤️ for German learners.
     </div>
   </div>
 </footer>
@@ -499,7 +499,7 @@ Add a "What's New" badge and modal:
 
 // WhatsNewModal
 <Modal>
-  <h2>🎉 What's New in Lingali</h2>
+  <h2>🎉 What's New in One-CEFR</h2>
   <ul>
     <li><Badge>NEW</Badge> Hearing comprehension activities</li>
     <li><Badge>IMPROVED</Badge> Faster AI analysis (60 seconds!)</li>
@@ -1611,7 +1611,7 @@ Add social proof elements:
   </p>
   <div className="space-y-3">
     <TestimonialCard
-      quote="Lingali helped me pass my Goethe A2 exam on the first try!"
+      quote="One-CEFR helped me pass my Goethe A2 exam on the first try!"
       author="Maria, 25"
       role="University Student"
       avatar="/avatars/maria.jpg"
@@ -1671,7 +1671,7 @@ Add social proof elements:
 
 4. **Basic Onboarding Modal**
    - Welcome message for first-time users
-   - 3-step quick intro (What is Lingali? → Choose goal → Set level)
+   - 3-step quick intro (What is One-CEFR? → Choose goal → Set level)
    - CTA to first practice session
 
 **Estimated Effort:** 3-4 days  
@@ -1836,7 +1836,7 @@ Add social proof elements:
 
 ### Summary
 
-Lingali has a **strong technical foundation** but suffers from **critical UX gaps** that prevent users from fully understanding and utilizing the platform. The most urgent issues are:
+One-CEFR has a **strong technical foundation** but suffers from **critical UX gaps** that prevent users from fully understanding and utilizing the platform. The most urgent issues are:
 
 1. **Broken Help System** (Rick Roll videos)
 2. **Missing Onboarding** (users dropped into empty dashboard)

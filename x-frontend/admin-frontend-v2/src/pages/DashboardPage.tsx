@@ -41,7 +41,7 @@ export default function DashboardPage() {
 
     // Set page title
     useEffect(() => {
-        document.title = 'Analytics Dashboard | lingali'
+        document.title = 'Analytics Dashboard | One-CEFR'
     }, [])
 
     // Load language options on mount

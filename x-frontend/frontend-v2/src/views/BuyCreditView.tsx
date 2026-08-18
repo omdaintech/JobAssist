@@ -43,7 +43,7 @@ export const BuyCreditView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Buy Credits | Lingali';
+    document.title = 'Buy Credits | One-CEFR';
   }, []);
 
   // Redirect if not authenticated
@@ -246,7 +246,7 @@ export const BuyCreditView: React.FC = () => {
                       >
                         hello@example.com
                       </a>
-                      . We really appreciate your help in making Lingali better!
+                      . We really appreciate your help in making One-CEFR better!
                     </p>
                   </div>
                 </div>

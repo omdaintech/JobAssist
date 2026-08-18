@@ -62,7 +62,7 @@ export const FeedbackView: React.FC = () => {
             Share Your Feedback
           </h1>
           <p className="text-sm md:text-base text-gray-600">
-            We'd love to hear your thoughts! Your feedback helps us improve Lingali.
+            We'd love to hear your thoughts! Your feedback helps us improve One-CEFR.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export const FeedbackView: React.FC = () => {
                 <h3 className="font-semibold text-blue-900 mb-1">Help Us Improve - Get Free Credits!</h3>
                 <p className="text-sm text-blue-800">
                   Give us genuine feedback and we'll reward you with free credits almost immediately. 
-                  Your honest insights help us make Lingali better for everyone!
+                  Your honest insights help us make One-CEFR better for everyone!
                 </p>
               </div>
             </div>

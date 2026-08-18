@@ -25,7 +25,7 @@ export const ResetPasswordView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Reset Password | Lingali';
+    document.title = 'Reset Password | One-CEFR';
   }, []);
 
   // Validate token on component mount

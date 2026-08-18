@@ -52,7 +52,7 @@ export const PublicResultsView: React.FC = () => {
   }, [shareCode]);
 
   useEffect(() => {
-    document.title = 'Shared Results | Lingali';
+    document.title = 'Shared Results | One-CEFR';
     if (shareCode) {
       loadPublicResults();
     }
@@ -93,7 +93,7 @@ export const PublicResultsView: React.FC = () => {
             <div>
               <h3 className="text-lg font-bold">Want to track your own progress?</h3>
               <p className="text-sm text-blue-100">
-                Create your free account and start improving your German today!
+                Create your free account and start improving your English today!
               </p>
             </div>
             <div className="flex gap-2">
@@ -104,7 +104,7 @@ export const PublicResultsView: React.FC = () => {
                 Sign Up Free
               </Button>
               <Button
-                onClick={() => window.open('https://lingali.com/', '_blank', 'noopener,noreferrer')}
+                onClick={() => navigate('/')}
                 className="bg-white !text-blue-600 hover:bg-gray-100 hover:!text-blue-600"
               >
                 Know More
@@ -137,7 +137,7 @@ export const PublicResultsView: React.FC = () => {
       <div className="bg-gray-50 border-t py-12">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-3">
-            Ready to Master German?
+            Ready to Master English?
           </h3>
           <p className="text-gray-600 mb-6">
             Get AI-powered feedback, track your progress, and ace your CEFR exams.

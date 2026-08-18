@@ -107,7 +107,7 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ className = '' }) 
                     <div className="flex items-center space-x-3">
                         <img 
                             src="/logos/lingali-logo.png" 
-                            alt="Lingali Logo" 
+                            alt="One-CEFR Logo" 
                             className="h-8 w-8 object-contain"
                         />
                         <span className="text-lg font-bold text-gray-900">Menu</span>

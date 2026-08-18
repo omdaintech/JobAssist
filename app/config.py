@@ -124,7 +124,7 @@ class Settings(BaseSettings):
     
     # Email sender details
     from_email: str | None = Field(default=None, env="FROM_EMAIL")
-    from_name: str = Field(default="Example App", env="FROM_NAME")
+    from_name: str = Field(default="One-CEFR", env="FROM_NAME")
 
     # Frontend URL
     frontend_url: str | None = Field(default=None, env="FRONTEND_URL")

@@ -469,7 +469,7 @@ export const SessionLanding: React.FC<SessionLandingProps> = ({
                       {selectedTemplate.breakdown.hearing > 0 && (
                         <div className="flex items-center gap-2">
                           <span>🎧</span>
-                          <span>Hearing: {selectedTemplate.breakdown.hearing}</span>
+                          <span>Listening: {selectedTemplate.breakdown.hearing}</span>
                         </div>
                       )}
                     </div>

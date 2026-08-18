@@ -27,7 +27,7 @@ export const EmailVerificationView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Verify Email | Lingali';
+    document.title = 'Verify Email | One-CEFR';
   }, []);
 
   // Extract email hash from URL

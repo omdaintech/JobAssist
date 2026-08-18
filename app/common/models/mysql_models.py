@@ -1,6 +1,6 @@
 """
 SQLAlchemy Models for MySQL Database
-MySQL database models for Lingali
+MySQL database models for One-CEFR
 Version: 1.0.0
 """
 import enum

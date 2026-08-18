@@ -39,7 +39,7 @@ export const DashboardView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Dashboard | Lingali';
+    document.title = 'Dashboard | One-CEFR';
   }, []);
 
   // Initial load

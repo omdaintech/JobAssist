@@ -51,7 +51,7 @@ export const ConsumptionHistoryViewSimple: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Usage History | Lingali';
+    document.title = 'Usage History | One-CEFR';
   }, []);
 
   useEffect(() => {

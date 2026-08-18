@@ -274,11 +274,11 @@ class EmailService:
                 f"{self.frontend_url}/verify-email?hash={email_hash}"
             )
 
-            subject = "CEFR Practice - Verify Your Email"
+            subject = "One-CEFR - Verify Your Email"
             
             # Plain text version
             text_content = f"""
-Welcome to CEFR Practice!
+Welcome to One-CEFR!
 
 Thank you for signing up! Please verify your email address to activate your account.
 
@@ -330,7 +330,7 @@ If you didn't create an account, please ignore this email.
             </head>
             <body>
                 <div class="header">
-                    <h2>Welcome to Lingali!</h2>
+                    <h2>Welcome to One-CEFR!</h2>
                 </div>
                 <div class="content">
                     <p>Thank you for signing up! Please verify your email address to activate your account.</p>
@@ -391,7 +391,7 @@ If you didn't create an account, please ignore this email.
             reset_url = f"{self.frontend_url}/reset-password?token={reset_token}&email={email}"
             
             # Email subject and content
-            subject = "🔐 Reset Your Password - Lingali"
+            subject = "🔐 Reset Your Password - One-CEFR"
             
             # Plain text version
             text_content = f"""
@@ -399,7 +399,7 @@ If you didn't create an account, please ignore this email.
 
             Hi there!
 
-            You requested to reset your password for your Lingali account.
+            You requested to reset your password for your One-CEFR account.
 
             Reset Token: {reset_token}
 
@@ -412,7 +412,7 @@ If you didn't create an account, please ignore this email.
             Your password will remain unchanged.
 
             Best regards,
-            The CEFR Practice Team
+            The One-CEFR Team
             """
 
             # HTML version with styling
@@ -437,13 +437,13 @@ If you didn't create an account, please ignore this email.
                 <div class="container">
                     <div class="header">
                         <h1>🔐 Reset Your Password</h1>
-                        <p>Lingali - Secure Password Reset</p>
+                        <p>One-CEFR - Secure Password Reset</p>
                     </div>
                     
                     <div class="content">
                         <h2>Hi there!</h2>
                         
-                        <p>You requested to reset your password for your Lingali account. No worries, it happens to the best of us!</p>
+                        <p>You requested to reset your password for your One-CEFR account. No worries, it happens to the best of us!</p>
 
                         <p>Click the button below to reset your password:</p>
                         <p style="text-align: center;">
@@ -467,7 +467,7 @@ If you didn't create an account, please ignore this email.
                         <p>Questions? Just reply to this email and we'll help you out!</p>
                         
                         <p>Best regards,<br>
-                        The CEFR Practice Team</p>
+                        The One-CEFR Team</p>
                     </div>
                 </div>
             </body>
@@ -519,7 +519,7 @@ If you didn't create an account, please ignore this email.
                 smtp_configured=self.smtp_configured
             )
 
-            subject = f"Welcome to {school_name} - Your Lingali Account"
+            subject = f"Welcome to {school_name} - Your One-CEFR Account"
             
             # Plain text content
             text_content = f"""
@@ -527,7 +527,7 @@ Welcome to {school_name}!
 
 Hello {student_name},
 
-Your CEFR Practice account has been created successfully. You can now start practicing and improving your language skills.
+Your One-CEFR account has been created successfully. You can now start practicing and improving your language skills.
 
 Login Details:
 Email: {email}
@@ -565,7 +565,7 @@ Best regards,
                     <div class="content">
                         <h2>Hello {student_name},</h2>
                         
-                        <p>Your Lingali account has been created successfully. You can now start practicing and improving your language skills.</p>
+                        <p>Your One-CEFR account has been created successfully. You can now start practicing and improving your language skills.</p>
                         
                         <div class="credentials">
                             <h3>Your Login Details:</h3>
@@ -584,7 +584,7 @@ Best regards,
                         {school_name} Team</p>
                     </div>
                     <div class="footer">
-                        <p>This is an automated message from CEFR Practice platform.</p>
+                        <p>This is an automated message from One-CEFR platform.</p>
                     </div>
                 </div>
             </body>
@@ -656,11 +656,11 @@ Best regards,
                 smtp_configured=self.smtp_configured
             )
 
-            subject = "Welcome to Lingali - Your Account is Ready!"
+            subject = "Welcome to One-CEFR - Your Account is Ready!"
             
             # Plain text content
             text_content = f"""
-Welcome to CEFR Practice!
+Welcome to One-CEFR!
 
 Hello {name},
 
@@ -681,7 +681,7 @@ Your trial account includes:
 Questions or need help? Just reply to this email - we're here to support you!
 
 Best regards,
-The Lingali Team
+The One-CEFR Team
             """.strip()
 
             # HTML content
@@ -691,7 +691,7 @@ The Lingali Team
             <head>
                 <meta charset="utf-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Welcome to Lingali</title>
+                <title>Welcome to One-CEFR</title>
                 <style>
                     body {{ font-family: Arial, sans-serif; line-height: 1.6; color: #333; }}
                     .container {{ max-width: 600px; margin: 0 auto; padding: 20px; }}
@@ -707,7 +707,7 @@ The Lingali Team
             <body>
                 <div class="container">
                     <div class="header">
-                        <h1>🎉 Welcome to Lingali!</h1>
+                        <h1>🎉 Welcome to One-CEFR!</h1>
                     </div>
                     <div class="content">
                         <h2>Hello {name},</h2>
@@ -731,11 +731,11 @@ The Lingali Team
                         <p>Questions or need help? Just reply to this email - we're here to support you every step of the way!</p>
                         
                         <p>Best regards,<br>
-                        The CEFR Practice Team</p>
+                        The One-CEFR Team</p>
                     </div>
                     <div class="footer">
-                        <p>This is an automated message from Lingali platform.</p>
-                        <p>© 2025 Lingali. All rights reserved.</p>
+                        <p>This is an automated message from One-CEFR platform.</p>
+                        <p>© 2025 One-CEFR. All rights reserved.</p>
                     </div>
                 </div>
             </body>

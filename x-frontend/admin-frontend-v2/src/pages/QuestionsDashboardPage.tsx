@@ -81,7 +81,7 @@ const ACTIVITY_CONFIG: Record<ActivityTypeKey, ActivityConfig> = {
         accentClasses: 'border-green-500/50 bg-green-50 text-green-600 hover:bg-green-100'
     },
     hearing: {
-        label: 'Hearing',
+        label: 'Listening',
         description: 'Listening comprehension questions',
         icon: SpeakerWaveIcon,
         accentClasses: 'border-red-500/50 bg-red-50 text-red-600 hover:bg-red-100'

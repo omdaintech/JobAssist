@@ -50,7 +50,7 @@ export const PracticeView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Practice Sessions | Lingali';
+    document.title = 'Practice Sessions | One-CEFR';
   }, []);
 
   // Capture navigation toast messages from route state
@@ -616,7 +616,7 @@ export const PracticeView: React.FC = () => {
                       ] : [
                         '🎉 Many practice types are FREE or cost very few credits • Perfect for daily practice',
                         '⚡ Get instant, detailed AI feedback on every answer',
-                        '🎯 Focus on one skill: Reading, Writing, Grammar, or Hearing',
+                        '🎯 Focus on one skill: Reading, Writing, Grammar, or Listening',
                         '📊 Takes about 15-20 minutes • Practice at your own pace',
                         '✨ Great for targeting specific weak areas'
                       ]}

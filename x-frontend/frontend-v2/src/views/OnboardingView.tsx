@@ -25,7 +25,7 @@ export const OnboardingView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Getting Started | Lingali';
+    document.title = 'Getting Started | One-CEFR';
   }, []);
 
   // Load available assessment languages
@@ -169,7 +169,7 @@ export const OnboardingView: React.FC = () => {
             <Sparkles className="w-8 h-8 text-white" />
           </div>
           <CardTitle className="text-3xl font-bold text-gray-900">
-            Welcome to Lingali! 🎉
+            Welcome to One-CEFR! 🎉
           </CardTitle>
           <CardDescription className="text-base text-gray-600">
             Let's personalize your experience in 30 seconds

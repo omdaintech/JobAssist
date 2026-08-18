@@ -132,7 +132,7 @@ const getActivityDisplayName = (activityType: string): string => {
     reading: 'Reading',
     writing: 'Writing',
     grammar: 'Grammar',
-    hearing: 'Hearing',
+    hearing: 'Listening',
     speaking: 'Speaking',
   };
   return activityNames[activityType] || activityType;

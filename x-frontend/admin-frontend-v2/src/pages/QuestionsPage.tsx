@@ -98,7 +98,7 @@ export default function QuestionsPage() {
     
     // Set page title
     useEffect(() => {
-        document.title = 'Questions Management | lingali Admin';
+        document.title = 'Questions Management | One-CEFR Admin';
     }, []);
 
     // Pagination state
@@ -794,7 +794,7 @@ export default function QuestionsPage() {
                                 <option value="">All Activities</option>
                                 <option value="reading">📖 Reading</option>
                                 <option value="writing">✍️ Writing</option>
-                                <option value="hearing">🎧 Hearing</option>
+                                <option value="hearing">🎧 Listening</option>
                                 <option value="speaking">🎤 Speaking</option>
                                 <option value="grammar">📝 Grammar</option>
                             </select>
@@ -1515,7 +1515,7 @@ export default function QuestionsPage() {
                                         >
                                             <option value="reading">Reading</option>
                                             <option value="writing">Writing</option>
-                                            <option value="hearing">Hearing</option>
+                                            <option value="hearing">Listening</option>
                                             <option value="speaking">Speaking</option>
                                             <option value="grammar">Grammar</option>
                                         </select>

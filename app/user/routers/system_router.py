@@ -7,7 +7,7 @@ router = APIRouter(tags=["System - Health"])
 @router.get("/")
 async def root():
     """Root endpoint - API health check"""
-    return {"message": "Lingali API is running"}
+    return {"message": "One-CEFR API is running"}
 
 
 @router.get("/ready")

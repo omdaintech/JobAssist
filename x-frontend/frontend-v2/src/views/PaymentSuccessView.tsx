@@ -28,7 +28,7 @@ export const PaymentSuccessView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Payment Processing | Lingali';
+    document.title = 'Payment Processing | One-CEFR';
   }, []);
 
   // Get initial credit balance

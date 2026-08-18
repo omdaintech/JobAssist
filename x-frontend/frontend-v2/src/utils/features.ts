@@ -53,7 +53,7 @@ export const getAvailableActivityTypes = (includeHearing: boolean = true): Array
   if (includeHearing && isHearingEnabled()) {
     baseTypes.push({
       value: 'hearing',
-      label: 'Hearing Comprehension',
+      label: 'Listening Comprehension',
       description: 'Audio-based listening and comprehension tasks',
       icon: '🎧'
     });

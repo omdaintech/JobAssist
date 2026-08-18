@@ -9,40 +9,40 @@ const FAQ_CONTENT = `# FAQ for Students & Individual Learners
 **Last Updated:** October 17, 2025  
 **Version:** Beta MVP
 
-Welcome! This FAQ answers common questions about using Lingali for your German language practice and assessment.
+Welcome! This FAQ answers common questions about using One-CEFR for your English language practice and assessment.
 
 ---
 
 ## 📚 Getting Started
 
-### What is Lingali?
+### What is One-CEFR?
 
-Lingali is an AI-powered CEFR (Common European Framework of Reference) assessment platform for German language learners. We help you practice and evaluate your German skills across Reading, Writing, Grammar, and Listening (Hearing) at levels A1, A2, and B1.
+One-CEFR is an AI-powered English placement assessment platform aligned with the CEFR (Common European Framework of Reference) framework. We help you practice and evaluate your English skills across Grammar, Vocabulary, Reading, Listening, Writing and Speaking.
 
-**Think of us as:** Your personal AI examiner that gives you instant, detailed feedback on your German proficiency—just like preparing for a Goethe-Institut exam, but faster, cheaper, and available 24/7.
+**Think of us as:** Your personal AI examiner that gives you instant, detailed feedback on your English proficiency—just like preparing for a formal language exam, but faster, cheaper, and available 24/7.
 
-### Who is Lingali for?
+### Who is One-CEFR for?
 
-- **Students** preparing for official German language exams (Goethe-Zertifikat, telc, TestDaF)
-- **Professionals** who need German certification for work or immigration
+- **Students** preparing for official English language exams
+- **Professionals** who need English certification for work or immigration
 - **Self-learners** who want honest feedback on their progress
 - **Anyone** who wants to know their real CEFR level without taking an expensive official exam
 
-### How is Lingali different from Duolingo or Babbel?
+### How is One-CEFR different from Duolingo or Babbel?
 
-| Feature | Lingali | Duolingo/Babbel |
+| Feature | One-CEFR | Duolingo/Babbel |
 |---------|---------|-----------------|
 | **Purpose** | Assessment & Testing | Learning & Teaching |
 | **Focus** | Measure your level | Build your skills |
 | **Feedback** | Detailed, examiner-style analysis | Correct/incorrect only |
-| **Standards** | CEFR-aligned (Goethe rubrics) | Gamified, general |
+| **Standards** | CEFR-aligned | Gamified, general |
 | **Best for** | Exam preparation & progress tracking | Daily practice & vocabulary |
 
 **Short answer:** We assess, they teach. Use both! Practice with Duolingo/Babbel, then test your progress with us.
 
-### Do I need German knowledge to start?
+### Do I need English knowledge to start?
 
-Yes! Lingali is for learners who already have some German foundation:
+Yes! One-CEFR is for learners who already have some English foundation:
 
 - **A1 (Beginner):** You can introduce yourself, ask simple questions, understand basic sentences (~600-800 words)
 - **A2 (Elementary):** You can talk about past events, write short emails, handle everyday situations (~1200-1500 words)
@@ -91,7 +91,7 @@ When your trial credits run out, you'll need to purchase more credits to continu
 
 ### What are credits?
 
-Credits are tokens you spend to take assessment sessions. Think of them like arcade tokens or gym class passes—you use them each time you want to analyze your German skills.
+Credits are tokens you spend to take assessment sessions. Think of them like arcade tokens or gym class passes—you use them each time you want to analyze your English skills.
 
 **How many credits per session?**
 - **Practice Session** (single skill): **FREE to 2 credits** (depending on activity type)
@@ -123,7 +123,7 @@ Credits are deducted only after you complete and analyze a session.
 - **Standard (€14.99):** Extensive practice + 33 full exams
 - **Premium (€29.99):** Comprehensive practice + 83 full exams
 
-**Compare to official exams:** One Goethe-Institut exam costs €150-200. Our Standard pack (€14.99) gives you 33 practice exams!
+**Compare to official exams:** One official in-person language exam can cost €150-200. Our Standard pack (€14.99) gives you 33 practice exams!
 
 ### Do credits expire?
 
@@ -161,11 +161,11 @@ Credits are deducted only after you complete and analyze a session.
 
 ### What languages are available?
 
-**Currently:** Only **German** is fully functional.
+**Currently:** This demo environment is seeded with German content while the English question bank is being finalized. The One-CEFR experience, scoring and reporting are language-agnostic and designed around English.
 
-**Coming soon:** French (planned for later in 2025).
+**Coming soon:** English, French and additional languages.
 
-### What CEFR levels does Lingali support?
+### What CEFR levels does One-CEFR support?
 
 We offer assessment for four levels:
 
@@ -241,7 +241,7 @@ Your results include:
 
 **4. Bilingual Explanations**
 - Feedback in **English** (easy to understand)
-- German examples where needed (see correct usage in context)
+- Examples in your target language where needed (see correct usage in context)
 
 ### Can I see past results?
 
@@ -249,14 +249,14 @@ Your results include:
 
 ---
 
-## 🎧 Audio/Hearing Sessions
+## 🎧 Audio/Listening Sessions
 
-### How do hearing sessions work?
+### How do listening sessions work?
 
-**Hearing (Hörverstehen)** tests your ability to understand spoken German.
+**Listening** tests your ability to understand spoken language.
 
 **Format:**
-1. You listen to a German audio recording (announcement, conversation, news clip)
+1. You listen to an audio recording (announcement, conversation, news clip)
 2. Answer comprehension questions about what you heard
 3. Get feedback on your listening skills
 
@@ -277,12 +277,12 @@ Your results include:
 **Any device with a modern web browser:**
 
 - **💻 Desktop/Laptop:** Best experience (recommended for Writing activities)
-- **📱 Smartphone:** Works well for Reading, Grammar, Hearing
+- **📱 Smartphone:** Works well for Reading, Grammar, Listening
 - **📱 Tablet:** Great for all activity types
 
 ### Do I need to download an app?
 
-**No!** Lingali works entirely in your web browser. Just go to [https://lingali.com](https://lingali.com) and log in.
+**No!** One-CEFR works entirely in your web browser. Just go to [https://lingali.com](https://lingali.com) and log in.
 
 ---
 
@@ -335,7 +335,7 @@ We typically respond within 24 hours (faster during weekdays).
 
 ---
 
-**Thank you for using Lingali! We're here to help you achieve your German language goals. 🇩🇪**
+**Thank you for using One-CEFR! We're here to help you achieve your English language goals. 🎯**
 `;
 
 interface FAQSection {
@@ -414,7 +414,7 @@ export const FAQStudentsView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'FAQ for Students | Lingali';
+    document.title = 'FAQ for Students | One-CEFR';
   }, []);
 
   return (
@@ -433,7 +433,7 @@ export const FAQStudentsView: React.FC = () => {
           <h1 className="text-3xl font-bold text-gray-900">Student FAQ</h1>
         </div>
         <p className="text-gray-600">
-          Everything you need to know about using Lingali
+          Everything you need to know about using One-CEFR
         </p>
         <p className="text-sm text-gray-500 mt-2">
           Click on any question to expand the answer

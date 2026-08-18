@@ -143,7 +143,7 @@ class PaymentService:
                     "custom_id": pricing_pack_id  # Store pricing_pack_id for validation
                 }],
                 "application_context": {
-                    "brand_name": "Lingali",
+                    "brand_name": "One-CEFR",
                     "landing_page": "BILLING",
                     "user_action": "PAY_NOW",
                     "return_url": f"{settings.frontend_url}/payment-success",
@@ -700,7 +700,7 @@ class PaymentService:
                     "custom_id": transaction["pricing_pack_id"]
                 }],
                 "application_context": {
-                    "brand_name": "Lingali",
+                    "brand_name": "One-CEFR",
                     "landing_page": "BILLING",
                     "user_action": "PAY_NOW",
                     "return_url": f"{settings.frontend_url}/payment-success",

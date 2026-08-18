@@ -580,7 +580,7 @@ const SchoolTemplatesPage: React.FC = () => {
                   
                   {/* Hearing Field */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">Hearing</label>
+                    <label className="block text-sm font-medium text-gray-700">Listening</label>
                     <input
                       type="number"
                       min="0"
@@ -750,7 +750,7 @@ const SchoolTemplatesPage: React.FC = () => {
                   
                   {/* Hearing Field */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">Hearing</label>
+                    <label className="block text-sm font-medium text-gray-700">Listening</label>
                     <input
                       type="number"
                       min="0"

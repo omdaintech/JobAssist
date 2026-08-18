@@ -90,7 +90,7 @@ export default function PaymentManagementPage() {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Payment Management | lingali Admin';
+    document.title = 'Payment Management | One-CEFR Admin';
   }, []);
 
   useEffect(() => {

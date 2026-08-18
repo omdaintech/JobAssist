@@ -611,7 +611,7 @@ export default function QuestionGenerationPage() {
                   <option value="reading">📖 Reading</option>
                   <option value="writing">✍️ Writing</option>
                   <option value="grammar">📝 Grammar</option>
-                  <option value="hearing">🎧 Hearing</option>
+                  <option value="hearing">🎧 Listening</option>
                   <option value="speaking">🎤 Speaking</option>
                 </select>
               </div>
@@ -1168,7 +1168,7 @@ ${generateForm.activity_type === 'reading' ? `{
 
                   {/* Hearing Questions */}
                   <div className="p-4 bg-indigo-50 rounded-lg">
-                    <h4 className="font-medium text-indigo-800 mb-2">🎧 Hearing Questions</h4>
+                    <h4 className="font-medium text-indigo-800 mb-2">🎧 Listening Questions</h4>
                     <pre className="text-xs overflow-x-auto text-indigo-900">
 {`{
   "questions": [

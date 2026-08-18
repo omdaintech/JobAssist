@@ -15,9 +15,9 @@ const FAQ_CONTENT = `# FAQ for Schools & Educational Institutions
 
 ## 🏫 Overview
 
-### What is the Lingali school offering?
+### What is the One-CEFR school offering?
 
-Lingali for Schools is a B2B platform that enables language schools, universities, and corporate training programs to:
+One-CEFR for Schools is a B2B platform that enables language schools, universities, and corporate training programs to:
 
 - **Assess students at scale** using AI-powered CEFR evaluations
 - **Create bulk sessions** for entire classes
@@ -69,7 +69,7 @@ Lingali for Schools is a B2B platform that enables language schools, universitie
 - Teacher time: €30/hour × 2 hours = €60
 - OR: External examiner: €200-300 per batch
 
-**Lingali cost:**
+**One-CEFR cost:**
 - 30 students × €0.10 = **€3.00**
 - Instant results + detailed analytics
 
@@ -150,7 +150,7 @@ Lingali for Schools is a B2B platform that enables language schools, universitie
 ### What are templates?
 
 Templates are reusable session structures that define:
-- Which skills to test (Reading, Writing, Grammar, Hearing)
+- Which skills to test (Reading, Writing, Grammar, Listening)
 - How many questions per skill
 - CEFR level (A1, A2, B1)
 - Optional time limits
@@ -175,7 +175,7 @@ Templates are reusable session structures that define:
 
 ### Is there an API for school systems?
 
-**Yes!** Schools can integrate Lingali with their existing:
+**Yes!** Schools can integrate One-CEFR with their existing:
 - Learning Management Systems (LMS)
 - Student Information Systems (SIS)
 - Grade books
@@ -225,7 +225,7 @@ Schools can export:
 
 ## 📞 Contact Us
 
-**Interested in Lingali for Schools?**
+**Interested in One-CEFR for Schools?**
 
 📧 **Contact:** [https://lingali.com/contact](https://lingali.com/contact)
 
@@ -239,7 +239,7 @@ We'll respond within 24-48 hours with a customized proposal.
 
 ---
 
-**Thank you for considering Lingali for your institution! We're committed to making CEFR assessment accessible, affordable, and scalable for language education. 🎓**
+**Thank you for considering One-CEFR for your institution! We're committed to making CEFR assessment accessible, affordable, and scalable for language education. 🎓**
 `;
 
 interface FAQSection {
@@ -318,7 +318,7 @@ export const FAQSchoolsView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'FAQ for Schools | Lingali';
+    document.title = 'FAQ for Schools | One-CEFR';
   }, []);
 
   return (
@@ -388,7 +388,7 @@ export const FAQSchoolsView: React.FC = () => {
       <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
         <div className="text-center">
           <h3 className="text-xl font-bold text-gray-900 mb-2">
-            Interested in Lingali for Your School?
+            Interested in One-CEFR for Your School?
           </h3>
           <p className="text-gray-700 mb-4">
             Join our beta program or get notified when school features launch

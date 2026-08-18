@@ -42,7 +42,7 @@ export default function MessagesManagementPage() {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Messages Management | lingali Admin';
+    document.title = 'Messages Management | One-CEFR Admin';
   }, []);
 
   useEffect(() => {

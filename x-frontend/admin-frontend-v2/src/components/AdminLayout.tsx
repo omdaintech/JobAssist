@@ -213,15 +213,15 @@ function SidebarContent({
             <div className="flex items-center h-16 flex-shrink-0 px-4 bg-eu-blue relative">
                 {!collapsed && (
                     <div className="flex items-center space-x-3">
-                        <img src="/logos/lingali-logo.png" alt="lingali Logo" className="h-8 w-8 object-contain" />
+                        <img src="/logos/lingali-logo.png" alt="One-CEFR Logo" className="h-8 w-8 object-contain" />
                         <h1 className="text-xl font-bold text-white transition-opacity duration-300">
-                            lingali
+                            One-CEFR
                         </h1>
                     </div>
                 )}
                 {collapsed && (
                     <div className="flex items-center justify-center w-full">
-                        <img src="/logos/lingali-logo.png" alt="lingali Logo" className="h-8 w-8 object-contain" />
+                        <img src="/logos/lingali-logo.png" alt="One-CEFR Logo" className="h-8 w-8 object-contain" />
                     </div>
                 )}
 

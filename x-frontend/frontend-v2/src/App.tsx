@@ -35,6 +35,7 @@ import { PaymentUPIView } from './views/PaymentUPIView';
 import { PaymentUPIPendingView } from './views/PaymentUPIPendingView';
 import { PaymentSuccessView } from './views/PaymentSuccessView';
 import { FeedbackView } from './views/FeedbackView';
+import { LandingView } from './views/LandingView';
 
 
 
@@ -42,23 +43,19 @@ import { FeedbackView } from './views/FeedbackView';
 
 
 
-// Landing component that redirects based on auth status
+// Landing route: signed-in users are routed to their app, everyone else sees the marketing page
 const AppLanding: React.FC = () => {
   const { isAuthenticated, isInitialized, isLoading, isOnboarded } = useAuth();
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    if (isInitialized && !isLoading) {
-      if (isAuthenticated) {
-        if (!isOnboarded) {
-          // New user - redirect to onboarding
-          navigate('/onboarding', { replace: true });
-        } else {
-          // Existing user - go to dashboard
-          navigate('/dashboard', { replace: true });
-        }
+    if (isInitialized && !isLoading && isAuthenticated) {
+      if (!isOnboarded) {
+        // New user - redirect to onboarding
+        navigate('/onboarding', { replace: true });
       } else {
-        navigate('/login', { replace: true });
+        // Existing user - go to dashboard
+        navigate('/dashboard', { replace: true });
       }
     }
   }, [isAuthenticated, isInitialized, isLoading, isOnboarded, navigate]);
@@ -75,7 +72,11 @@ const AppLanding: React.FC = () => {
     );
   }
 
-  return null;
+  if (isAuthenticated) {
+    return null; // redirecting via effect above
+  }
+
+  return <LandingView />;
 };
 
 const NotFoundView = () => (

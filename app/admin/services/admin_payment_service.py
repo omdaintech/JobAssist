@@ -464,10 +464,10 @@ Payment Details:
 
 You can now use these credits for practice sessions and exams.
 
-Thank you for choosing Lingali!
+Thank you for choosing One-CEFR!
 
 Best regards,
-The Lingali Team
+The One-CEFR Team
             """.strip()
             
             html_content = f"""
@@ -504,9 +504,9 @@ The Lingali Team
                         
                         <p>You can now use these credits for practice sessions and exams to improve your language skills.</p>
                         
-                        <p>Thank you for choosing Lingali!</p>
+                        <p>Thank you for choosing One-CEFR!</p>
                         
-                        <p>Best regards,<br>The Lingali Team</p>
+                        <p>Best regards,<br>The One-CEFR Team</p>
                     </div>
                 </div>
             </body>
@@ -542,7 +542,7 @@ The Lingali Team
             text_content = f"""
 Hello {user_name},
 
-Great news! Credits have been added to your Lingali account.
+Great news! Credits have been added to your One-CEFR account.
 
 Credits Added: {credits_added}
 Note: {reason}
@@ -550,7 +550,7 @@ Note: {reason}
 You can now use these credits for practice sessions and exams.
 
 Best regards,
-The Lingali Team
+The One-CEFR Team
             """.strip()
             
             html_content = f"""
@@ -573,7 +573,7 @@ The Lingali Team
                     </div>
                     <div class="content">
                         <h2>Hello {user_name},</h2>
-                        <p>Great news! Credits have been added to your Lingali account.</p>
+                        <p>Great news! Credits have been added to your One-CEFR account.</p>
                         
                         <div class="credits">
                             🎉 {credits_added} Credits Added!
@@ -585,7 +585,7 @@ The Lingali Team
                         
                         <p>You can now use these credits for practice sessions and exams to improve your language skills.</p>
                         
-                        <p>Best regards,<br>The Lingali Team</p>
+                        <p>Best regards,<br>The One-CEFR Team</p>
                     </div>
                 </div>
             </body>

@@ -142,7 +142,7 @@ export const AppFooter: React.FC = () => {
         <PageContainer>
           <div className="text-center">
             <p className="text-gray-500 text-[11px]">
-              © 2024 Lingali. Real assessment, honest feedback.
+              © 2026 One-CEFR. CEFR-aligned assessment, honest feedback.
             </p>
           </div>
         </PageContainer>

@@ -45,9 +45,9 @@ export default defineConfig({
       },
       includeAssets: ['pwa-192x192.svg', 'pwa-512x512.svg', 'favicon.svg'],
       manifest: {
-        name: 'lingali-school',
-        short_name: 'lingali-school',
-        description: 'Admin dashboard for managing lingali language learning platform',
+        name: 'One-CEFR Admin',
+        short_name: 'One-CEFR Admin',
+        description: 'Admin dashboard for managing the One-CEFR placement test platform',
         theme_color: '#1e40af',
         background_color: '#ffffff',
         display: 'standalone',
@@ -55,7 +55,7 @@ export default defineConfig({
         orientation: 'any',
         scope: '/',
         start_url: '/?source=pwa',
-        id: 'com.lingali.admin',
+        id: 'com.onecefr.admin',
         categories: ['productivity', 'business'],
         prefer_related_applications: false,
         icons: [

@@ -19,8 +19,8 @@ export const ACTIVITY_TYPES = {
     color: "bg-orange-100 text-orange-700",
   },
   hearing: {
-    name: "Hearing Comprehension",
-    shortName: "Hearing",
+    name: "Listening Comprehension",
+    shortName: "Listening",
     icon: "🎧",
     color: "bg-purple-100 text-purple-700",
   },

@@ -22,7 +22,7 @@ export const LoginView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Login | Lingali';
+    document.title = 'Login | One-CEFR';
   }, []);
 
   // Redirect if authenticated (handles both traditional and Firebase auth)
@@ -106,7 +106,7 @@ export const LoginView: React.FC = () => {
             Sign In
           </CardTitle>
           <CardDescription className="text-gray-600">
-            Enter your credentials to start your German assessment journey
+            Enter your credentials to start your English assessment journey
           </CardDescription>
         </CardHeader>
 

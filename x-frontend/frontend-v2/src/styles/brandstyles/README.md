@@ -9,7 +9,7 @@ This system provides dynamic brand styling based on the user's `school_id` to su
 src/
 ├── styles/
 │   └── brandstyles/
-│       ├── default.css          # Default brand theme (Lingali)
+│       ├── default.css          # Default brand theme (One-CEFR)
 │       ├── brand-overrides.css  # Common CSS overrides for all brands
 │       ├── company1.css         # Example company theme
 │       └── {school_id}.css      # School-specific themes

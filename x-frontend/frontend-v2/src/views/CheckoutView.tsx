@@ -40,7 +40,7 @@ export const CheckoutView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Checkout | Lingali';
+    document.title = 'Checkout | One-CEFR';
   }, []);
 
   // Redirect if not authenticated

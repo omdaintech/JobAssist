@@ -340,7 +340,7 @@ class LearningPreferencesRequest(BaseModel):
         None, ge=1, le=14, description="Desired number of practice sessions per week"
     )
     onboarding_goal: Optional[Literal["exam_prep", "level_check", "skill_improvement"]] = Field(
-        None, description="Primary goal for using Lingali"
+        None, description="Primary goal for using One-CEFR"
     )
 
     # Note: Language validation disabled to avoid session binding issues

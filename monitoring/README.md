@@ -1,6 +1,6 @@
 # Monitoring Configuration for Grafana Cloud
 
-This directory contains monitoring configurations for Lingali with Grafana Cloud integration.
+This directory contains monitoring configurations for One-CEFR with Grafana Cloud integration.
 
 ## 🚨 CRITICAL: Promtail Log Filtering Issue (October 23, 2025)
 

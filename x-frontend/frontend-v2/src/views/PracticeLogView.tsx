@@ -288,7 +288,7 @@ export const PracticeLogView: React.FC = () => {
         { value: 'reading', label: 'Reading', icon: '📖' },
         { value: 'writing', label: 'Writing', icon: '✍️' },
         { value: 'grammar', label: 'Grammar', icon: '📝' },
-        { value: 'hearing', label: 'Hearing', icon: '🎧' },
+        { value: 'hearing', label: 'Listening', icon: '🎧' },
         { value: 'speaking', label: 'Speaking', icon: '🎤' }
     ];
 

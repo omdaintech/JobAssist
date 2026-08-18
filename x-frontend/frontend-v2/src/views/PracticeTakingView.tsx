@@ -11,7 +11,7 @@ export const PracticeTakingView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Practice Session | Lingali';
+    document.title = 'Practice Session | One-CEFR';
   }, []);
 
   // Auth check

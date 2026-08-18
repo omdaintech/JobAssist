@@ -19,7 +19,7 @@ export const ForgotPasswordView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Forgot Password | Lingali';
+    document.title = 'Forgot Password | One-CEFR';
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

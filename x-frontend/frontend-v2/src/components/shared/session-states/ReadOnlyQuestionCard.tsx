@@ -26,7 +26,7 @@ const ReadOnlyQuestionCard = React.forwardRef<HTMLDivElement, ReadOnlyQuestionCa
         return questionData.instruction || questionData.prompt || questionData.question || questionData.text
       }
       if (questionData.activity_type === 'hearing') {
-        return questionData.question || 'Hearing comprehension question'
+        return questionData.question || 'Listening comprehension question'
       }
       return questionData.question || questionData.prompt || questionData.text || 'Question content'
     }

@@ -332,7 +332,7 @@ export const SessionTaking: React.FC<SessionTakingProps> = ({
     switch (type) {
       case 'writing': return 'Writing Task';
       case 'grammar': return 'Grammar Exercise';
-      case 'hearing': return 'Hearing Comprehension';
+      case 'hearing': return 'Listening Comprehension';
       default: return 'Question';
     }
   };

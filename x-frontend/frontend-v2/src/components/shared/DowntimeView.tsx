@@ -104,7 +104,7 @@ export const DowntimeView: React.FC = () => {
         {/* Footer */}
         <div className="pt-6 border-t border-gray-200">
           <p className="text-gray-700 mb-3 text-lg font-semibold">
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">lingali</span> - Your CEFR Excellence Platform
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">One-CEFR</span> - Know your English level
           </p>
           <div className="space-y-2">
             <p className="text-sm text-gray-600 flex items-center justify-center gap-2">

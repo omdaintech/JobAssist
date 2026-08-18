@@ -21,7 +21,7 @@ export const PaymentUPIPendingView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Payment Pending Verification | Lingali';
+    document.title = 'Payment Pending Verification | One-CEFR';
   }, []);
 
   // Redirect if not authenticated

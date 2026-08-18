@@ -184,7 +184,7 @@ export const CreatePracticeModal: React.FC<CreatePracticeModalProps> = ({
       reading: { icon: '📖', label: 'Reading Practice' },
       writing: { icon: '✍️', label: 'Writing Practice' },
       grammar: { icon: '📝', label: 'Grammar Practice' },
-      hearing: { icon: '🎧', label: 'Hearing Practice' },
+      hearing: { icon: '🎧', label: 'Listening Practice' },
       speaking: { icon: '🎤', label: 'Speaking Practice' },
     };
 

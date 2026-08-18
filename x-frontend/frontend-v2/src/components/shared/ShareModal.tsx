@@ -20,7 +20,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({
 
   if (!isOpen) return null;
 
-  const shareMessage = `🎉 I just finished a Lingali session! Dive into my progress: ${shareUrl}`;
+  const shareMessage = `🎉 I just finished a One-CEFR session! Dive into my progress: ${shareUrl}`;
 
   const handleCopyMessage = async () => {
     try {
@@ -56,7 +56,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({
         <Card className="w-full max-w-md shadow-xl">
           <CardHeader className="border-b">
             <div className="flex items-center justify-between">
-              <CardTitle>Share Your Lingali Results</CardTitle>
+              <CardTitle>Share Your One-CEFR Results</CardTitle>
               <button
                 onClick={onClose}
                 className="text-gray-400 hover:text-gray-600 text-2xl leading-none"
@@ -100,7 +100,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({
             {/* Info */}
             <div className="text-sm text-gray-600 bg-slate-50 border border-slate-200 rounded-lg p-3">
               <p className="font-medium text-slate-900 mb-1">Help us spread the word 🚀</p>
-              <p>Post this on social, drop it in your study group, or send it to a friend—every share helps more learners discover Lingali.</p>
+              <p>Post this on social, drop it in your study group, or send it to a friend—every share helps more learners discover One-CEFR.</p>
             </div>
 
             {/* Actions */}

@@ -1,10 +1,6 @@
-# 🚀 Lingali - CEFR Language Assessment Platform
+# 🚀 One-CEFR Placement Test
 
-
-Working app: https://app.lingali.com/
-Site https://www.lingali.com/
-
-
+AI-powered English placement assessment aligned with the CEFR framework.
 
 An AI-powered web application for evaluating language proficiency according to the Common European Framework of Reference for Languages (CEFR) standards.
 
@@ -31,7 +27,7 @@ An AI-powered web application for evaluating language proficiency according to t
 
 ## 🎯 Overview
 
-Lingali is a comprehensive language assessment platform that uses artificial intelligence to evaluate learners' proficiency across multiple CEFR levels (A1, A2, B1, B2) and various languages (German, French, Spanish, and more). Unlike traditional language learning apps, this is an **assessment-first** application focused on evaluating exam readiness.
+One-CEFR is a comprehensive language assessment platform that uses artificial intelligence to evaluate learners' proficiency across multiple CEFR levels (A1, A2, B1, B2) and various languages (German, French, Spanish, and more). Unlike traditional language learning apps, this is an **assessment-first** application focused on evaluating exam readiness.
 
 ## 🎓 Purpose
 
@@ -307,7 +303,7 @@ ELEVENLABS_API_KEY=your_elevenlabs_key
 MAILGUN_API_KEY=your_mailgun_key
 MAILGUN_DOMAIN=your_mailgun_domain
 FROM_EMAIL=noreply@yourdomain.com
-FROM_NAME=Lingali Platform
+FROM_NAME=One-CEFR Platform
 
 # PayPal Payments
 PAYPAL_MODE=sandbox
@@ -407,7 +403,7 @@ The application follows a strict domain separation:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Lingali Platform                          │
+│                    One-CEFR Platform                          │
 ├─────────────────┬─────────────────┬────────────────────────┤
 │  System Admin   │  School Admin   │    End Users           │
 │  Domain         │  Domain         │    Domain              │

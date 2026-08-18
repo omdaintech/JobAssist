@@ -18,7 +18,7 @@ export default function LoginPage() {
 
     // Set page title
     useEffect(() => {
-        document.title = 'Admin Login | lingali';
+        document.title = 'Admin Login | One-CEFR';
     }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {

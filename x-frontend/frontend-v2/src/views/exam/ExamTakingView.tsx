@@ -19,7 +19,7 @@ export const ExamTakingView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Taking Exam | Lingali';
+    document.title = 'Taking Exam | One-CEFR';
   }, []);
 
   // Auth check

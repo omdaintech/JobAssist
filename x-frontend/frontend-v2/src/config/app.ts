@@ -16,7 +16,7 @@ export const appConfig = {
   
   // App Information
   app: {
-    name: "Lingali",
+    name: "One-CEFR",
     version: "2.0.0",
   },
 

@@ -59,7 +59,7 @@ export default function SchoolsPage() {
 
     // Set page title
     useEffect(() => {
-    document.title = 'Schools Management | lingali Admin';
+    document.title = 'Schools Management | One-CEFR Admin';
   }, []);  useEffect(() => {
     if (!token) return;
     fetchSchools();

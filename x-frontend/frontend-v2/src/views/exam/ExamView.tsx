@@ -39,7 +39,7 @@ export const ExamView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Exams | Lingali';
+    document.title = 'Exams | One-CEFR';
   }, []);
 
   // Custom hook for exam data
@@ -261,7 +261,7 @@ export const ExamView: React.FC = () => {
                       title={completedExams.length > 0 ? "Ready for Another Exam?" : "Ready for a Full Assessment?"}
                       description={completedExams.length > 0 
                         ? "You don't have any ongoing exams. Start a new one to get your latest CEFR level assessment!"
-                        : "Exams test multiple skills in one comprehensive session, giving you an official CEFR level evaluation. Perfect when you want a complete picture of your German proficiency."
+                        : "Exams test multiple skills in one comprehensive session, giving you an official CEFR level evaluation. Perfect when you want a complete picture of your English proficiency."
                       }
                       actions={[
                         {
@@ -276,7 +276,7 @@ export const ExamView: React.FC = () => {
                         '� Full exam tests all skills together'
                       ] : [
                         '� Comprehensive multi-skill assessment',
-                        '🎯 Tests Reading, Writing, Grammar, and Hearing together',
+                        '🎯 Tests Reading, Writing, Grammar, and Listening together',
                         '📊 Get your official CEFR level (A1-C2)',
                         '⏱️ Takes 45-60 minutes • Set aside enough time',
                         '🎓 Results comparable to official Goethe exams',

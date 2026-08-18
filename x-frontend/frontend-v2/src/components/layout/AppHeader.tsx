@@ -15,7 +15,7 @@ export const AppHeader: React.FC = () => {
   const brandConfig = useBrandConfig();
 
   // Use brand configuration for logo text
-  const logoText = brandConfig?.logoText || 'lingali';
+  const logoText = brandConfig?.logoText || 'One-CEFR';
 
   return (
     <motion.header 
@@ -30,7 +30,7 @@ export const AppHeader: React.FC = () => {
           <Link to="/dashboard" className="flex items-center space-x-3">
             <img
               src="/logos/lingali-logo.png"
-              alt="Lingali Logo"
+              alt="One-CEFR Logo"
               className="h-8 w-8 object-contain"
             />
             <div className="hidden sm:flex items-center gap-2">

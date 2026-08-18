@@ -79,7 +79,7 @@ docker-compose -f docker-compose.dev.yml build frontend-v2
 ### 1. Get Flagsmith Environment ID
 
 1. Sign up at [Flagsmith](https://app.flagsmith.com/) (free tier available)
-2. Create a new project (e.g., "Lingali")
+2. Create a new project (e.g., "One-CEFR")
 3. Copy your **Environment ID** from the dashboard
 
 ### 2. Configure Environment Variables

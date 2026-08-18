@@ -14,7 +14,7 @@ import { SocialLoginButtons } from '@/components/auth/SocialLoginButtons';
 export const SignupView: React.FC = () => {
   // Set page title
   useEffect(() => {
-    document.title = 'Sign Up | Lingali';
+    document.title = 'Sign Up | One-CEFR';
   }, []);
 
   const [formData, setFormData] = useState({
@@ -101,7 +101,7 @@ export const SignupView: React.FC = () => {
       setSuccessMessage(
         '🎉 Account created! Check your email to verify and unlock:\n\n' +
         '✅ 10 FREE trial credits (worth 5 practice sessions)\n' +
-        '✅ Full AI feedback on your German skills\n' +
+        '✅ Full AI feedback on your English skills\n' +
         '✅ No credit card required\n\n' +
         'Can\'t find the email? Check your spam folder or contact support.'
       );
@@ -145,7 +145,7 @@ export const SignupView: React.FC = () => {
             </div>
             <CardTitle className="text-2xl text-green-700">Account Created!</CardTitle>
             <CardDescription className="text-green-600">
-              Welcome to Lingali
+              Welcome to One-CEFR
             </CardDescription>
           </CardHeader>
           <CardContent className="text-center">
@@ -164,7 +164,7 @@ export const SignupView: React.FC = () => {
                 </p>
                 <p className="text-green-800 text-sm flex items-start gap-2">
                   <span className="flex-shrink-0">✅</span>
-                  <span><strong>Full AI feedback</strong> on your German skills</span>
+                  <span><strong>Full AI feedback</strong> on your English skills</span>
                 </p>
                 <p className="text-green-800 text-sm flex items-start gap-2">
                   <span className="flex-shrink-0">✅</span>

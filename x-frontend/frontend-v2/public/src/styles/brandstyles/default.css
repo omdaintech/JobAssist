@@ -1,13 +1,13 @@
 /**
- * Default Brand Styles - Lingali
+ * Default Brand Styles - One-CEFR
  * Contains minimal brand-specific styling for easy customization
  */
 
 :root {
   /* Brand Logo */
-  --brand-logo-text: "Lingali";
+  --brand-logo-text: "One-CEFR";
   --brand-logo-url: "/logos/lingali-logo.png";
-  --brand-logo-avatar-text: "L";
+  --brand-logo-avatar-text: "O";
   
   /* Brand Color Theme */
   --brand-primary: 214 100% 30%; /* EU Blue #003399 */

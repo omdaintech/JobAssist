@@ -49,7 +49,7 @@ const ACTIVITY_LABELS = {
   reading: '📖 Reading',
   writing: '📝 Writing',
   grammar: '📚 Grammar',
-  hearing: '🎧 Hearing',
+  hearing: '🎧 Listening',
 };
 
 /**

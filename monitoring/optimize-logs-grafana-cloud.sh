@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Lingali - Grafana Cloud Log Monitoring Script
-echo "🚀 Lingali - Grafana Cloud Monitoring"
+# One-CEFR - Grafana Cloud Log Monitoring Script
+echo "🚀 One-CEFR - Grafana Cloud Monitoring"
 echo "=================================================="
 
 # Check if Promtail is running

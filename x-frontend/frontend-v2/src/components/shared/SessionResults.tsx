@@ -2,6 +2,7 @@ import { PageContainer } from '@/components/layout/PageContainer';
 import { Badge, Button, Card, CardContent, CardHeader, CardTitle, FeedbackCard, FilterButtons, LoadingSpinner, ProgressRing, HowToButton, ScoreBar, AudioPlayer } from '@/components/ui';
 import { SessionResultsHero } from './SessionResultsHero';
 import { PracticeResultsHero } from './PracticeResultsHero';
+import { CefrLevelIndicator } from './CefrLevelIndicator';
 import { getActivityName } from '@/constants/activity-types';
 import { cn } from '@/lib/utils';
 import { renderTextOrBullets } from '@/utils/render-helpers';
@@ -639,6 +640,11 @@ export const SessionResults: React.FC<SessionResultsProps> = ({
           />
         )}
 
+        {/* CEFR Level Progression - only once a real result exists */}
+        {isAnalyzed() && sessionData.level && (
+          <CefrLevelIndicator level={sessionData.level} className="mb-6" />
+        )}
+
         {/* Analysis Progress */}
         {renderAnalysisProgress()}
 
@@ -742,8 +748,8 @@ export const SessionResults: React.FC<SessionResultsProps> = ({
                   ? [{
                       value: 'hearing',
                       label: isAnalyzed() && sectionSummaries.hearing?.score !== undefined
-                        ? `Hearing ${formatScorePercentage(sectionSummaries.hearing.score)}`
-                        : `Hearing (${answers.filter(answer => answer.activityType === 'hearing').length})`,
+                        ? `Listening ${formatScorePercentage(sectionSummaries.hearing.score)}`
+                        : `Listening (${answers.filter(answer => answer.activityType === 'hearing').length})`,
                       score: normalizeScore(sectionSummaries.hearing?.score)
                     }]
                   : []),
@@ -1283,7 +1289,7 @@ export const SessionResults: React.FC<SessionResultsProps> = ({
                 </h3>
                 <p className="text-sm md:text-base text-gray-700 mb-3">
                   You have <span className="font-bold text-green-600">{remainingUsage} credits</span> remaining. 
-                  Practice makes perfect - continue improving your German skills today!
+                  Practice makes perfect - continue improving your English skills today!
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2 md:gap-3">
                   <Button

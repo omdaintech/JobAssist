@@ -1,5 +1,5 @@
 """
-MySQL Database Service for Lingali
+MySQL Database Service for One-CEFR
 Provides MySQL/SQLAlchemy database connectivity and operations
 Version: 1.0.0
 """

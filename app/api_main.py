@@ -93,13 +93,13 @@ if settings.sentry_dsn:
         attach_stacktrace=True,  # Always include stack traces
         
         # Release tracking (helps identify when bugs were introduced)
-        release=f"lingali@{settings.sentry_environment}",
+        release=f"one-cefr@{settings.sentry_environment}",
     )
     logger.info(
         "sentry_initialized",
         environment=settings.sentry_environment,
         traces_sample_rate=settings.sentry_traces_sample_rate,
-        release=f"lingali@{settings.sentry_environment}"
+        release=f"one-cefr@{settings.sentry_environment}"
     )
 else:
     logger.info("sentry_disabled", reason="No SENTRY_DSN configured")
@@ -220,7 +220,7 @@ async def lifespan(app: FastAPI):
 
 # Create FastAPI app with conditional documentation
 app_kwargs = {
-    "title": "Lingali API",
+    "title": "One-CEFR API",
     "description": "API for CEFR-level exam preparation",
     "version": "2.0.0",
     "lifespan": lifespan,
@@ -318,7 +318,7 @@ async def root():
     else:
         return JSONResponse(
             content={
-                "message": "Lingali API is running",
+                "message": "One-CEFR API is running",
                 "version": "2.0.0",
                 "status": "healthy",
                 "documentation": "disabled"

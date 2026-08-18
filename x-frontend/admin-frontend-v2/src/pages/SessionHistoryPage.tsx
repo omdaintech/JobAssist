@@ -291,7 +291,7 @@ const SessionHistoryPage: React.FC = () => {
                                 <option value="reading">Reading</option>
                                 <option value="writing">Writing</option>
                                 <option value="grammar">Grammar</option>
-                                <option value="hearing">Hearing</option>
+                                <option value="hearing">Listening</option>
                             </select>
                         </div>
 

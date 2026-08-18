@@ -27,9 +27,9 @@ export default defineConfig({
       },
       includeAssets: ['pwa-192x192.svg', 'pwa-512x512.svg', 'favicon.svg'],
       manifest: {
-        name: 'lingali',
-        short_name: 'lingali',
-        description: 'Practice German language skills with AI-powered feedback and CEFR assessment',
+        name: 'One-CEFR Placement Test',
+        short_name: 'One-CEFR',
+        description: 'AI-powered English placement assessment aligned with the CEFR framework',
         theme_color: '#1e40af',
         background_color: '#ffffff',
         display: 'standalone',
@@ -37,7 +37,7 @@ export default defineConfig({
         orientation: 'any',
         scope: '/',
         start_url: '/?source=pwa',
-        id: 'com.lingali.student',  // Unique identifier for student app
+        id: 'com.onecefr.student',  // Unique identifier for student app
         categories: ['education', 'productivity'],
         prefer_related_applications: false,
         icons: [

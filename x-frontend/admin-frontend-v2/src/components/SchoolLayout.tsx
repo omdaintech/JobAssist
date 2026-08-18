@@ -74,8 +74,8 @@ const SchoolLayout: React.FC = () => {
           <div className="flex justify-between h-16">
             <div className="flex">
               <div className="flex-shrink-0 flex items-center">
-                <img src="/logos/lingali-logo.png" alt="lingali Logo" className="h-8 w-8 object-contain" />
-                <span className="ml-2 text-xl font-semibold text-gray-900">lingali School Admin</span>
+                <img src="/logos/lingali-logo.png" alt="One-CEFR Logo" className="h-8 w-8 object-contain" />
+                <span className="ml-2 text-xl font-semibold text-gray-900">One-CEFR School Admin</span>
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                 {navigation.map((item) => {

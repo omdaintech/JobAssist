@@ -39,7 +39,7 @@ export const SettingsView: React.FC = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Settings | Lingali';
+    document.title = 'Settings | One-CEFR';
   }, []);
 
   // Success and error states (shared across sections)
